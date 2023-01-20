@@ -68,6 +68,18 @@ googleAnalytics = "G-8B5XLER8F7"
   name = 'InnerSource Twitter'
   url = 'https://twitter.com/InnerSourceJP'
   weight = 24
+[[menu.main]]
+  name = 'Other'
+  params.header = true
+  weight = 30
+[[menu.main]]
+  name = 'Travel Records'
+  url = '/travelrecords'
+  weight = 31
+[[menu.main]]
+  name = 'stack'
+  url = '/stack'
+  weight = 31
 
 [[menu.social]]
   name = 'Twitter'
