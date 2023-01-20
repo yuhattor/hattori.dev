@@ -21,7 +21,11 @@ jobs:
           hugo-version: '0.80.0'
           extended: true
       - name: Build
-        run: npm i -g postcss-cli && npm install && npm run build
+        run: | 
+          npx browserslist@latest --update-db
+          npm i -g postcss-cli
+          npm install 
+          npm run build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
