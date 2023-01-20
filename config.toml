@@ -2,7 +2,7 @@
 baseURL = '/'
 languageCode = 'ja-jp'
 title = 'hattori.dev'
-googleAnalytics = "UA-PROPERTY_ID"
+googleAnalytics = "G-8B5XLER8F7"
 
 [[menu.social]]
   name = 'Twitter'
@@ -33,7 +33,7 @@ googleAnalytics = "UA-PROPERTY_ID"
   url = '/'
   weight = 1
 [[menu.main]]
-  name = 'Twitter @yuhattor'
+  name = 'Twitter@yuhattor'
 	url = 'https://twitter.com/yuhattor'
   weight = 2
 [[menu.main]]
