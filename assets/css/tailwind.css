@@ -33,3 +33,6 @@ html.dark *::-webkit-scrollbar-thumb {
 html.dark * {
   scrollbar-color: theme("colors.slate.400") theme("colors.slate.600");
 }
+
+
+

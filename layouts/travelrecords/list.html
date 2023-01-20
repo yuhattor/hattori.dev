@@ -1,0 +1,176 @@
+{{ define "main" }}
+
+<!-- Resources -->
+<script src="https://www.amcharts.com/lib/4/core.js"></script>
+<script src="https://www.amcharts.com/lib/4/maps.js"></script>
+<script src="https://www.amcharts.com/lib/4/geodata/worldHigh.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+<!-- Chart code -->
+<script>
+	am4core.ready(function () {
+
+		am4core.useTheme(am4themes_animated);
+		var chart = am4core.create("chartdiv", am4maps.MapChart);
+		chart.geodata = am4geodata_worldHigh;
+		chart.projection = new am4maps.projections.Mercator();
+		chart.exporting.menu = new am4core.ExportMenu();
+		chart.zoomControl = new am4maps.ZoomControl();
+		var homeButton = new am4core.Button();
+		homeButton.events.on("hit", function () {
+			chart.goHome();
+		});
+
+		homeButton.icon = new am4core.Sprite();
+		homeButton.padding(7, 5, 7, 5);
+		homeButton.width = 30;
+		homeButton.icon.path = "M16,8 L14,8 L14,16 L10,16 L10,10 L6,10 L6,16 L2,16 L2,8 L0,8 L8,0 L16,8 Z M16,8";
+		homeButton.marginBottom = 10;
+		homeButton.parent = chart.zoomControl;
+		homeButton.insertBefore(chart.zoomControl.plusButton);
+
+		// Center on the groups by default
+		chart.homeZoomLevel = 3.5;
+		chart.homeGeoPoint = { longitude: 10, latitude: 52 };
+
+
+		var groupData = [
+			{
+				"name": "Visited Countries",
+				"color": chart.colors.getIndex(1),
+				"data": [
+					{ "id": "AT", "title": "Australia", "visited": "2016", "cities": "Vienna" },
+					{ "id": "BE", "title": "Belgium", "visited": "", "cities": "Brussels, Ghent, Halle, Itterbeek, Vlezenbeek" },
+					{ "id": "BA", "title": " Bosnia and Herzegovina", "visited": "2019", "cities": "Sarajevo, Mostar" },
+					{ "id": "BG", "title": "Bulgaria", "visited": "2018", "cities": "Sofia, Rila" },
+					{ "id": "HR", "title": "Croatia", "visited": "2019", "cities": "Dubrovnik" },
+					{ "id": "CZ", "title": "Czech Republic", "visited": "2016", "cities": "Prague, Cesky Krumlov" },
+					{ "id": "DK", "title": "Denmark", "visited": "2019", "cities": "Copenhagen, Hillerød" },
+					{ "id": "FR", "title": "France", "visited": "2016", "cities": "Paris, Lyon, Marseille, Nice(+Monaco)" },
+					{ "id": "DE", "title": "Germany", "visited": "2016", "cities": "Munich, Berlin, Cologne" },
+					{ "id": "GR", "title": "Greece", "visited": "2018", "cities": "Athens, Santorini" },
+					{ "id": "HU", "title": "Hungary", "visited": "2016", "cities": "Budapest" },
+					{ "id": "IT", "title": "Italy", "visited": "2016", "cities": "Rome(+Vatican), Pisa, Florence, Venice" },
+					{ "id": "LU", "title": "Luxembourg", "visited": "2019", "cities": "Luxembourg" },
+					{ "id": "ME", "title": "Montenegro", "visited": "2019", "cities": "Kotor" },
+					{ "id": "NL", "title": "Netherlands", "visited": "2016", "cities": "Amsterdam" },
+					{ "id": "SK", "title": "Slovaki", "visited": "2016", "cities": "Bratislava" },
+					{ "id": "SI", "title": "Slovenia", "visited": "2019", "cities": "Ljubljana, Bled" },
+					{ "id": "ES", "title": "Spain", "visited": "2016", "cities": "Barcelona" },
+					{ "id": "CH", "title": "Switzerland", "visited": "2016", "cities": "Geneva, Bern, Zurich" },
+					{ "id": "GB", "title": "Great Britain", "visited": "2014, 2019", "cities": "London" },
+					{ "id": "CA", "title": "Canada", "visited": "2017, 2019", "cities": "Calgary, Banff, Vancouver" },
+					{ "id": "MX", "title": "Mexico", "visited": "2019", "cities": "Mexico City, Morelos, San Juan Teotihuacán" },
+					{ "id": "US", "title": "United States", "visited": "2017, 2018, 2019", "cities": "Ney York, Seattle" },
+					{ "id": "CN", "title": "", "visited": "2014, 2018", "cities": "Beijing, Shenzhen, Hong Kong" },
+					{ "id": "JP", "title": "Japan", "visited": "N/A", "cities": "Many" },
+					{ "id": "PH", "title": "Philippines", "visited": "2015", "cities": "Cebu" },
+					{ "id": "QA", "title": "Qatar", "visited": "2019", "cities": "Doha" },
+					{ "id": "SG", "title": "Singapore", "visited": "2017", "cities": "N/A" },
+					{ "id": "KR", "title": "South Korea", "visited": "2018", "cities": "Seoul" },
+					{ "id": "TH", "title": "Thailand", "visited": "2014, 2017", "cities": "Bangkok, Chiang Mai, Phuket" },
+					{ "id": "AU", "title": "Australia", "visited": "2020", "cities": "Sydney, Gold Coast" }
+				]
+			},
+			{
+				"name": "Next Travel Destination,",
+				"color": chart.colors.getIndex(3),
+				"data": [
+					{
+
+					}]
+			}
+		];
+
+		// This array will be populated with country IDs to exclude from the world series
+		var excludedCountries = ["AQ"];
+
+		// Create a series for each group, and populate the above array
+		groupData.forEach(function (group) {
+			var series = chart.series.push(new am4maps.MapPolygonSeries());
+			series.name = group.name;
+			series.useGeodata = true;
+			var includedCountries = [];
+			group.data.forEach(function (country) {
+				includedCountries.push(country.id);
+				excludedCountries.push(country.id);
+			});
+			series.include = includedCountries;
+
+			series.fill = am4core.color(group.color);
+
+			// By creating a hover state and setting setStateOnChildren to true, when we
+			// hover over the series itself, it will trigger the hover SpriteState of all
+			// its countries (provided those countries have a hover SpriteState, too!).
+			series.setStateOnChildren = true;
+			series.calculateVisualCenter = true;
+
+
+			// Country shape properties & behaviors
+			var mapPolygonTemplate = series.mapPolygons.template;
+			// Instead of our custom title, we could also use {name} which comes from geodata  
+			mapPolygonTemplate.fill = am4core.color(group.color);
+			mapPolygonTemplate.fillOpacity = 0.6;
+			mapPolygonTemplate.nonScalingStroke = true;
+			mapPolygonTemplate.tooltipPosition = "fixed"
+
+			mapPolygonTemplate.events.on("over", function (event) {
+				series.mapPolygons.each(function (mapPolygon) {
+					mapPolygon.isHover = true;
+				})
+				event.target.isHover = false;
+				event.target.isHover = true;
+			})
+
+			mapPolygonTemplate.events.on("out", function (event) {
+				series.mapPolygons.each(function (mapPolygon) {
+					mapPolygon.isHover = false;
+				})
+			})
+
+			// States  
+			var hoverState = mapPolygonTemplate.states.create("hover");
+			hoverState.properties.fill = am4core.color("#6794dc");
+
+			// Tooltip
+			mapPolygonTemplate.tooltipText = "Country: {title}\nVisited: {visited}\nCities: {cities}"; // enables tooltip
+			// series.tooltip.getFillFromObject = false; // prevents default colorization, which would make all tooltips red on hover
+			// series.tooltip.background.fill = am4core.color(group.color);
+
+			// MapPolygonSeries will mutate the data assigned to it, 
+			// we make and provide a copy of the original data array to leave it untouched.
+			// (This method of copying works only for simple objects, e.g. it will not work
+			//  as predictably for deep copying custom Classes.)
+			series.data = JSON.parse(JSON.stringify(group.data));
+		});
+
+
+		// The rest of the world.
+		var worldSeries = chart.series.push(new am4maps.MapPolygonSeries());
+		var worldSeriesName = "world";
+		worldSeries.name = worldSeriesName;
+		worldSeries.useGeodata = true;
+		worldSeries.exclude = excludedCountries;
+		worldSeries.fillOpacity = 0.8;
+		worldSeries.hiddenInLegend = true;
+		worldSeries.mapPolygons.template.nonScalingStroke = true;
+
+		// This auto-generates a legend according to each series' name and fill
+		chart.legend = new am4maps.Legend();
+
+		// Legend styles
+		chart.legend.paddingLeft = 27;
+		chart.legend.paddingRight = 27;
+		chart.legend.marginBottom = 15;
+		chart.legend.width = am4core.percent(90);
+		chart.legend.valign = "bottom";
+		chart.legend.contentAlign = "left";
+
+		// Legend items
+		chart.legend.itemContainers.template.interactionsEnabled = false;
+
+	}); // end am4core.ready()
+</script>
+
+    <div id="chartdiv" style="width:100%;height:100%;"></div>
+
+{{ end }}

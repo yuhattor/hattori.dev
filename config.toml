@@ -2,7 +2,7 @@
 baseURL = '/'
 languageCode = 'ja-jp'
 title = 'hattori.dev'
-googleAnalytics = "UA-PROPERTY_ID"
+googleAnalytics = "G-8B5XLER8F7"
 
 [[menu.social]]
   name = 'Twitter'
@@ -33,7 +33,7 @@ googleAnalytics = "UA-PROPERTY_ID"
   url = '/'
   weight = 1
 [[menu.main]]
-  name = 'Twitter @yuhattor'
+  name = 'Twitter@yuhattor'
 	url = 'https://twitter.com/yuhattor'
   weight = 2
 [[menu.main]]
@@ -45,8 +45,8 @@ googleAnalytics = "UA-PROPERTY_ID"
   url = '/articles'
   weight = 11
 [[menu.main]]
-  name = 'GitHub Change Feed'
-  url = '/changefeed'
+  name = 'GitHub Changelog'
+  url = '/changelog'
   weight = 12
 [[menu.main]]
   name = 'Links'
@@ -68,6 +68,18 @@ googleAnalytics = "UA-PROPERTY_ID"
   name = 'InnerSource Twitter'
   url = 'https://twitter.com/InnerSourceJP'
   weight = 24
+[[menu.main]]
+  name = 'Other'
+  params.header = true
+  weight = 30
+[[menu.main]]
+  name = 'Travel Records'
+  url = '/travelrecords'
+  weight = 31
+[[menu.main]]
+  name = 'stack'
+  url = '/stack'
+  weight = 31
 
 [[menu.social]]
   name = 'Twitter'

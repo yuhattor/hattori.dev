@@ -1,0 +1,54 @@
+name: Create branch and PR on issue open
+
+on:
+  issues:
+    types: [opened, reopened]
+
+env:
+  TZ: 'Asia/Tokyo'
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  create-branch-and-pr:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: Setup Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+    - name: Setup git config
+      run: |
+        git config --global user.email "yuhattor@users.noreply.github.com"
+        git config --global user.name "Yuki Hattori"
+    - name: Create file and push
+      run: |
+        # Checkout Branch
+        BRANCH_NAME="blog-${{ github.event.issue.number }}"
+        git checkout -b "$BRANCH_NAME"
+
+        # Get Issue Body
+        pip3 install requests
+        python3 
+        ITEM=$( python3 .github/workflows/scripts/generate-blog.py \
+          ${{ secrets.DeepL_API_KEY }} \
+          ${{ github.repository }} \
+          ${{ github.event.issue.number }} \
+        )
+
+        # Push to GitHub
+        git add .
+        git commit -m "Add issue body to file"
+        git branch -m "changelog/$ITEM"
+        git push origin "changelog/$ITEM" 
+
+        # Create PR
+        gh pr create \
+        --title "New ${{ github.event.issue.title }} " \
+        --body "@yuhattor #${{ github.event.issue.number }}\n Please review this PR:)" \
+        --base "main" \
+        --head "changelog/$ITEM" \
+        --label "blog" \
+        --reviewer "yuhattor" \
+        --assignee "yuhattor" \
