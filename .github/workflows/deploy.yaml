@@ -24,7 +24,7 @@ jobs:
         run: | 
           npm i -g postcss-cli
           npm install 
-          npm run build && exit(0)
+          npm run build && exit 0
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
