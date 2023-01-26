@@ -18,20 +18,16 @@ jobs:
       run: |
         git config --global user.email "yuhattor@users.noreply.github.com"
         git config --global user.name "Yuki Hattori"
-    - name: Create Branch
-      id: create_branch
+    - name: Create file and push
       run: |
         BRANCH_NAME="blog-${{ github.event.issue.number }}"
         git checkout -b "$BRANCH_NAME"
-        git push origin "$BRANCH_NAME"
-    - name: Create file and push
-      run: |
         cat > tmp.txt << EOF
           ${{ github.event.issue.body }}
         EOF
         git add tmp.txt
         git commit -m "Add issue body to file"
-        git push origin blog-${{ github.event.issue.number }}
+        git push origin "$BRANCH_NAME"
     - name: Create PR
       uses: peter-evans/create-pull-request@v4
       with:
