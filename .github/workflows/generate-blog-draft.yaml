@@ -25,6 +25,12 @@ jobs:
         git checkout -b "$BRANCH_NAME"
         git push origin "$BRANCH_NAME"
     - name: Create file and push
+      run: |
+        echo ${{ github.event.issue.body }} > issue_body.txt
+        git add issue_body.txt
+        git commit -m "Add issue body to file"
+        git push origin blog-${{ github.event.issue.number }}
+    - name: Create PR
       uses: peter-evans/create-pull-request@v4
       with:
         token: ${{ secrets.PAT }}
