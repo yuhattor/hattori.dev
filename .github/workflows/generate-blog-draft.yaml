@@ -33,6 +33,7 @@ jobs:
       with:
         token: ${{ secrets.PAT }}
         author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+        base: main
         branch: blog-${{ github.event.issue.number }}
         title: '[Sample] Blog Title'
         body: Update report
