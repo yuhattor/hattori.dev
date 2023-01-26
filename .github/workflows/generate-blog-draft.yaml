@@ -22,9 +22,11 @@ jobs:
       run: |
         BRANCH_NAME="blog-${{ github.event.issue.number }}"
         git checkout -b "$BRANCH_NAME"
-        cat > tmp.txt << EOF
-          ${{ github.event.issue.body }}
-        EOF
+
+        response=$(curl -s "https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}")
+        body=$(echo $response | jq -r '.body')
+        echo $body > tmp.txt
+
         git add tmp.txt
         git commit -m "Add issue body to file"
         git push origin "$BRANCH_NAME"
