@@ -2,7 +2,7 @@ name: Create branch and PR on issue open
 
 on:
   issues:
-    types: [opened]
+    types: [opened, reopened]
 
 env:
   TZ: 'Asia/Tokyo'
