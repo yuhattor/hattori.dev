@@ -32,16 +32,10 @@ jobs:
       uses: peter-evans/create-pull-request@v4
       with:
         token: ${{ secrets.PAT }}
-        commit-message: Update report
-        committer: GitHub <noreply@github.com>
         author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
-        base: main
         branch: blog-${{ github.event.issue.number }}
-        delete-branch: true
         title: '[Sample] Blog Title'
-        body: |
-          Update report
-        labels: |
-          blog
+        body: Update report
+        labels: blog
         assignees: yuhattor
         reviewers: yuhattor
