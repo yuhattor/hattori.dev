@@ -4,18 +4,26 @@ on:
   issues:
     types: [opened]
 
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 jobs:
   create-branch-and-pr:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-    - name: Create branch and push
+    - name: Create Branch
+      id: create_branch
       env:
+        TZ: 'Asia/Tokyo'
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        git branch blog-${{ github.event.issue.number }}
-        git push origin blog-${{ github.event.issue.number }}
+        DATE=`date +"%Y%m%d"`
+        BRANCH_NAME="blog-$DATE"
+        git checkout -b "$BRANCH_NAME"
+        git push origin "$BRANCH_NAME"
+        echo ::set-output name=branch_name::$BRANCH_NAME
     - name: Create file and push
       run: |
         echo ${{ github.event.issue.body }} > issue_body.txt
