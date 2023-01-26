@@ -26,8 +26,10 @@ jobs:
         git push origin "$BRANCH_NAME"
     - name: Create file and push
       run: |
-        echo ${{ github.event.issue.body }} > issue_body.txt
-        git add issue_body.txt
+        cat > tmp.txt << EOF
+          ${{ github.event.issue.body }}
+        EOF
+        git add tmp.txt
         git commit -m "Add issue body to file"
         git push origin blog-${{ github.event.issue.number }}
     - name: Create PR
