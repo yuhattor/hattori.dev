@@ -28,15 +28,13 @@ jobs:
         git add tmp.txt
         git commit -m "Add issue body to file"
         git push origin "$BRANCH_NAME"
-    - name: Create PR
-      uses: peter-evans/create-pull-request@v4
-      with:
-        token: ${{ secrets.PAT }}
-        author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
-        base: main
-        branch: blog-${{ github.event.issue.number }}
-        title: '[Sample] Blog Title'
-        body: Update report
-        labels: blog
-        assignees: yuhattor
-        reviewers: yuhattor
+    - run: |
+        gh pr create \
+        --title "The bug is fixed" \
+        --body "Everything works again" \
+        --base "main" \
+        --head "blog-${{ github.event.issue.number }}" \
+        --label "blog" \
+        --reviewer "yuhattor" \
+        --assignee "yuhattor" \
+      # token: ${{ secrets.PAT }}
