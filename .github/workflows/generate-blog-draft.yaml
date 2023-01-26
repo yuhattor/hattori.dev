@@ -39,8 +39,6 @@ jobs:
         commit-message: Update report
         committer: GitHub <noreply@github.com>
         author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
-        base: main
-        branch: "blog-${{ github.event.issue.number }}"
         delete-branch: true
         title: '[Sample] Blog Title'
         body: |
@@ -49,3 +47,6 @@ jobs:
           blog
         assignees: yuhattor
         reviewers: yuhattor
+
+        # base: main
+        # branch: "blog-${{ github.event.issue.number }}"
