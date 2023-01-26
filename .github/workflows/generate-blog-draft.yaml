@@ -5,6 +5,7 @@ on:
     types: [opened]
 
 env:
+  TZ: 'Asia/Tokyo'
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
@@ -13,11 +14,12 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+    - name: Setup git config
+      run: |
+        git config --global user.email "yuhattor@users.noreply.github.com"
+        git config --global user.name "Yuki Hattori"
     - name: Create Branch
       id: create_branch
-      env:
-        TZ: 'Asia/Tokyo'
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         BRANCH_NAME="blog-${{ github.event.issue.number }}"
         git checkout -b "$BRANCH_NAME"
