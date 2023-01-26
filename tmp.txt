@@ -1,0 +1,5 @@
+  New Blog: [Twilio Segment is now a GitHub secret scanning partner](https://github.blog/changelog/2023-01-20-twilio-segment-is-now-a-github-secret-scanning-partner)
+
+
+
+
