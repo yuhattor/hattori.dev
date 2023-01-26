@@ -19,11 +19,9 @@ jobs:
         TZ: 'Asia/Tokyo'
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        DATE=`date +"%Y%m%d"`
-        BRANCH_NAME="blog-$DATE"
+        BRANCH_NAME="blog-${{ github.event.issue.number }}"
         git checkout -b "$BRANCH_NAME"
         git push origin "$BRANCH_NAME"
-        echo ::set-output name=branch_name::$BRANCH_NAME
     - name: Create file and push
       run: |
         echo ${{ github.event.issue.body }} > issue_body.txt
