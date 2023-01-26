@@ -10,25 +10,19 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-    - name: Find date in issue body
-      run: |
-        issue_body=$(curl -s https://api.github.com/repos/$GITHUB_REPOSITORY/issues/$GITHUB_EVENT_NUMBER)
-        date_string=$(echo $issue_body | grep -oE "[0-9]{4}-[0-9]{2}-[0-9]{2}")
-        branch_name="foo-$date_string"
-        echo "Creating branch $branch_name"
     - name: Create branch and push
       run: |
-        git branch $branch_name
-        git push origin $branch_name
+        git branch blog-${{ github.event.issue.number }}
+        git push origin blog-${{ github.event.issue.number }}
     - name: Create file and push
       run: |
-        echo $issue_body > issue_body.txt
+        echo ${{ github.event.issue.body }} > issue_body.txt
         git add issue_body.txt
         git commit -m "Add issue body to file"
-        git push origin $branch_name
+        git push origin blog-${{ github.event.issue.number }}
     - name: Create pull request
       uses: peter-evans/create-pull-request@v3
       with:
-        title: "Issue body added to file"
-        head: $branch_name
+        title: "Issue #${{ github.event.issue.number }} added to blog"
+        head: blog-${{ github.event.issue.number }}
         base: main
