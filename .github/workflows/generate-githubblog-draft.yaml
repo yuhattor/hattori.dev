@@ -11,7 +11,7 @@ env:
 jobs:
   create-branch-and-pr:
     runs-on: ubuntu-latest
-    if: startsWith(github.event.issue.title, 'Blog')
+    if: startsWith(github.event.issue.title, 'Blog:')
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
