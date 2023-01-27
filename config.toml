@@ -37,6 +37,10 @@ googleAnalytics = "G-8B5XLER8F7"
 	url = 'https://twitter.com/yuhattor'
   weight = 2
 [[menu.main]]
+  name = 'Speaker Deck'
+	url = 'https://speakerdeck.com/yuhattor'
+  weight = 3
+[[menu.main]]
   name = 'Content'
   params.header = true
   weight = 10
