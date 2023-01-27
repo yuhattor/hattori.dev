@@ -30,7 +30,8 @@ jobs:
 
         # Get Issue Body
         pip3 install requests
-        python3 
+        # Sleep 10 seconds to wait for GitHub API is ready
+        python3 -c "import time; time.sleep(10)" 
         ITEM=$( python3 .github/workflows/scripts/generate-blog.py \
           ${{ secrets.DeepL_API_KEY }} \
           ${{ github.repository }} \
@@ -45,10 +46,10 @@ jobs:
 
         # Create PR
         gh pr create \
-        --title "New ${{ github.event.issue.title }} " \
-        --body "@yuhattor #${{ github.event.issue.number }}\n Please review this PR:)" \
-        --base "main" \
-        --head "changelog/$ITEM" \
-        --label "blog" \
-        --reviewer "yuhattor" \
-        --assignee "yuhattor" \
+          --title "New ${{ github.event.issue.title }} " \
+          --body "@yuhattor Please review this PR related to the issue #${{ github.event.issue.number }}" \
+          --base "main" \
+          --head "changelog/$ITEM" \
+          --label "blog" \
+          --reviewer "yuhattor" \
+          --assignee "yuhattor"
