@@ -40,8 +40,8 @@ author = re.search(re.compile(r"## Author\n(.+?)\n\n## Description") , text).gro
 description = re.search(re.compile(r"## Description\n(.+?)\n") , text).group(1) # Get description from issue body
 content = re.search(r"## Raw Content(.*)```", text, re.DOTALL).group(1) # Get content from issue body
 
-# format the content for blog
-blog_content = f"""---
+# format the content for changelog
+changelog_content = f"""---
 title: { translate_with_deepl(api_key, title) }
 englishtitle: { title }
 date: { published_date }
@@ -55,6 +55,6 @@ description: { description }
 # write the content to a file
 item = f"{published_date}-{re.sub(r'[^a-z0-9]', '-', title.lower())}"
 with open(f"content/changelog/{item}.md", 'w') as f:
-  f.write(blog_content)
+  f.write(changelog_content)
 
 print(item)

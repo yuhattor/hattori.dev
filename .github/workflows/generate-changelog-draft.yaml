@@ -11,6 +11,7 @@ env:
 jobs:
   create-branch-and-pr:
     runs-on: ubuntu-latest
+    if: startsWith(github.event.issue.title, 'Changelog')
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
@@ -25,14 +26,14 @@ jobs:
     - name: Create file and push
       run: |
         # Checkout Branch
-        BRANCH_NAME="blog-${{ github.event.issue.number }}"
+        BRANCH_NAME="changelog-${{ github.event.issue.number }}"
         git checkout -b "$BRANCH_NAME"
 
         # Get Issue Body
         pip3 install requests
         # Sleep 10 seconds to wait for GitHub API is ready
         python3 -c "import time; time.sleep(10)" 
-        ITEM=$( python3 .github/workflows/scripts/generate-blog.py \
+        ITEM=$( python3 .github/workflows/scripts/generate-changelog.py \
           ${{ secrets.DeepL_API_KEY }} \
           ${{ github.repository }} \
           ${{ github.event.issue.number }} \
@@ -50,6 +51,6 @@ jobs:
           --body "@yuhattor Please review this PR and close #${{ github.event.issue.number }}" \
           --base "main" \
           --head "changelog/$ITEM" \
-          --label "blog" \
+          --label "changelog" \
           --reviewer "yuhattor" \
           --assignee "yuhattor"
