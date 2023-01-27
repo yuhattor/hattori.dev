@@ -1,6 +1,6 @@
 ---
 title: コンプライアンスの基盤整備
-subtitle: 開発者対応型コンプライアンスへの基礎固め。
+subtitle: 開発者対応型コンプライアンスへの基礎固めを実施
 englishsubtitle: Laying the groundwork for developer-enabled compliance.
 englishtitle: Setting the foundations for compliance
 date: 2023-01-26
