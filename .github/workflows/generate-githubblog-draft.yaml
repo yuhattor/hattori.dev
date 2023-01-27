@@ -30,7 +30,7 @@ jobs:
         git checkout -b "$BRANCH_NAME"
 
         # Get Issue Body
-        pip3 install requests
+        pip3 install requests bs4
         # Sleep 10 seconds to wait for GitHub API is ready
         # python3 -c "import time; time.sleep(10)" 
         # ITEM=$( python3 .github/workflows/scripts/generate-changelog.py \
