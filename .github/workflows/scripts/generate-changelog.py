@@ -20,7 +20,7 @@ def translate_with_deepl(api_key: str, content: str, is_xml: bool = False):
   }
   if is_xml:
       params["tag_handling"] = "xml"
-  result = requests.get("https://api-free.deepl.com/v2/translate", params=params) 
+  result = requests.post("https://api-free.deepl.com/v2/translate", data=params) 
   data = result.json()
   return data["translations"][0]["text"]
 
