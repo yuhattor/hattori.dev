@@ -1,4 +1,4 @@
-name: Create branch and PR on issue open
+name: Generate GitHub Changelog Draft
 
 on:
   issues:

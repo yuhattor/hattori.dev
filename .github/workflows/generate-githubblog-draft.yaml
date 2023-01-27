@@ -1,0 +1,40 @@
+name: Generate GitHub Blog Draft
+
+on:
+  issues:
+    types: [opened, reopened]
+
+env:
+  TZ: 'Asia/Tokyo'
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  create-branch-and-pr:
+    runs-on: ubuntu-latest
+    if: startsWith(github.event.issue.title, 'Blog')
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: Setup Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+    - name: Setup git config
+      run: |
+        git config --global user.email "yuhattor@users.noreply.github.com"
+        git config --global user.name "Yuki Hattori"
+    - name: Create file and push
+      run: |
+        # Checkout Branch
+        BRANCH_NAME="changelog-${{ github.event.issue.number }}"
+        git checkout -b "$BRANCH_NAME"
+
+        # Get Issue Body
+        pip3 install requests
+        # Sleep 10 seconds to wait for GitHub API is ready
+        # python3 -c "import time; time.sleep(10)" 
+        # ITEM=$( python3 .github/workflows/scripts/generate-changelog.py \
+        #   ${{ secrets.DeepL_API_KEY }} \
+        #   ${{ github.repository }} \
+        #   ${{ github.event.issue.number }} \
+        # )
