@@ -45,8 +45,8 @@ googleAnalytics = "G-8B5XLER8F7"
   url = '/articles'
   weight = 11
 [[menu.main]]
-  name = 'GitHub Change Feed'
-  url = '/changefeed'
+  name = 'GitHub Changelog'
+  url = '/changelog'
   weight = 12
 [[menu.main]]
   name = 'Links'
