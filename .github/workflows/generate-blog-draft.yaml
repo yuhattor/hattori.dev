@@ -29,7 +29,7 @@ jobs:
         git checkout -b "$BRANCH_NAME"
 
         # Get Issue Body
-        pip install requests
+        pip3 install requests
         python3 
         ITEM=$( python3 .github/workflows/scripts/generate-blog.py \
           ${{ secrets.DeepL_API_KEY }} \
@@ -45,8 +45,8 @@ jobs:
 
         # Create PR
         gh pr create \
-        --title "The bug is fixed" \
-        --body "Everything works again" \
+        --title "New ${{ github.event.issue.title }} #${{ github.event.issue.number }}" \
+        --body "@yuhattor will review this PR." \
         --base "main" \
         --head "changelog/$ITEM" \
         --label "blog" \
