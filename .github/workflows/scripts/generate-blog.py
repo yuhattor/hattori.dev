@@ -37,7 +37,7 @@ title = re.search(re.compile(r"## Title\n(.+?)\n\n## Link") , text).group(1) # G
 link = re.search(re.compile(r"## Link\n(.+?)\n\n## Published date") , text).group(1) # Get link from issue body
 published_date = format_date(re.search(re.compile(r"## Published date\n(.+?)\n\n## Author") , text).group(1)) # Get published date from issue body
 author = re.search(re.compile(r"## Author\n(.+?)\n\n## Description") , text).group(1) # Get author from issue body
-description = re.search(re.compile(r"## Description\n(.+?)\n\n## Raw Content") , text).group(1) # Get description from issue body
+description = re.search(re.compile(r"## Description\n(.+?)\n") , text).group(1) # Get description from issue body
 content = re.search(r"## Raw Content(.*)```", text, re.DOTALL).group(1) # Get content from issue body
 
 # format the content for blog
