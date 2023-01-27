@@ -36,7 +36,7 @@ def get_cover_image_url(url):
   html = response.content
   soup = BeautifulSoup(html, 'html.parser')
   img = soup.find('img', class_="cover-image")
-  return img
+  return img.get("src")
 
 # Get Issue Body
 text = requests.get(f"https://api.github.com/repos/{repository}/issues/{issue_id}").json()["body"]
@@ -61,7 +61,7 @@ date: { published_date }
 cardurl: { link }
 author: { author }
 description: { description }
-coverimage: { get_cover_image_url(link).get("src") }
+coverimage: { get_cover_image_url(link) }
 category: { category }
 ---
 { translate_with_deepl(api_key, content, is_xml=True) }

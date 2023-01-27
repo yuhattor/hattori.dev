@@ -63,10 +63,8 @@
       <a class="article block px-3 py-4 {{ if $isCurrentPage }} bg-slate-900 dark:bg-slate-700 text-slate-50 {{ else }} hover:bg-slate-200 dark:hover:bg-slate-700 {{ end }}"
         href="{{ .RelPermalink }}">
         {{ $title := .Params.title }}
-        {{ with .Params.images }}
-        {{- range first 1 . }}
-        <img class="rounded max-w-full mb-4" src="{{ . }}" alt="{{ $title }}" />
-        {{ end -}}
+        {{ with .Params.coverimage }}
+        <img class="rounded max-w-full mb-4" src="{{ . }}" />
         {{ end }}
         <h3 class="text-lg font-semibold mb-0.5">{{ $title }}</h3>
         <div
@@ -91,17 +89,15 @@
 			<br/> Pruned {{ .Lastmod.Format "January 2, 2006" }}
         {{ end }}
         <br>
+      Category: {{ .Params.category }}
+        <br>
       Author: {{ .Params.author }}
 	  </p>
       {{ end }}
 
-      {{ with .Params.images }}
-      {{- range first 1 . }}
-      <img class="rounded max-w-full mx-auto mb-4" src="{{ . }}" alt="{{ $title }}" />
-      {{ end -}}
-      {{ end }}
-
       <div class="blog-content">
+      {{ .Params.Subtitle}}
+      <img class="rounded max-w-full mx-auto mb-4" src="{{ .Params.coverimage }}"  />
       {{ .Content }}
       </div >
       <h3>Source</h3>
@@ -118,7 +114,7 @@
       <h3>Comments</h3>
       <script src="https://utteranc.es/client.js"
         repo="yuhattor/hattori.dev"
-        issue-term="Blog: {{ .Params.englishtitle }}"
+        issue-term=": {{ .Params.englishtitle }}"
         label="blog-comment"
         theme="github-light"
         crossorigin="anonymous"

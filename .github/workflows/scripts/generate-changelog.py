@@ -3,6 +3,7 @@ import sys
 import json
 import requests
 from datetime import datetime
+from bs4 import BeautifulSoup
 
 # Get Arguments 
 api_key = sys.argv[1] # DeepL API key
@@ -29,6 +30,15 @@ def format_date(published_date: str):
   date_object = datetime.strptime(date_string, "%a, %d %b %Y %H:%M:%S %z")
   return date_object.strftime("%Y-%m-%d")
 
+def get_cover_image_url(url):
+  response = requests.get(url)
+  html = response.content
+  soup = BeautifulSoup(html, 'html.parser')
+  images = soup.select("main.changelog img")
+  if images:
+    return images[0].get("src")
+  return ""
+
 # Get Issue Body
 text = requests.get(f"https://api.github.com/repos/{repository}/issues/{issue_id}").json()["body"]
 
@@ -48,6 +58,7 @@ date: { published_date }
 cardurl: { link }
 author: { author }
 description: { description }
+coverimage: { get_cover_image_url(link) }
 ---
 { translate_with_deepl(api_key, content, is_xml=True) }
 """
