@@ -30,18 +30,25 @@ jobs:
 
         # Get Issue Body
         pip install requests
-        python3 .github/workflows/scripts/generate-blog.py ${{ secrets.DeepL_API_KEY }} ${{ github.repository }} ${{ github.event.issue.number }} 
+        python3 
+        ITEM=$( python3 .github/workflows/scripts/generate-blog.py \
+          ${{ secrets.DeepL_API_KEY }} \
+          ${{ github.repository }} \
+          ${{ github.event.issue.number }} \
+        )
 
         # Push to GitHub
         git add .
         git commit -m "Add issue body to file"
-        git push origin "$BRANCH_NAME"
-    - run: |
+        git branch -m "changelog/$ITEM"
+        git push origin "changelog/$ITEM" 
+
+        # Create PR
         gh pr create \
         --title "The bug is fixed" \
         --body "Everything works again" \
         --base "main" \
-        --head "blog-${{ github.event.issue.number }}" \
+        --head "changelog/$ITEM" \
         --label "blog" \
         --reviewer "yuhattor" \
         --assignee "yuhattor" \
