@@ -72,3 +72,4 @@ item = f"{published_date}-{re.sub(r'[^a-z0-9]', '-', title.lower())}"
 with open(f"content/githubblog/{item}.md", 'w') as f:
   f.write(githubblog_content)
 
+print(item)
