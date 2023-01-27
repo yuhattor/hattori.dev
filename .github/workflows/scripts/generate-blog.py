@@ -46,8 +46,8 @@ title: { translate_with_deepl(api_key, title) }
 englishtitle: { title }
 date: { published_date }
 cardurl: { link }
-description: { description }
 author: { author }
+description: { description[:100] }
 ---
 { translate_with_deepl(api_key, content, is_xml=True) }
 """
