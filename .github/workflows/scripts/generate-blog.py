@@ -32,7 +32,6 @@ def format_date(published_date: str):
 
 
 # Get Issue Body
-print(f"https://api.github.com/repos/{repository}/issues/{issue_id}")
 text = requests.get(f"https://api.github.com/repos/{repository}/issues/{issue_id}").json()["body"]
 
 # Get Items

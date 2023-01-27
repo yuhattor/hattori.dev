@@ -30,7 +30,7 @@ jobs:
 
         # Get Issue Body
         pip install requests
-        python .github/workflows/scripts/generate-blog.py ${{ secrets.DeepL_API_KEY }} ${{ github.repository }} ${{ github.event.issue.number }} 
+        python3 .github/workflows/scripts/generate-blog.py ${{ secrets.DeepL_API_KEY }} ${{ github.repository }} ${{ github.event.issue.number }} 
 
         # Push to GitHub
         git add .
