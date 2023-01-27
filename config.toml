@@ -84,10 +84,6 @@ googleAnalytics = "G-8B5XLER8F7"
   name = 'Travel Records'
   url = '/travelrecords'
   weight = 31
-[[menu.main]]
-  name = 'stack'
-  url = '/stack'
-  weight = 31
 
 [[menu.social]]
   name = 'Twitter'
