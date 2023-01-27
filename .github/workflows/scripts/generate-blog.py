@@ -49,6 +49,8 @@ author: { author }
 ---
 { translate_with_deepl_stub(api_key, content, is_xml=True) }
 """
-
-with open(f"content/changelog/{published_date}-{re.sub(r'[^a-z0-9]', '-', title.lower())}.md", 'w') as f:
+item = f"{published_date}-{re.sub(r'[^a-z0-9]', '-', title.lower())}"
+with open(f"content/changelog/{item}.md", 'w') as f:
   f.write(blog_content)
+
+print(item)
