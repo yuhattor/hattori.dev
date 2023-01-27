@@ -31,14 +31,13 @@ def format_date(published_date: str):
   return date_object.strftime("%Y-%m-%d")
 
 # Get Issue Body
-print(requests.get(f"https://api.github.com/repos/{repository}/issues/{issue_id}").json())
 text = requests.get(f"https://api.github.com/repos/{repository}/issues/{issue_id}").json()["body"]
 
 # Get Items
-title = re.search(re.compile(r"## Title\r\n(.+?)\r\n\r\n## Link") , text).group(1)
-link = re.search(re.compile(r"## Link\r\n(.+?)\r\n\r\n## Published date") , text).group(1)
-published_date = format_date(re.search(re.compile(r"## Published date\r\n(.+?)\r\n\r\n## Author") , text).group(1))
-author = re.search(re.compile(r"## Author\r\n(.+?)\r\n\r\n## Raw Content") , text).group(1)
+title = re.search(re.compile(r"## Title\n(.+?)\n\n## Link") , text).group(1)
+link = re.search(re.compile(r"## Link\n(.+?)\n\n## Published date") , text).group(1)
+published_date = format_date(re.search(re.compile(r"## Published date\n(.+?)\n\n## Author") , text).group(1))
+author = re.search(re.compile(r"## Author\n(.+?)\n\n## Raw Content") , text).group(1)
 content = re.search(r"## Raw Content(.*)```", text, re.DOTALL).group(1)
 
 blog_content = f"""---
