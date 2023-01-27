@@ -31,7 +31,7 @@ def format_date(published_date: str):
   return date_object.strftime("%Y-%m-%d")
 
 # Get Issue Body
-print() requests.get(f"https://api.github.com/repos/{repository}/issues/{issue_id}").json())
+print(requests.get(f"https://api.github.com/repos/{repository}/issues/{issue_id}").json())
 text = requests.get(f"https://api.github.com/repos/{repository}/issues/{issue_id}").json()["body"]
 
 # Get Items
