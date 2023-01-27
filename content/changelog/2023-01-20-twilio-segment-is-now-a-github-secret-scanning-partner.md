@@ -4,6 +4,7 @@ englishtitle: Twilio Segment is now a GitHub secret scanning partner
 date: 2023-01-20
 cardurl: https://github.blog/changelog/2023-01-20-twilio-segment-is-now-a-github-secret-scanning-partner
 author: Kevin Duck
+description: GitHub secret scanning protects users by searching repositories for known types of secrets. By identifying and flagging these secrets, our scans help prevent data leaks and fraud.
 ---
 
 <p>GitHub シークレットスキャンは、既知のタイプのシークレットをリポジトリから検索することで、ユーザーを保護します。これらの秘密を特定し、フラグを立てることで、私たちのスキャンはデータ漏洩や不正行為の防止に役立っています。</p>

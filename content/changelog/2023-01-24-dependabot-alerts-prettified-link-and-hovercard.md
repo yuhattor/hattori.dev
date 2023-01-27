@@ -4,6 +4,7 @@ englishtitle: Dependabot alerts prettified link and hovercard
 date: 2023-01-24
 cardurl: https://github.blog/changelog/2023-01-24-dependabot-alerts-prettified-link-and-hovercard
 author: Kevin Duck
+description: Starting today, when linking to a Dependabot alert in an issue and or pull requests, anyone with permissions to view the alert will see a rich Dependabot alert mention, with detailed hovercard and a prettified link with the title of the alert.
 ---
 
 <p>今日から、課題およびプルリクエストでDependabotアラートにリンクする場合、アラートの閲覧権限を持つ人は、詳細なホバーカードとアラートのタイトルを持つプリセットされたリンクで、リッチDependabotアラート言及を見ることができます。</p>

@@ -4,6 +4,7 @@ englishtitle: GitHub Projects – January 26th update
 date: 2023-01-26
 cardurl: https://github.blog/changelog/2023-01-26-github-projects-january-26th-update
 author: Kevin Duck
+description: This week, we’ve shipped a new experience for creating issues directly from Projects, improved sorting by custom fields across all layouts, and fixed a few bugs.
 ---
 
 <p>今週は、Projectsから直接課題を作成するための新しいエクスペリエンスを提供し、すべてのレイアウトでカスタムフィールドによるソートを改善し、いくつかのバグを修正しました。</p>

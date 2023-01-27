@@ -4,7 +4,7 @@ englishtitle: Enable private vulnerabilty reporting organization-wide
 date: 2023-01-26
 cardurl: https://github.blog/changelog/2023-01-26-enable-private-vulnerabilty-reporting-organization-wide
 author: Kevin Duck
-description: Organization admins and security managers can now enable private vulnerability reporting for all pub
+description: Organization admins and security managers can now enable private vulnerability reporting for all public repositories within an organization at once.
 ---
 
 <p>組織管理者およびセキュリティ管理者は、組織内のすべてのパブリックリポジトリに対して、一度にプライベート脆弱性レポートを有効にすることができるようになりました。</p>
