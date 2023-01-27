@@ -47,7 +47,7 @@ jobs:
         # Create PR
         gh pr create \
           --title "New ${{ github.event.issue.title }} " \
-          --body "@yuhattor Please review this PR related to the issue #${{ github.event.issue.number }}" \
+          --body "@yuhattor Please review this PR and close #${{ github.event.issue.number }}" \
           --base "main" \
           --head "changelog/$ITEM" \
           --label "blog" \
