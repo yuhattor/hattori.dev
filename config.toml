@@ -25,7 +25,7 @@ googleAnalytics = "G-8B5XLER8F7"
   # Buttondown - URL from share page; Refer: https://blog.buttondown.email/2019/10/11/adding-a-buttondown-subscription-form-to-webflow#getting-your-subscription-url
   # Substack - URL of the newsletter homepage; Example: https://on.substack.com/
   # Revue - Username
-  path = "https://buttondown.email/api/emails/embed-subscribe/"
+  path = "https://buttondown.email/api/emails/embed-subscribe/yuki"
 
 [menu]
 [[menu.main]]
@@ -99,7 +99,7 @@ googleAnalytics = "G-8B5XLER8F7"
   weight = 8
 [[menu.social]]
   name = 'RSS'
-  url = '/articles/index.xml'
+  url = '/changelog/index.xml'
   weight = 9
 
 
