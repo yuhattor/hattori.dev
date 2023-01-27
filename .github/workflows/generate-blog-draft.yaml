@@ -39,7 +39,7 @@ jobs:
 
         # Push to GitHub
         git add .
-        git commit -m "Add issue body to file"
+        git commit -m "Add $ITEM file"
         git branch -m "changelog/$ITEM"
         git push origin "changelog/$ITEM" 
 
