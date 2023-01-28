@@ -52,16 +52,16 @@ content = re.search(r"## Raw Content(.*)```", text, re.DOTALL).group(1) # Get co
 
 # format the content for githubblog
 githubblog_content = f"""---
-title: { translate_with_deepl(api_key, title) }
-subtitle: { translate_with_deepl(api_key, subtitle) }
-englishsubtitle: { subtitle }
-englishtitle: { title }
-date: { published_date }
-cardurl: { link }
-author: { author }
-description: { description }
-coverimage: { get_cover_image_url(link) }
-category: { category }
+title: "{ translate_with_deepl(api_key, title) }"
+subtitle: "{ translate_with_deepl(api_key, subtitle) }"
+englishsubtitle: "{ subtitle }"
+englishtitle: "{ title }"
+date: "{ published_date }"
+cardurl: "{ link }"
+author: "{ author }"
+description: "{ description }"
+coverimage: "{ get_cover_image_url(link) }"
+category: "{ category }"
 ---
 { translate_with_deepl(api_key, content, is_xml=True) }
 """

@@ -52,13 +52,13 @@ content = re.search(r"## Raw Content(.*)```", text, re.DOTALL).group(1) # Get co
 
 # format the content for changelog
 changelog_content = f"""---
-title: { translate_with_deepl(api_key, title) }
-englishtitle: { title }
-date: { published_date }
-cardurl: { link }
-author: { author }
-description: { description }
-coverimage: { get_cover_image_url(link) }
+title: "{ translate_with_deepl(api_key, title) }"
+englishtitle: "{ title }"
+date: "{ published_date }"
+cardurl: "{ link }"
+author: "{ author }"
+description: "{ description }"
+coverimage: "{ get_cover_image_url(link) }"
 ---
 { translate_with_deepl(api_key, content, is_xml=True) }
 """
