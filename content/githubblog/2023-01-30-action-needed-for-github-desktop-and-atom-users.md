@@ -1,6 +1,6 @@
 ---
 title: "GitHub DesktopとAtomをご利用の方に必要な対応について"
-subtitle: "2月2日までにDesktopの最新バージョンとAtomの旧バージョンにアップデートしてください。"
+subtitle: "2月2日までに GitHub DesktopとAtomのバージョンをアップデートしてください。"
 englishsubtitle: "Update to the latest version of Desktop and previous version of Atom before February 2."
 englishtitle: "Action needed for GitHub Desktop and Atom users"
 date: "2023-01-30"
