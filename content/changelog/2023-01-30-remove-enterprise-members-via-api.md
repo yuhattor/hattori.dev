@@ -1,5 +1,5 @@
 ---
-title: "APIによる企業メンバーの削除"
+title: "APIによる Enterprise メンバーの削除"
 englishtitle: "Remove Enterprise Members via API"
 date: "2023-01-30"
 cardurl: "https://github.blog/changelog/2023-01-30-remove-enterprise-members-via-api"
