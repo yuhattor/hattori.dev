@@ -1,5 +1,5 @@
 ---
-title: "Git アーカイブのチェックサムが変更されることがある"
+title: "Git Archive のチェックサムが変更される可能性があります"
 englishtitle: "Git archive checksums may change"
 date: "2023-01-30"
 cardurl: "https://github.blog/changelog/2023-01-30-git-archive-checksums-may-change"
