@@ -4,7 +4,7 @@ englishtitle: "Remove Enterprise Members via API"
 date: "2023-01-30"
 cardurl: "https://github.blog/changelog/2023-01-30-remove-enterprise-members-via-api"
 author: "Kevin Duck"
-description: "GitHub Enterprise owners can now leverage the removeEnterpriseMember API, in addition to the built-in functionality on the Enterprise's "People" pages , to remove enterprise members from their GitHub Enterprise."
+description: "GitHub Enterprise owners can now leverage the removeEnterpriseMember API, in addition to the built-in functionality on the Enterprise's 'People' pages , to remove enterprise members from their GitHub Enterprise."
 coverimage: ""
 ---
 
