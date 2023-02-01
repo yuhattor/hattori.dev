@@ -8,7 +8,7 @@ description: "We are making chnages to job summaries and logs in GitHub Actions 
 coverimage: ""
 ---
 
-<p>GitHub Actionsのジョブサマリーとログに変更があり、セルフホストランナーをご利用のお客様に影響があります。今後6ヶ月間、セルフホストランナーをご利用のお客様は、Actions ワークフローから出力されるジョブサマリーやログが期待通りに動作するよう、マシンが以下の GitHub ホストと通信できる適切なネットワークアクセスを持っていることを確認する必要があります。</p>
+<p>GitHub Actionsのジョブサマリーとログにアップデートがあり、セルフホストランナーをご利用の方々に影響があります。今後6ヶ月間、セルフホストランナーをご利用の方は、Actions ワークフローから出力されるジョブサマリーやログが期待通りに動作するよう、マシンが以下の GitHub ホストと通信できる適切なネットワークアクセスを持っていることを確認してください。</p>
 <ul>
 <li><code>アクション-結果-レシーバー-production.githubapp.com</code></li>
 <li><code>productionresultssa*.blob.core.windows.net</code></li>
