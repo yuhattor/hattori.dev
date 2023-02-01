@@ -9,7 +9,7 @@ coverimage: "https://i0.wp.com/user-images.githubusercontent.com/101840513/21561
 ---
 
 <p>本日はGitHub Projectsのロードマップのパブリックベータを発表します！<g-emoji fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f389.png?v8" alias="tada">🎉</g-emoji>。</p>
-<p>昨年11月のGitHub Universeで、私たちはロードマップの<a href="https://github.blog/2022-11-15-the-journey-of-your-work-has-never-been-clearer/">プライベートベータ</a>を発表しました。この3ヶ月間、皆さんの協力とフィードバックにより、私たちは多くのエキサイティングなアップデートを提供し、時間をかけて作業を視覚化し計画すること、進行中または次に来るものを理解し、チームと利害関係者に最新情報を提供することを容易にしました。</p>
+<p>昨年11月のGitHub Universeで、私たちはロードマップの<a href="https://github.blog/2022-11-15-the-journey-of-your-work-has-never-been-clearer/">プライベートベータ</a>を発表しました。この3ヶ月間、皆さんの協力とフィードバックにより、私たちは多くの素晴らしいアップデートを提供し、時間をかけて作業を視覚化し計画すること、そして進行中のことを理解し、チームとステークホルダーに最新情報を提供することを容易くしました。</p>
 <p><img decoding="async" src="https://i0.wp.com/user-images.githubusercontent.com/101840513/215615356-81a6b3f4-0555-4ff9-9c97-8e3337983a90.jpg?ssl=1" alt="image" data-recalc-dims="1"></p>
 <h2 id="world_map-creating-a-roadmap" id="world_map-creating-a-roadmap" ><g-emoji fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f5fa.png?v8" alias="world_map">🗺ロード</g-emoji>マップの作成<a href="#world_map-creating-a-roadmap" class="heading-link pl-2 text-italic text-bold" aria-label="&lt;g-emoji fallback-src=&quot;https://github.githubassets.com/images/icons/emoji/unicode/1f5fa.png?v8&quot; alias=&quot;world_map&quot;&gt;&#128506;&lt;/g-emoji&gt; Creating a roadmap"></a></h2>
 <p>ロードマップは、テーブルビューやボードビューと同じように、すばやく作成することができます。</p>
