@@ -49,11 +49,11 @@ googleAnalytics = "G-8B5XLER8F7"
   url = '/articles'
   weight = 11
 [[menu.main]]
-  name = 'GitHub Blog 🇯🇵'
+  name = '日本語 GitHub Blog (Unofficial)'
   url = '/githubblog'
   weight = 12
 [[menu.main]]
-  name = 'GitHub Changelog 🇯🇵'
+  name = '日本語 GitHub Changelog (Unofficial)'
   url = '/changelog'
   weight = 12
 [[menu.main]]
