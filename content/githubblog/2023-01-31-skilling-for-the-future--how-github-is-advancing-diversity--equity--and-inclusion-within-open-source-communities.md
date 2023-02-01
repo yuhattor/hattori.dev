@@ -1,5 +1,5 @@
 ---
-title: "未来へのスキルアップ。GitHubはどのようにオープンソースコミュニティにおける多様性、公平性、包括性を推進しているのか？"
+title: "未来へのスキルアップ: GitHub はどのようにオープンソースコミュニティにおける多様性、公平性、包括性を推進しているのか"
 subtitle: "今後数ヶ月の間に、オープンソースコミュニティにおけるDEIを促進するために、規模を拡大し、拡張し、新しいプログラミングを開始します。"
 englishsubtitle: "In the coming months, we’re scaling, expanding, and launching new programming to further DEI within open source communities."
 englishtitle: "Skilling for the future: How GitHub is advancing diversity, equity, and inclusion within open source communities"
