@@ -1,5 +1,5 @@
 ---
-title: "AWS S3への監査ログストリーミングとAWS CloudTrail Lakeの統合"
+title: "AWS CloudTrail Lake を使った監査ログの AWS S3 インテグレーション"
 englishtitle: "Audit log streaming to AWS S3 integration with AWS CloudTrail Lake"
 date: "2023-01-31"
 cardurl: "https://github.blog/changelog/2023-01-31-audit-log-streaming-to-aws-s3-integration-with-aws-cloudtrail-lake"
