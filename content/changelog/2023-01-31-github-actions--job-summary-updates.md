@@ -1,5 +1,5 @@
 ---
-title: "GitHubのアクション。ジョブサマリーの更新"
+title: "GitHub Actions: ジョブサマリーのアップデート"
 englishtitle: "GitHub Actions: Job summary updates"
 date: "2023-01-31"
 cardurl: "https://github.blog/changelog/2023-01-31-github-actions-job-summary-updates"
