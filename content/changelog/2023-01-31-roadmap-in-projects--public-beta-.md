@@ -1,5 +1,5 @@
 ---
-title: "プロジェクトにおけるロードマップ（パブリックベータ版）"
+title: "GitHub Project の Roadmap (パブリックベータ版)"
 englishtitle: "Roadmap in Projects (public beta)"
 date: "2023-01-31"
 cardurl: "https://github.blog/changelog/2023-01-31-roadmap-in-projects-public-beta"
