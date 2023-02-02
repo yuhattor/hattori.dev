@@ -1,5 +1,5 @@
 ---
-title: "GitHubの可用性レポート。2023年1月"
+title: "GitHubの可用性レポート: 2023年1月"
 subtitle: "1月に、Package と Pagesのパフォーマンスが低下するインシデントと、Git ユーザーに影響を与えるインシデントの2つが発生しました"
 englishsubtitle: "In January, we experienced two incidents, one that resulted in degraded performance for Packages and Pages and another that impacted Git users."
 englishtitle: "GitHub Availability Report: January 2023"
