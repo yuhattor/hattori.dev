@@ -8,7 +8,7 @@ description: "GitHub Enterprise Cloud customers can now join a private beta whic
 coverimage: ""
 ---
 
-<p>GitHub Enterprise Cloudの顧客は、APIリクエストイベントをエンタープライズ監査ログの一部としてストリーミングできるプライベートベータに参加できるようになった。</p>
+<p>GitHub Enterprise Cloudの顧客は、APIリクエストイベントをエンタープライズ監査ログの一部としてストリーミングできるプライベートベータに参加できるようになりました。</p>
 <p>このプライベートベータでは、企業のプライベートリポジトリに対するREST APIコールを、<a href="https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/streaming-the-audit-log-for-your-enterprise">GitHubがサポートするストリーミングエンドポイントの</a>いずれかにストリーミングすることができます。この機能は今後、取得できるAPIイベントを拡大し、監査ログAPIを通じてこのデータを利用できるようにする予定です。</p>
 <p>多くの GitHub ユーザーは GitHub の API を利用して GitHub の体験を拡張、カスタマイズしています。しかし、APIを利用することは、企業にとってセキュリティや運用上のユニークな課題を生み出す可能性があります。</p>
 <p>ターゲット監査ログストリーミングAPIリクエストの導入により、Enterprise の Owner は以下のことが可能になります。</p>
