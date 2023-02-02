@@ -1,5 +1,5 @@
 ---
-title: "All In for Maintainers の DEI Resource Hub を開設しました。"
+title: "All In for Maintainers の DEI Resource Hub を開設"
 subtitle: "DEI Resource Hub は、オープンソースのメンテナが、包括的で多様なオープンソースコミュニティを構築・維持するために役立つリソース、ツール、ベストプラクティスを集めた、綿密な調査に基づいて設計されています。"
 englishsubtitle: "The DEI Resource Hub is a vetted collection of resources, tools, and best practices designed to help open source maintainers create and maintain inclusive and diverse open source communities."
 englishtitle: "Announcing the launch of the All In for Maintainers DEI Resource Hub"
