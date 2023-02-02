@@ -1,5 +1,5 @@
 ---
-title: "APIリクエストは監査ログストリーミングで利用可能 - Private Beta"
+title: "API リクエストが監査ログストリーミングで利用可能に - Private Beta"
 englishtitle: "API requests are available via audit log streaming – Private Beta"
 date: "2023-02-01"
 cardurl: "https://github.blog/changelog/2023-02-01-api-requests-are-available-via-audit-log-streaming-private-beta"
