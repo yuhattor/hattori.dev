@@ -28,7 +28,7 @@ category: "Engineering,Open Source,automation,Deployment,GitHub Actions"
 <li>デプロイは<code>メイン</code>ブランチから開始されます。</li>
 </ol>
 <div class="image-frame image-frame-full border rounded-2 overflow-hidden d-flex flex-row flex-justify-center" style="background: #EAEEF2"><br />
-<img decoding="async" loading="lazy" src="https://github.blog/wp-content/uploads/2023/02/merge-deploy.jpg?w=720&#038;resize=720%2C237" alt="Diagram outlining the steps of the traditional deploy model, enumerated in the numbered list above." width="720" height="237" class="aligncenter size-large wp-image-69854 width-fit" srcset="https://github.blog/wp-content/uploads/2023/02/merge-deploy.jpg?w=720&#038;resize=720%2C237 720w, https://github.blog/wp-content/uploads/2023/02/merge-deploy.jpg?w=300 300w" sizes="(max-width: 720px) 100vw, 720px" data-recalc-dims="1" /><br /></div>
+<img decoding="async" loading="lazy" src="https://github.blog/wp-content/uploads/2023/02/merge-deploy.jpg?w=720&#038;resize=720%2C237" alt="Diagram outlining the steps of the traditional deploy model, enumerated in the numbered list above."  srcset="https://github.blog/wp-content/uploads/2023/02/merge-deploy.jpg?w=720&#038;resize=720%2C237 720w, https://github.blog/wp-content/uploads/2023/02/merge-deploy.jpg?w=300 300w" data-recalc-dims="1" /><br /></div>
 <p>では、<strong>ブランチのデプロイモデルを見て</strong>いきましょう。</p>
 <ol>
 <li>ブランチを作成する。</li>
@@ -40,7 +40,7 @@ category: "Engineering,Open Source,automation,Deployment,GitHub Actions"
 <li>あなたのブランチを<code>main</code>/<code>master</code>ブランチにマージする。 </li>
 </ol>
 <div class="image-frame image-frame-full border rounded-2 overflow-hidden d-flex flex-row flex-justify-center" style="background: #EAEEF2"><br />
-<img decoding="async" loading="lazy" src="https://github.blog/wp-content/uploads/2023/02/branch-deploy.jpg?w=720&#038;resize=720%2C244" alt="Diagram outlining the steps of the branch deploy model, enumerated in the list above." width="720" height="244" class="aligncenter size-large wp-image-69855 width-fit" srcset="https://github.blog/wp-content/uploads/2023/02/branch-deploy.jpg?w=720&#038;resize=720%2C244 720w, https://github.blog/wp-content/uploads/2023/02/branch-deploy.jpg?w=300 300w" sizes="(max-width: 720px) 100vw, 720px" data-recalc-dims="1" /><br /></div>
+<img decoding="async" loading="lazy" src="https://github.blog/wp-content/uploads/2023/02/branch-deploy.jpg?w=720&#038;resize=720%2C244" alt="Diagram outlining the steps of the branch deploy model, enumerated in the list above." srcset="https://github.blog/wp-content/uploads/2023/02/branch-deploy.jpg?w=720&#038;resize=720%2C244 720w, https://github.blog/wp-content/uploads/2023/02/branch-deploy.jpg?w=300 300w"  data-recalc-dims="1" /><br /></div>
 <p><code>main</code>ブランチが本当に安定したブランチになることはないため、マージデプロイモデルは本質的にリスクが高いです。デプロイに失敗したり、ロールバックが必要になったりした場合は、もう一度すべてのプロセスをたどって変更をロールバックすることになります。しかし、ブランチデプロイモデルでは、<code>main</code>ブランチは常に「良い」状態であり、いつでもブランチデプロイからデプロイを元に戻すことができます。ブランチデプロイモデルでは、ブランチが正常にデプロイされ、検証された時点で初めて変更を<code>main</code>ブランチにマージします。</p>
 <p><em>注：これは、<a href="https://docs.github.com/en/get-started/quickstart/github-flow">GitHub flowと</a>呼ばれることもあります。</em></p>
 <h3 id="key-concepts">主要な概念<a href="#key-concepts" class="heading-link pl-2 text-italic text-bold" aria-label="Key concepts"></a></h3>
@@ -103,7 +103,6 @@ jobs:
         if: ${{ steps.branch-deploy.outputs.continue == 'true' && steps.branch-deploy.outputs.noop != 'true' }} # only run if the trigger phrase is found and the branch-deploy step detected a regular deployment
         run: echo "I am doing a fake regular deploy"
 ```
-
 <h4 id="2-trigger-a-noop-deploy-by-commenting-deploy-noop-on-a-pull-request">2.プルリクエストに<code>.deploy noop</code>とコメントすることで noop デプロイをトリガーします。<a href="#2-trigger-a-noop-deploy-by-commenting-deploy-noop-on-a-pull-request" class="heading-link pl-2 text-italic text-bold" aria-label="2. Trigger a noop deploy by commenting &lt;code&gt;.deploy noop&lt;/code&gt; on a pull request."></a></h4>
 <p>noopデプロイが検出されたので、このアクションは<code>noop</code>変数を<code>trueに</code>出力します。IssueOpsコマンドを実行する正しい権限がある場合、このアクションは<code>continue</code>変数も<code>trueに</code>出力します。<code>fake noop deployという</code>名前のステップが実行され、<code>fake regular deployの</code>ステップはスキップされます。</p>
 <h4 id="3-after-your-noop-deploy-completes-you-would-typically-run-deploy-to-execute-the-actual-deployment-fake-regular-deploy">3.3. noop deployが完了したら、通常、<code>.deployを</code>実行して、実際のデプロイメント、<code>偽の通常のデプロイメントを</code>実行することになります。<a href="#3-after-your-noop-deploy-completes-you-would-typically-run-deploy-to-execute-the-actual-deployment-fake-regular-deploy" class="heading-link pl-2 text-italic text-bold" aria-label="3. After your noop deploy completes, you would typically run &lt;code&gt;.deploy&lt;/code&gt; to execute the actual deployment, &lt;code&gt;fake regular deploy&lt;/code&gt;."></a></h4>
