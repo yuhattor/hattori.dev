@@ -38,21 +38,27 @@ def get_cover_image_url(url):
   img = soup.find('img', class_="cover-image")
   return img.get("src")
 
+
 # 文章を要約する関数
 def summarize(text, openai_api_key):
   # API Key の設定
-    openai.api_key = openai_api_key
-    response = openai.Completion.create(
-        engine="text-davinci-002",
-        prompt='Summarize this text in one sentence: ' + text,
-        max_tokens=50,
-        n=1,
-        stop=None,
-        temperature=0.5,
-    )
+  url = "https://api.openai.com/v1/completions"
+  headers = {
+    "Content-Type": "application/json",
+    "Authorization": f"Bearer {openai_api_key}"
+  }
+  data = {
+    "model": "text-davinci-003",
+    "prompt": ('Summarize this text in one sentence: ' + text),
+    "temperature": 0.5,
+    "max_tokens": 50
+  }
 
-    message = response['choices'][0]['text']
-    return message
+  payload = json.dumps(data,ensure_ascii=False).encode('utf-8').decode('unicode-escape')
+  response = requests.post(url, headers=headers, data=payload)
+  message = response.json()['choices'][0]['text']
+  return message
+
 
 # Get Issue Body
 text = requests.get(f"https://api.github.com/repos/{repository}/issues/{issue_id}").json()["body"]
@@ -68,9 +74,8 @@ description = re.search(re.compile(r"## Description\n(.+?)\n") , text).group(1) 
 content = re.search(r"## Raw Content(.*)```", text, re.DOTALL).group(1) # Get content from issue body
 
 # Summarize description
-english_summary = summarize(openai_api_key, description)
+english_summary = summarize(description, openai_api_key)
 summary = translate_with_deepl(api_key, english_summary) 
-
 
 # format the content for githubblog
 githubblog_content = f"""---
@@ -85,7 +90,7 @@ description: "{ description }"
 coverimage: "{ get_cover_image_url(link) }"
 category: "{ category }"
 englishsummary: "{ english_summary }"
-summary: "{ japanese_summary }"
+summary: "{ summary }"
 ---
 { translate_with_deepl(api_key, content, is_xml=True) }
 """

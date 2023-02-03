@@ -18,7 +18,7 @@ jobs:
     - name: Setup Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.8'
+        python-version: '3.10.9'
     - name: Setup git config
       run: |
         git config --global user.email "yuhattor@users.noreply.github.com"
@@ -30,7 +30,7 @@ jobs:
         git checkout -b "$BRANCH_NAME"
 
         # Get Issue Body
-        pip3 install requests bs4 openai
+        pip3 install requests bs4 
         # Sleep 10 seconds to wait for GitHub API is ready
         python3 -c "import time; time.sleep(10)" 
         ITEM=$( python3 .github/workflows/scripts/generate-changelog.py \
