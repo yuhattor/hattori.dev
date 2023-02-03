@@ -34,6 +34,47 @@ html.dark * {
   scrollbar-color: theme("colors.slate.400") theme("colors.slate.600");
 }
 
+.blog-content img{
+  border-radius: 10px;
+}
+.blog-content video{
+  border-radius: 10px;
+}
+.blog-content h1 *, .blog-content h2 *, .blog-content h3 *{
+  display: inline;
+}
+.blog-content li img {
+  display: inline;
+  margin-left: -30px;
+}
+.blog-content .highlight{
+  width:84vw;
+  max-width:100%
+}
 
+
+.card {
+  margin-top:40px;
+  padding: 20px 40px;
+  width: 100%;
+  background-color: #eee;
+	box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.border-gradient {
+  position: relative;
+  border-radius: var(--radius);
+}
+
+.border-gradient:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: var(--radius);
+  border-radius: var(--radius) var(--radius) 0 0;
+  background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+}
 
 

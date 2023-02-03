@@ -1,0 +1,6 @@
+<span>
+	{{ $image := resources.Get "/images/pencil.webp" | default "" }}
+	{{ if $image }}
+			<img src="{{ $image.RelPermalink }}" alt="" style="height:20px;display:inline;padding-bottom:3px;">
+	{{ end }}
+</span>
