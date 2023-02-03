@@ -44,7 +44,7 @@ def summarize(text, openai_api_key):
   # API Key の設定
   url = "https://api.openai.com/v1/completions"
   headers = {
-    "Content-Type": "application/json",
+    "Content-Type": 'text/text; charset=utf-8',
     "Authorization": f"Bearer {openai_api_key}"
   }
   data = {
