@@ -55,9 +55,8 @@ def summarize(text, openai_api_key):
       "temperature": 0.5,
       "max_tokens": 50
   }
-	print(json.dumps(data))
   
-  response = requests.post(url, headers=headers, data=re.sub(u"(\u2018|\u2019)", "'", json.dumps(data)).encode('utf-8'))
+  response = requests.post(url, headers=headers, data=json.dumps(data).encode('latin-1'))
   message = response['choices'][0]['text']
   return message
 
