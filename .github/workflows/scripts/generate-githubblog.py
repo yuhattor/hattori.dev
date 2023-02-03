@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 api_key = sys.argv[1] # DeepL API key
 repository = sys.argv[2] # GitHub repository name in the format of "username/repo"
 issue_id = sys.argv[3] # GitHub issue id
-openai_key = sys.argv[4] #OpenAI API key
+openai_api_key = sys.argv[4] #OpenAI API key
 
 # Translate with DeepL
 def translate_with_deepl(api_key: str, content: str, is_xml: bool = False):
@@ -39,9 +39,9 @@ def get_cover_image_url(url):
   return img.get("src")
 
 # 文章を要約する関数
-def summarize(text, openai_key):
+def summarize(text, openai_api_key):
   # API Key の設定
-    openai.api_key = openai_key
+    openai.api_key = openai_api_key
     response = openai.Completion.create(
         engine="text-davinci-002",
         prompt='Summarize this text in one sentence: ' + text,
@@ -68,7 +68,7 @@ description = re.search(re.compile(r"## Description\n(.+?)\n") , text).group(1) 
 content = re.search(r"## Raw Content(.*)```", text, re.DOTALL).group(1) # Get content from issue body
 
 # Summarize description
-english_summary = summarize(description)
+english_summary = summarize(openai_api_key, description)
 summary = translate_with_deepl(api_key, english_summary) 
 
 
