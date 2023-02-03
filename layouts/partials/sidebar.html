@@ -24,19 +24,28 @@
 
         <span>
         {{ if hasPrefix .Name "GitHub " }}
-        <span>{{- partial "icon/githubInlineIcon" . -}}</span>
+        <span style="padding-right: 4px;">{{- partial "icon/githubInlineIcon" . -}}</span>
         {{ else if hasPrefix .Name "Speaker Deck" }}
-        <span>{{- partial "icon/speakerdeckicon" . -}}</span>
+        <span style="padding-right: 4px;">{{- partial "icon/speakerdeckicon" . -}}</span>
         {{ else if hasPrefix .Name "Twitter" }}
-        <span>{{- partial "icon/twitterInlineIcon" . -}}</span>
+        <span style="padding-right: 4px;">{{- partial "icon/twitterInlineIcon" . -}}</span>
         {{ else if hasPrefix .Name "InnerSource" }}
-        <span>{{- partial "icon/innersourceicon" . -}}</span>
+        <span style="padding-right: 4px;">{{- partial "icon/innersourceicon" . -}}</span>
         {{ else if hasPrefix .Name "Articles" }}
-        <span>{{- partial "icon/pencilicon" . -}}</span>
+        <span style="padding-right: 4px;">{{- partial "icon/pencilicon" . -}}</span>
         {{ end }}
         {{ .Name }}
         {{ if hasPrefix .Name "GitHub " }}
-        <span><span style="border:solid #bc002d 0.5px; background-color: #fff;border-radius:18px;padding:4px;color:#bc002d;font-size:8px;font-weight:700;">Unofficial</span></span>
+        <span><span style="
+          border:solid #bc002d 0.5px; 
+          background-color: #fff;
+          color:#bc002d;
+          border-radius:8px;
+          padding:4px 4px;
+          font-size:8px;
+          font-weight:700;
+          "
+        >Unofficial</span></span>
         {{ end }}
         </span>
         {{ if strings.HasPrefix .URL "http" }}

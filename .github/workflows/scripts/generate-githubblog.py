@@ -38,21 +38,25 @@ def get_cover_image_url(url):
   img = soup.find('img', class_="cover-image")
   return img.get("src")
 
+
 # 文章を要約する関数
 def summarize(text, openai_api_key):
   # API Key の設定
-    openai.api_key = openai_api_key
-    response = openai.Completion.create(
-        engine="text-davinci-002",
-        prompt='Summarize this text in one sentence: ' + text,
-        max_tokens=50,
-        n=1,
-        stop=None,
-        temperature=0.5,
-    )
-
-    message = response['choices'][0]['text']
-    return message
+  url = "https://api.openai.com/v1/completions"
+  headers = {
+    "Content-Type": "application/json",
+    "Authorization": f"Bearer {openai_api_key}"
+  }
+  data = {
+      "model": "text-davinci-003",
+      "prompt": ('Summarize this text in one sentence: ' + text),
+      "temperature": 0.5,
+      "max_tokens": 50
+  }
+  
+  response = requests.post(url, headers=headers, json=data.encode('utf-8'))
+  message = response['choices'][0]['text']
+  return message
 
 # Get Issue Body
 text = requests.get(f"https://api.github.com/repos/{repository}/issues/{issue_id}").json()["body"]
@@ -70,7 +74,6 @@ content = re.search(r"## Raw Content(.*)```", text, re.DOTALL).group(1) # Get co
 # Summarize description
 english_summary = summarize(openai_api_key, description)
 summary = translate_with_deepl(api_key, english_summary) 
-
 
 # format the content for githubblog
 githubblog_content = f"""---
