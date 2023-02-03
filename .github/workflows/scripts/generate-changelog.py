@@ -56,7 +56,7 @@ def summarize(text, openai_api_key):
       "max_tokens": 50
   }
   
-  response = requests.post(url, headers=headers, data=json.dumps(data).encode('latin-1'))
+  response = requests.post(url, headers=headers, data=json.dumps(data).encode('latin-1', 'ignore'))
   message = response['choices'][0]['text']
   return message
 
