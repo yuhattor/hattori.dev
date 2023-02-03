@@ -61,45 +61,49 @@ category: "Engineering,Open Source,automation,Deployment,GitHub Actions"
 <p>どのように動作するのでしょうか？このセクションでは、この Action がどのように動作するのかを詳しく説明し、あなたのプロジェクトで活用するきっかけになればと思います。完全なソースコードと詳細なドキュメントは<a href="https://github.com/github/branch-deploy">GitHubで</a>見ることができます。</p>
 <p>以下、branch-deploy Actionのデモ設定を使って、その手順を説明します。</p>
 <h4 id="1-create-this-file-under-github-workflows-branch-deploy-yml-in-your-github-repository">1.1. GitHub リポジトリの<code>.github/workflows/branch-deploy.yml</code>の下に、以下のファイルを作成します。<a href="#1-create-this-file-under-github-workflows-branch-deploy-yml-in-your-github-repository" class="heading-link pl-2 text-italic text-bold" aria-label="1. Create this file under &lt;code&gt;.github/workflows/branch-deploy.yml&lt;/code&gt; in your GitHub repository:"></a></h4>
-<pre><code class="language-yaml">名前: "ブランチデプロイデモ"
 
-# このワークフローは、プルリクエストの新しいコメントに対して実行されます - 例。コメントとして ".deploy" を指定
-を実行します。
+```yaml
+
+name: "branch deploy demo"
+
+# The workflow will execute on new comments on pull requests - example: ".deploy" as a comment
+on:
   issue_comment:
-    タイプ[作成済み］
+    types: [created]
 
-ジョブズ
+jobs:
   demo:
-    もし${{ github.event.issue.pull_request }} を実行します。# pull requestのコメントに対してのみ実行 (issueのコメントに対しては実行する必要なし)
-    実行環境: ubuntu-latest
-    の手順で実行します。
-      # IssueOps のブランチデプロイメントロジックを実行する、ばんざーい!
-      # これは以下の全てのステップの "ゲート "として使われ、条件付きでステップ/デプロイメントを起動します。
-      - uses: github/branch-deploy@vX.X.X # X.X.X を使いたいバージョンに置き換えてください。
-        id: branch-deploy # このステップのアウトプットを参照できるように、ここに id をつけることが重要です。
-        を使っています。
-          trigger:".deploy" # プルリクエストのコメントで探したいトリガーフレーズ
+    if: ${{ github.event.issue.pull_request }} # only run on pull request comments (no need to run on issue comments)
+    runs-on: ubuntu-latest
+    steps:
+      # Execute IssueOps branch deployment logic, hooray!
+      # This will be used to "gate" all future steps below and conditionally trigger steps/deployments
+      - uses: github/branch-deploy@vX.X.X # replace X.X.X with the version you want to use
+        id: branch-deploy # it is critical you have an id here so you can reference the outputs of this step
+        with:
+          trigger: ".deploy" # the trigger phrase to look for in the comment on the pull request
 
-      # プロジェクトのデプロイメントロジックをここで実行します - 例は以下の通りです。
+      # Run your deployment logic for your project here - examples seen below
 
-      # branch-deploy ステップで提供された ref に基づいて、プロジェクトのリポジトリをチェックアウトします。
+      # Checkout your project repository based on the ref provided by the branch-deploy step
       - uses: actions/checkout@3.0.2
-        もし${{ steps.branch-deploy.outputs.continue == 'true' }} # トリガーとなるフレーズが見つからない場合はスキップします。# トリガーとなるフレーズが見つからなかったらスキップする
-        を使っています。
-          ref: ${{ steps.branch-deploy.outputs.ref }} # トリガーとなるフレーズが見つからない場合はスキップする。# branch-deploy ステップから検出されたブランチを使用する
+        if: ${{ steps.branch-deploy.outputs.continue == 'true' }} # skips if the trigger phrase is not found
+        with:
+          ref: ${{ steps.branch-deploy.outputs.ref }} # uses the detected branch from the branch-deploy step
 
-      # ここで偽の "noop" デプロイメントロジックを実行する
-      # 条件付きで noop のデプロイを実行する
-      - name: 偽の noop デプロイ
-        もし${{ steps.branch-deploy.outputs.continue == 'true' &amp;&amp; steps.branch-deploy.outputs.noop == 'true' }} # トリガーとなるフレーズが見つかり、branch-deploy ステップで noop デプロイが検出された場合のみ実行されます。# トリガーフレーズが見つかり、branch-deploy ステップが noop デプロイを検出した場合のみ実行される
-        run: echo "I am doing a fake noop deploy" （偽の noop デプロイをしています。
+      # Do some fake "noop" deployment logic here
+      # conditionally run a noop deployment
+      - name: fake noop deploy
+        if: ${{ steps.branch-deploy.outputs.continue == 'true' && steps.branch-deploy.outputs.noop == 'true' }} # only run if the trigger phrase is found and the branch-deploy step detected a noop deployment
+        run: echo "I am doing a fake noop deploy"
 
-      # ここで、偽の "通常の" デプロイメントロジックを実行します。
-      # 条件付きで通常のデプロイを実行する
-      - name: 偽の通常のデプロイ
-        もし${{ steps.branch-deploy.outputs.continue == 'true' &amp;&amp; steps.branch-deploy.outputs.noop != 'true' }} # トリガーとなるフレーズが見つかり、branch-deploy ステップが通常のデプロイを検出した場合のみ実行されます。# トリガーフレーズが見つかり、branch-deploy ステップが通常のデプロイを検出した場合のみ実行される
-        run: echo "私は偽の通常のデプロイを行っています"
-</code></pre>
+      # Do some fake "regular" deployment logic here
+      # conditionally run a regular deployment
+      - name: fake regular deploy
+        if: ${{ steps.branch-deploy.outputs.continue == 'true' && steps.branch-deploy.outputs.noop != 'true' }} # only run if the trigger phrase is found and the branch-deploy step detected a regular deployment
+        run: echo "I am doing a fake regular deploy"
+```
+
 <h4 id="2-trigger-a-noop-deploy-by-commenting-deploy-noop-on-a-pull-request">2.プルリクエストに<code>.deploy noop</code>とコメントすることで noop デプロイをトリガーします。<a href="#2-trigger-a-noop-deploy-by-commenting-deploy-noop-on-a-pull-request" class="heading-link pl-2 text-italic text-bold" aria-label="2. Trigger a noop deploy by commenting &lt;code&gt;.deploy noop&lt;/code&gt; on a pull request."></a></h4>
 <p>noopデプロイが検出されたので、このアクションは<code>noop</code>変数を<code>trueに</code>出力します。IssueOpsコマンドを実行する正しい権限がある場合、このアクションは<code>continue</code>変数も<code>trueに</code>出力します。<code>fake noop deployという</code>名前のステップが実行され、<code>fake regular deployの</code>ステップはスキップされます。</p>
 <h4 id="3-after-your-noop-deploy-completes-you-would-typically-run-deploy-to-execute-the-actual-deployment-fake-regular-deploy">3.3. noop deployが完了したら、通常、<code>.deployを</code>実行して、実際のデプロイメント、<code>偽の通常のデプロイメントを</code>実行することになります。<a href="#3-after-your-noop-deploy-completes-you-would-typically-run-deploy-to-execute-the-actual-deployment-fake-regular-deploy" class="heading-link pl-2 text-italic text-bold" aria-label="3. After your noop deploy completes, you would typically run &lt;code&gt;.deploy&lt;/code&gt; to execute the actual deployment, &lt;code&gt;fake regular deploy&lt;/code&gt;."></a></h4>
