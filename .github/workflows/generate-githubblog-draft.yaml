@@ -30,13 +30,14 @@ jobs:
         git checkout -b "$BRANCH_NAME"
 
         # Get Issue Body
-        pip3 install requests bs4
+        pip3 install requests bs4 openai
         # Sleep 10 seconds to wait for GitHub API is ready
         python3 -c "import time; time.sleep(10)" 
         ITEM=$( python3 .github/workflows/scripts/generate-githubblog.py \
           ${{ secrets.DeepL_API_KEY }} \
           ${{ github.repository }} \
           ${{ github.event.issue.number }} \
+          ${{ secrets.OpenAI_API_KEY }} \
         )
 
         # Push to GitHub

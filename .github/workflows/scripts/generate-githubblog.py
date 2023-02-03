@@ -9,6 +9,7 @@ from bs4 import BeautifulSoup
 api_key = sys.argv[1] # DeepL API key
 repository = sys.argv[2] # GitHub repository name in the format of "username/repo"
 issue_id = sys.argv[3] # GitHub issue id
+openai_key = sys.argv[4] #OpenAI API key
 
 # Translate with DeepL
 def translate_with_deepl(api_key: str, content: str, is_xml: bool = False):
@@ -37,6 +38,22 @@ def get_cover_image_url(url):
   img = soup.find('img', class_="cover-image")
   return img.get("src")
 
+# 文章を要約する関数
+def summarize(text, openai_key):
+  # API Key の設定
+    openai.api_key = openai_key
+    response = openai.Completion.create(
+        engine="text-davinci-002",
+        prompt='Summarize this text in one sentence: ' + text,
+        max_tokens=50,
+        n=1,
+        stop=None,
+        temperature=0.5,
+    )
+
+    message = response['choices'][0]['text']
+    return message
+
 # Get Issue Body
 text = requests.get(f"https://api.github.com/repos/{repository}/issues/{issue_id}").json()["body"]
 
@@ -50,6 +67,11 @@ category = re.search(re.compile(r"## Category\n(.+?)\n\n## Description") , text)
 description = re.search(re.compile(r"## Description\n(.+?)\n") , text).group(1) # Get description from issue body
 content = re.search(r"## Raw Content(.*)```", text, re.DOTALL).group(1) # Get content from issue body
 
+# Summarize description
+english_summary = summarize(description)
+summary = translate_with_deepl(api_key, english_summary) 
+
+
 # format the content for githubblog
 githubblog_content = f"""---
 title: "{ translate_with_deepl(api_key, title) }"
@@ -62,6 +84,8 @@ author: "{ author }"
 description: "{ description }"
 coverimage: "{ get_cover_image_url(link) }"
 category: "{ category }"
+englishsummary: "{ english_summary }"
+summary: "{ japanese_summary }"
 ---
 { translate_with_deepl(api_key, content, is_xml=True) }
 """
