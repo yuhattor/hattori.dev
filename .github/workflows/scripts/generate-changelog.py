@@ -46,22 +46,21 @@ def summarize(text, openai_api_key):
   # API Key の設定
   url = "https://api.openai.com/v1/completions"
   headers = {
-    "Content-Type": 'text/text; charset=utf-8',
+    "Content-Type": "application/json",
     "Authorization": f"Bearer {openai_api_key}"
   }
   data = {
-      "model": "text-davinci-003",
-      "prompt": ('Summarize this text in one sentence: ' + text),
-      "temperature": 0.5,
-      "max_tokens": 50
+    "model": "text-davinci-003",
+    "prompt": ('Summarize this text in one sentence: ' + text),
+    "temperature": 0.5,
+    "max_tokens": 50
   }
-  
+
   payload = json.dumps(data,ensure_ascii=False).encode('utf-8').decode('unicode-escape')
   response = requests.post(url, headers=headers, data=payload)
-
-  
-  message = response.json()['data']['choices'][0]['text']
+  message = response.json()# ['data']['choices'][0]['text']
   return message
+
 
 # Get Issue Body
 text = requests.get(f"https://api.github.com/repos/{repository}/issues/{issue_id}").json()["body"]
