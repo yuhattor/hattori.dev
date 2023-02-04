@@ -73,10 +73,8 @@ description = re.search(re.compile(r"## Description\n(.+?)\n") , text).group(1) 
 content = re.search(r"## Raw Content(.*)```", text, re.DOTALL).group(1) # Get content from issue body
 
 # Summarize description
-# english_summary = summarize(openai_api_key, description)
-# summary = translate_with_deepl(api_key, english_summary) 
-# englishsummary: "{ english_summary }"
-# summary: "{ japanese_summary }"
+english_summary = summarize(openai_api_key, description)
+summary = translate_with_deepl(api_key, english_summary) 
 
 # format the content for githubblog
 githubblog_content = f"""---
@@ -90,6 +88,8 @@ author: "{ author }"
 description: "{ description }"
 coverimage: "{ get_cover_image_url(link) }"
 category: "{ category }"
+englishsummary: "{ english_summary }"
+summary: "{ japanese_summary }"
 ---
 { translate_with_deepl(api_key, content, is_xml=True) }
 """
