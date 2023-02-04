@@ -87,7 +87,7 @@ author: "{ author }"
 description: "{ description }"
 coverimage: "{ get_cover_image_url(link) }"
 englishsummary: "{ english_summary }"
-summary: "{ japanese_summary }"
+summary: "{ summary }"
 ---
 { translate_with_deepl(api_key, content, is_xml=True) }
 """
