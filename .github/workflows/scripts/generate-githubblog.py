@@ -55,14 +55,9 @@ def summarize(text, openai_api_key):
   }
   
   payload = json.dumps(data,ensure_ascii=False).encode('utf-8').decode('unicode-escape')
-  # response = requests.post(url, headers=headers, data=payload)
-  # message = response['choices'][0]['text']
-  # write content to a file
-  with open('test.txt', 'w') as f:
-    f.write(payload)
-
-  return "test"
-  # return message
+  response = requests.post(url, headers=headers, data=payload)
+  message = response['choices'][0]['text']
+  return message
 
 # Get Issue Body
 text = requests.get(f"https://api.github.com/repos/{repository}/issues/{issue_id}").json()["body"]
@@ -78,7 +73,7 @@ description = re.search(re.compile(r"## Description\n(.+?)\n") , text).group(1) 
 content = re.search(r"## Raw Content(.*)```", text, re.DOTALL).group(1) # Get content from issue body
 
 # Summarize description
-english_summary = summarize(openai_api_key, description)
+english_summary = summarize(description, openai_api_key)
 summary = translate_with_deepl(api_key, english_summary) 
 
 # format the content for githubblog

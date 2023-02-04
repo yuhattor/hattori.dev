@@ -74,7 +74,7 @@ description = re.search(re.compile(r"## Description\n(.+?)\n") , text).group(1) 
 content = re.search(r"## Raw Content(.*)```", text, re.DOTALL).group(1) # Get content from issue body
 
 # Summarize description
-english_summary = summarize(openai_api_key, description)
+english_summary = summarize(description, openai_api_key)
 summary = translate_with_deepl(api_key, english_summary) 
 
 # format the content for changelog
