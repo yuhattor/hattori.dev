@@ -1,0 +1,1 @@
+{"model": "text-davinci-003", "prompt": "Summarize this text in one sentence: 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", "temperature": 0.5, "max_tokens": 50}
