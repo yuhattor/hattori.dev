@@ -1,6 +1,6 @@
 ---
-title: "Ludum Dare 52のスタッフピック🕹。"
-subtitle: "最新のゲームジャム「Ludum Dare」からのトップゲーム10本とソースコードをお届けします。ダジャレです。"
+title: "Ludum Dare 52: スタッフのピックアップ🕹"
+subtitle: "最新のゲームジャム「Ludum Dare」からのトップゲーム10本とソースコードをお届けします。"
 englishsubtitle: "We’ve got ten top games from the latest Ludum Dare game jam plus source code for you to check out. Pun intended."
 englishtitle: "Ludum Dare 52 staff picks 🕹"
 date: "2023-02-04"
@@ -9,8 +9,6 @@ author: "Lee Reilly"
 description: " Ludum Dare 52 , the weekend-long game jam that’s been running for almost 20 years, just wrapped up. This year’s theme was “harvest” and the number of game submissions grew to a whopping 1632!  Ludum Dare is an online competition challenging participants to create a game from scratch in just a few days. The only catch is that entries must adhere to a theme that’s announced at the start of the competition. So, if the theme was “harvest,” you can expect to see lots of games featuring combine harvesters, fields of oats, the grim reaper harvesting souls(!), fruit collection—that sort of thing. Read more about it’s rich history on Wikipedia .  Here are ten of the best entries from Ludum Dare 52 that you can play now, fork, clone, and hack to your heart’s content. Enjoy!  Boba  Play  Source  Unity  C#  @DanielMullinsGames’ Boba won first place overall with a short, creative, incremental-style game.  Did you know: @DanielMullinsGames ’ Ludum Dare 43 entry (November 2018)—Sacrifices Must Be Made —was released 3 years later as a full game . It later went on to win Game of the Year at both the GDC Awards and the IGF awards in 2022 , the first game to ever win to win both awards  Ether Warp  document.createElement('video');  https://github.blog/wp-content/uploads/2023/01/ether-warp.mp4  Play  Source  Unity  C#  Collect Ether Crystals and avoid deadly space pirates.  Fallowtide  Play  Sour"
 coverimage: "https://github.blog/wp-content/uploads/2023/01/ld-52.gif?resize=1200%2C630"
 category: "Community,Open Source,gamedev,ludum-dare"
-englishsummary: " ce HTML5  JavaScript  Fallowtide is a beautiful, story-driven adventure game with a unique art style and a haunting soundtrack.  Ludum Dare 52, an online competition challenging participants to create a game from scratch in just"
-summary: "ce HTML5 JavaScript Fallowtideは、ユニークなアートスタイルと心に響くサウンドトラックを備えた、美しいストーリー主導のアドベンチャーゲームです。  Ludum Dare 52は、ゼロからわずかな時間でゲームを作成することに挑戦するオンラインコンペティションです。"
 ---
 
 <p>20年近く続いている週末限定のゲームジャム「<a href="https://ldjam.com/events/ludum-dare/52/results">Ludum Dare 52</a>」が終了しました。今年のテーマは「収穫」で、応募されたゲームの数はなんと1632本にもなりました。</p>
