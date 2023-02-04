@@ -70,11 +70,11 @@ link = re.search(re.compile(r"## Link\n(.+?)\n\n## Published date") , text).grou
 published_date = format_date(re.search(re.compile(r"## Published date\n(.+?)\n\n## Author") , text).group(1)) # Get published date from issue body
 author = re.search(re.compile(r"## Author\n(.+?)\n\n## Category") , text).group(1) # Get author from issue body
 category = re.search(re.compile(r"## Category\n(.+?)\n\n## Description") , text).group(1) # Get author from issue body
-description = re.search(re.compile(r"## Description\n(.+?)\n") , text).group(1) # Get description from issue body
+description = re.sub(r"\n", " ", re.search(r"## Description(.*)## Raw Content", text, re.DOTALL).group(1))[0:1400]
 content = re.search(r"## Raw Content(.*)```", text, re.DOTALL).group(1) # Get content from issue body
 
 # Summarize description
-english_summary = summarize(description, openai_api_key)
+english_summary = re.sub(r"\n", " ", summarize(description, openai_api_key))
 summary = translate_with_deepl(api_key, english_summary) 
 
 # format the content for githubblog
