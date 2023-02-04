@@ -5,7 +5,7 @@ date: "2023-02-03"
 cardurl: "https://github.blog/changelog/2023-02-03-category-forms-on-github-discussions"
 author: "Kevin Duck"
 description: " Maintainers of GitHub repositories can now use Category Forms to create templates for their Discussions, which means that users can start new discussions with all the necessary information already included. We hope this leads to less repetitive back and forth conversation with maintainers, as users are more likely to capture all relevant details in their first Discussion post.  Similar to Issue Forms, maintainers can create a discussion template, which will live in .github/DISCUSSION_TEMPLATE/ . Each template will map 1:1 with the available Discussion Categories slugs. For example, the template for the “Announcements” category will be .github/DISCUSSION_TEMPLATE/announcements.yml . Once created, Category Forms in Discussions will be familiar to users who have seen them in issues:  Learn more about Category Forms  For questions or feedback, please visit our community .  "
-coverimage: "https://i0.wp.com/user-images.githubusercontent.com/3157267/216721337-760c3c67-6fb7-4e78-bf30-95027f22e426.png?ssl=1"
+coverimage: "https://i0.wp.com/user-images.githubusercontent.com/3157267/216721337-760c3c67-6fb7-4e78-bf30-95027f22e426.png"
 englishsummary: "  GitHub repositories now have Category Forms for Discussions, which should lead to more complete initial posts and less repetitive back and forth conversations with maintainers."
 summary: "  GitHub リポジトリにディスカッション用のカテゴリーフォームが追加され、最初の投稿がより完全なものになり、メンテナとの会話の繰り返しが少なくなることが期待されます。"
 ---

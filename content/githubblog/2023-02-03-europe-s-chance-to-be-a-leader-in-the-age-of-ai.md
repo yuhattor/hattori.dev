@@ -10,7 +10,7 @@ description: " The GitHub policy paper on the AI Act can be found here .  Hello.
 coverimage: "https://github.blog/wp-content/uploads/2023/02/Europes_chance_to_lead_AI.jpg?resize=1600%2C850"
 category: "Open Source,Policy,AI,policy"
 englishsummary: "  Thomas, CEO of GitHub, is speaking in Brussels about the AI Act and the importance of getting it right for developers and the open source community in order to help a new generation of developers build the next great thing of tomorrow."
-summary: "  GitHubのCEOであるトーマスは、ブリュッセルでAI法について、そして新しい世代の開発者が明日の次の素晴らしいものを作るのを助けるために、開発者とオープンソースコミュニティのためにそれを正しくすることの重要性について講演しています。"
+summary: "GitHubのCEOであるトーマスが、ブリュッセルのAI法に関する会議で行った公演です。新しい世代の開発者が次の素晴らしいものを作るのを支援するために、開発者とオープンソースコミュニティのありかたの重要性について説明しています。"
 ---
 
 <p><em>AI法に関するGitHubのポリシーペーパーは<a href="https://github.blog/wp-content/uploads/2023/02/GitHub_Position_Paper-AI_Act.pdf">こちらで</a>ご覧いただけます。</em></p>

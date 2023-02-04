@@ -77,4 +77,15 @@ html.dark * {
   background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
 }
 
-
+.text-gradient-purple-coral, h1, h2, h3, h4{
+  background: -webkit-linear-gradient(-70deg, #8250df 0%, #d42a32 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: rgba(0,0,0,0);
+  -webkit-box-decoration-break: clone;
+}
+.purple-text {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+}
