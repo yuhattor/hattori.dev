@@ -58,7 +58,7 @@ def summarize(text, openai_api_key):
 
   payload = json.dumps(data,ensure_ascii=False).encode('utf-8').decode('unicode-escape')
   response = requests.post(url, headers=headers, data=payload)
-  message = response.json()# ['data']['choices'][0]['text']
+  message = response.json()['choices'][0]['text']
   return message
 
 
