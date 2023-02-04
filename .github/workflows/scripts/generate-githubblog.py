@@ -55,9 +55,14 @@ def summarize(text, openai_api_key):
   }
   
   payload = json.dumps(data,ensure_ascii=False).encode('utf-8').decode('unicode-escape')
-  response = requests.post(url, headers=headers, data=payload)
-  message = response['choices'][0]['text']
-  return message
+  # response = requests.post(url, headers=headers, data=payload)
+  # message = response['choices'][0]['text']
+  # write content to a file
+  with open('test.txt', 'w') as f:
+    f.write(payload)
+
+  return "test"
+  # return message
 
 # Get Issue Body
 text = requests.get(f"https://api.github.com/repos/{repository}/issues/{issue_id}").json()["body"]
