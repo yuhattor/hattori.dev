@@ -4,11 +4,6 @@ languageCode = 'ja-jp'
 title = 'hattori.dev'
 googleAnalytics = "G-8B5XLER8F7"
 
-[[menu.social]]
-  name = 'Twitter'
-  url = 'https://twitter.com/yuhattor'
-  weight = 1
-
 
 [Params]
   description = "My Digital Garden on the Internet"
@@ -16,16 +11,16 @@ googleAnalytics = "G-8B5XLER8F7"
   enableSearch = true
 
 [Params.newsletter]
-  title = ""
-  description = "A curated weekly digest once a week to your mailbox"
+  # title = ""
+  # description = "A curated weekly digest once a week to your mailbox"
 
   # Supports buttondown, substack and revue
-  provider = "buttondown"
+  # provider = "buttondown"
 
   # Buttondown - URL from share page; Refer: https://blog.buttondown.email/2019/10/11/adding-a-buttondown-subscription-form-to-webflow#getting-your-subscription-url
   # Substack - URL of the newsletter homepage; Example: https://on.substack.com/
   # Revue - Username
-  path = "https://buttondown.email/api/emails/embed-subscribe/yuki"
+  # path = "https://buttondown.email/api/emails/embed-subscribe/yuki"
 
 [menu]
 [[menu.main]]
@@ -33,13 +28,25 @@ googleAnalytics = "G-8B5XLER8F7"
   url = '/'
   weight = 1
 [[menu.main]]
-  name = 'Twitter@yuhattor'
+  name = 'Twitter (@yuhattor)'
 	url = 'https://twitter.com/yuhattor'
   weight = 2
 [[menu.main]]
+  name = 'GitHub'
+  url = 'https://github.com/yuhattor'
+  weight = 3
+[[menu.main]]
+  name = 'LinkedIn'
+  url = 'https://www.linkedin.com/in/yukihattori/'
+  weight = 4
+[[menu.main]]
   name = 'Speaker Deck'
 	url = 'https://speakerdeck.com/yuhattor'
-  weight = 3
+  weight = 5
+[[menu.main]]
+  name = 'RSS'
+  url = '/changelog/index.xml'
+  weight = 6
 [[menu.main]]
   name = 'Content'
   params.header = true
@@ -85,26 +92,22 @@ googleAnalytics = "G-8B5XLER8F7"
   url = '/travelrecords'
   weight = 31
 
-[[menu.social]]
-  name = 'Twitter'
-  url = 'https://twitter.com/yuhattor'
-  weight = 1
-[[menu.social]]
-  name = 'GitHub'
-  url = 'https://github.com/yuhattor'
-  weight = 2
-[[menu.social]]
-  name = 'LinkedIn'
-  url = 'https://www.linkedin.com/in/yukihattori/'
-  weight = 3
-[[menu.social]]
-  name = 'Email'
-  url = 'mailto:hello@hattori.dev'
-  weight = 8
-[[menu.social]]
-  name = 'RSS'
-  url = '/changelog/index.xml'
-  weight = 9
+# [[menu.social]]
+#   name = 'Twitter'
+#   url = 'https://twitter.com/yuhattor'
+#   weight = 1
+# [[menu.social]]
+#   name = 'GitHub'
+#   url = 'https://github.com/yuhattor'
+#   weight = 2
+# [[menu.social]]
+#   name = 'LinkedIn'
+#   url = 'https://www.linkedin.com/in/yukihattori/'
+#   weight = 3
+# [[menu.social]]
+#   name = 'RSS'
+#   url = '/changelog/index.xml'
+#   weight = 9
 
 
 # syntax highlight settings

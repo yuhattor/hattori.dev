@@ -25,8 +25,14 @@
         <span>
         {{ if hasPrefix .Name "GitHub " }}
         <span style="padding-right: 4px;">{{- partial "icon/githubInlineIcon" . -}}</span>
+        {{ else if hasPrefix .Name "GitHub" }}
+        <span style="padding-right: 4px;">{{- partial "icon/githubInlineBlackIcon" . -}}</span>
+        {{ else if hasPrefix .Name "LinkedIn" }}
+        <span style="padding-right: 4px;">{{- partial "icon/linkedinInlineIcon" . -}}</span>
         {{ else if hasPrefix .Name "Speaker Deck" }}
         <span style="padding-right: 4px;">{{- partial "icon/speakerdeckicon" . -}}</span>
+        {{ else if hasPrefix .Name "RSS" }}
+        <span style="padding-right: 4px;">{{- partial "icon/rssfeedInlineIcon" . -}}</span>
         {{ else if hasPrefix .Name "Twitter" }}
         <span style="padding-right: 4px;">{{- partial "icon/twitterInlineIcon" . -}}</span>
         {{ else if hasPrefix .Name "InnerSource" }}
@@ -59,7 +65,7 @@
     {{ end }}
   </ul>
 
-
+  {{ if false }} <!-- disable -->
   <div class="flex-1"></div>
 
   {{ if .Site.Params.newsletter }}
@@ -101,6 +107,8 @@
     </li>
     {{ end }}
   </ul>
+  {{ end }}
+
 </aside>
 
 <div

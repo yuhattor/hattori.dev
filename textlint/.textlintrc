@@ -1,0 +1,35 @@
+{
+  "rules": {
+    "prh":{
+      "rulePaths": [
+        "./rules.yaml"
+      ]
+    },
+    "preset-ja-technical-writing":{
+      "max-comma": {
+        "max": 4
+      },
+      "max-ten": {
+        "max": 4
+      },
+      "no-mix-dearu-desumasu": {
+        "preferInHeader": "",
+        "preferInBody": "ですます",
+        "preferInList": ""
+      },
+      "ja-no-weak-phrase": false,
+      "no-exclamation-question-mark": {
+        "severity": "warning"
+      }
+    }
+  },
+  "filters": {
+    "comments": true,
+    "allowlist": {
+      "allow": [
+        "InnerSource Commons", 
+        "InnerSourceCommons"
+      ]
+    }
+  }
+}
