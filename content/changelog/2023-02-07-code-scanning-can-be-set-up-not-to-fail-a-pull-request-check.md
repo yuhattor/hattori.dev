@@ -1,5 +1,5 @@
 ---
-title: "コードスキャンは、プルリクエストチェックを失敗しないように設定することができます"
+title: "コードスキャンでプルリクエストチェックを失敗しないように設定することができるようになりました"
 englishtitle: "Code scanning can be set up not to fail a pull request check"
 date: "2023-02-07"
 cardurl: "https://github.blog/changelog/2023-02-07-code-scanning-can-be-set-up-not-to-fail-a-pull-request-check"
