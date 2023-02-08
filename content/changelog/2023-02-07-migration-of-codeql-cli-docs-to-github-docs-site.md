@@ -1,5 +1,5 @@
 ---
-title: "CodeQL CLI DocsのGitHub Docsサイトへの移行について"
+title: "CodeQL CLI Docs の GitHub Docs サイトへの移行について"
 englishtitle: "Migration of CodeQL CLI Docs to GitHub Docs site"
 date: "2023-02-07"
 cardurl: "https://github.blog/changelog/2023-02-07-migration-of-codeql-cli-docs-to-github-docs-site"
