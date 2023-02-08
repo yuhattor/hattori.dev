@@ -10,26 +10,26 @@ description: " From launching our technology preview of the new and improved cod
 coverimage: "https://github.blog/wp-content/uploads/2023/02/code-search-header.png?resize=1600%2C736"
 category: "Engineering,code search,Core productivity"
 englishsummary: "  GitHub has built its own search engine from scratch, in Rust, to answer the question of "How does code search work?", and this post provides an overview of the system architecture and technical underpinnings of the product."
-summary: "  GitHubは、「コード検索はどのように機能するのか」という疑問に答えるために、Rustでゼロから独自の検索エンジンを構築しました。この記事では、この製品のシステムアーキテクチャと技術的基盤の概要について説明します。"
+summary: "GitHubは、「コード検索はどのように機能するのか」という疑問に答えるために、Rustでゼロから独自の検索エンジンを構築しました。この記事では、この製品のシステムアーキテクチャと技術的基盤の概要について説明します。"
 ---
 
 <p>1年前に新しいコード検索エクスペリエンスの<a href="https://github.blog/2021-12-08-improving-github-code-search/">テクノロジープレビューを</a>発表してから、昨年11月のGitHub Universeで<a href="https://github.blog/2022-11-15-a-better-way-to-search-navigate-and-understand-code-on-github/">パブリックベータ</a>版をリリースするまで、私たち開発者がコードを見つけ、読み、ナビゲートする方法に関する革新とGitHub製品のコア体験への劇的変化が相次いでいます。</p>
 <p>新しいコード検索エクスペリエンスについてよく聞かれる質問のひとつに、"どのように動作するのか "というものがあります。この記事では、<a href="https://www.youtube.com/watch?v=QCs76SC1ZZ0">GitHub Universeで</a>行った講演を補足する形で、この質問に対するハイレベルな答えと、この製品のシステムアーキテクチャや技術的基盤についての小さな窓を提供するものです。</p>
-<p>では、どのように動作<em>する</em>のでしょうか？簡単に言うと、私たちはコード検索に特化した独自の検索エンジンをRustで一から作り上げました。この検索エンジンをBlackbirdと呼んでいますが、その仕組みを説明する前に、私たちのモチベーションを少し理解するのに役立つと思うんです。一見すると、ゼロから検索エンジンを作るというのは疑問のある決断のように思えます。なぜそんなことをするのでしょうか？既存のオープンソースのソリューションがすでにたくさんあるのではないでしょうか？なぜ、新しいものを作るのか？</p>
-<p>公平を期すために、私たちはGitHubの歴史のほとんどすべてにおいて、この問題に対して既存のソリューションを利用することを試み、またそうしてきました。私たちの道のりについては Pavel Avgustinov の投稿「<a href="https://github.blog/2021-12-15-a-brief-history-of-code-search-at-github/">A brief history of code search at GitHub</a>」に詳しいですが、ひとつだけ印象に残っていることがあります。 <strong><em>コード</em></strong>一般的なテキスト検索製品をコード検索のために使うのは、あまり良いことではありません。ユーザーエクスペリエンスが悪く、インデックス作成に時間がかかり、ホスティングにコストがかかるからです。コードに特化した新しいオープンソースプロジェクトもありますが、GitHubの規模では間違いなく機能しません。このような状況を知っていた私たちは、3つの点で独自のソリューションを作る気になりました。</p>
+<p>では、どのように動作<em>する</em>のでしょうか？簡単に言うと、私たちはコード検索に特化した独自の検索エンジンをRustで一から作り上げました。この検索エンジンをBlackbirdと呼んでいますが、その仕組みを説明する前に、私たちのモチベーションをお伝えします。一見すると、ゼロから検索エンジンを作るというのは疑問のある決断のように思えます。なぜそんなことをするのでしょうか？既存のオープンソースのソリューションはすでにたくさんあります。ではなぜ、新しいものを作るのでしょうか？</p>
+<p>公平を期すために、私たちはGitHubの歴史のほとんどすべてにおいて、この問題に対して既存のソリューションを利用することをまず検討し、またそうしてきました。私たちの道のりについては Pavel Avgustinov の投稿「<a href="https://github.blog/2021-12-15-a-brief-history-of-code-search-at-github/">A brief history of code search at GitHub</a>」の中で紹介されています。この中で印象に残っていることは、<strong><em>コード</em></strong>一般的なテキスト検索製品をコード検索のために使うのは、あまり良いことではないということです。ユーザーエクスペリエンスが悪く、インデックス作成に時間がかかり、ホスティングにコストがかかるからです。コードに特化した新しいオープンソースプロジェクトもありますが、GitHubの規模では間違いなく機能しません。このような状況を知っていた私たちは、以下の3つの点に着目し、独自のソリューションを作ることにしました。</p>
 <ol>
-<li>コードに質問をし、検索、ブラウズ、ナビゲート、読み込みを繰り返しながら答えを得ることができる、全く新しいユーザーエクスペリエンスのビジョンを持っています。</li>
-<li>私たちは <strong><em>コード</em></strong>コード検索は、一般的なテキスト検索とは明らかに異なるものです。コードはすでに機械が理解できるように設計されており、その構造と関連性を利用することができるはずです。コードの検索には、句読点（ピリオドや開カッコなど）を検索したい、ステミングをしたくない、クエリーからストップワードを削除したくない、正規表現で検索したい、などの独自の要件もあります。</li>
-<li>GitHubの規模は実にユニークな挑戦です。Elasticsearchを初めて導入した時、GitHub上の全てのコード（当時は約800万リポジトリ）のインデックスを作成するのに数ヶ月かかりました。現在ではその数は2億を超え、しかもそのコードは静的なものではなく、常に変化しており、検索エンジンが扱うにはかなり困難なものです。ベータ版では、現在約4500万のリポジトリを検索することができ、これは115TBのコードと155億のドキュメントに相当します。 </li>
+<li>コードに質問をし、検索、ブラウズ、ナビゲート、読み込みを繰り返しながら答えを得ることができる、全く新しいユーザーエクスペリエンスのビジョン</li>
+<li>私たちは<strong><em>コード</em></strong>検索が、一般的なテキスト検索とは明らかに異なるものであると理解しています。コードはすでに機械が理解できるように設計されており、その構造と関連性を利用することができるはずです。コードの検索には、句読点（ピリオドや開カッコなど）を検索したい、ステミングをしたくない、クエリーからストップワードを削除したくない、正規表現で検索したい、などの独自の要件もあります。</li>
+<li>GitHubのサービス規模に対しての開発は非常にユニークであり、挑戦でもあります。Elasticsearchを初めて導入した時、GitHub上の全てのコード（当時は約800万リポジトリ）のインデックスを作成するのに数ヶ月かかりました。現在ではその数は2億を超え、しかもそのコードは静的なものではなく、常に変化しており、検索エンジンが扱うにはかなり困難なものです。ベータ版では、現在約4500万のリポジトリを検索することができ、これは115TBのコードと155億のドキュメントに相当します。 </li>
 </ol>
 <p>結局、既成のものでは我々のニーズを満たせなかったので、ゼロから何かを作り上げたのです。</p>
 <h2 id="just-use-grep">grepを使うだけでいいのか？<a href="#just-use-grep" class="heading-link pl-2 text-italic text-bold" aria-label="Just use grep?"></a></h2>
 <p>まず、この問題に対するブルートフォース・アプローチについて説明します。よくこんな質問を受けます。"なぜgrepを使わないのですか？"その答えとして、115TBのコンテンツに対して<a href="https://github.com/BurntSushi/ripgrep">ripgrepを</a>使った計算を少ししてみましょう。8コアのIntel CPUを持つマシンで、ripgrepはメモリにキャッシュされた13GBのファイルに対して、<a href="https://github.com/BurntSushi/ripgrep#quick-examples-comparing-tools">網羅的な正規表現クエリを</a>2.769秒、つまり約0.6GB/秒/コアで実行することができます。</p>
-<p>これでは、大量のデータを処理することができないことがすぐにわかります。コード検索は64コア、32マシンのクラスターで実行されます。仮に115TBのコードをメモリに格納し、完璧に並列化できたとしても、1つのクエリを実行するために2,048個のCPUコアを96秒間飽和させることになります！1つのクエリしか実行できません。その1つのクエリだけが実行できるのです。他のクエリーは順番に実行しなければなりません。この結果、1秒あたりのクエリー数は0.01となり、QPSを2倍にすることができれば、インフラ請求について経営陣と楽しい会話ができることでしょう。</p>
+<p>これでは、大量のデータを処理することができないことがすぐにわかります。コード検索は64コア、32マシンのクラスターで実行されます。仮に115TBのコードをメモリに格納し、完璧に並列化できたとしても、1つのクエリを実行するために2,048個のCPUコアを96秒間飽和させることになります！そうすると1つのクエリしか実行できません。他のクエリーは順番に実行しなければなりません。これは、1 秒あたりのクエリ数 (QPS) が 0.01 という驚異的な数字であり、うまくいけば QPS が 2 倍になります。これでは、インフラストラクチャの請求について経営陣との楽しい会話をすることになるでしょう。</p>
 <p>このアプローチをGitHubの全コードと全ユーザーに適用するには、費用対効果の高い方法はありません。この問題に大量の資金を投入したとしても、ユーザー体験の目標を達成することはできないでしょう。</p>
 <p>つまり、インデックスを作成する必要があるのです。</p>
 <h2 id="a-search-index-primer">検索インデックス入門<a href="#a-search-index-primer" class="heading-link pl-2 text-italic text-bold" aria-label="A search index primer"></a></h2>
-<p>インデックスとは、キーと、そのキーが出現する文書IDのソートされたリスト（「投稿リスト」と呼ばれる）の対応表と考えることができます。例えば、プログラミング言語に関する小さなインデックスがあります。各文書をスキャンしてどのプログラミング言語で書かれているかを検出し、文書IDを割り当てて、言語をキー、文書IDの投稿リストを値とする転置インデックスを作成する。</p>
+<p>インデックスとは、キーと、そのキーが出現する文書IDのソートされたリスト（「投稿リスト」と呼ばれる）の対応表と考えることができます。例えば、プログラミング言語に関する小さなインデックスがあります。各文書をスキャンしてどのプログラミング言語で書かれているかを検出し、文書IDを割り当てて、言語をキー、文書IDの投稿リストを値とする転置インデックスを作成します。</p>
 <h3 id="forward-index">転置インデックス<a href="#forward-index" class="heading-link pl-2 text-italic text-bold" aria-label="Forward index"></a></h3>
 <div class="content-table-wrap"><table>
 <tr>
@@ -86,7 +86,7 @@ summary: "  GitHubは、「コード検索はどのように機能するのか�
    </td>
 </tr>
 </table></div>
-<p>コード検索には、コンテンツの部分文字列を検索するのに便利な、ngram インデックスと呼ばれる特殊な転置インデックスが必要です。例えば、<a href="https://en.wikipedia.org/wiki/N-gram">n</a>=3 (trigrams)とすると、コンテンツ「limit」を構成するngramは<code>lim</code>,<code>imi</code>,<code>mit</code>,<code>itsと</code>なる。上の文書で、これらのtrigramのインデックスは次のようになる。</p>
+<p>コード検索には、コンテンツの部分文字列を検索するのに便利な、ngram インデックスと呼ばれる特殊な転置インデックスが必要です。例えば、<a href="https://en.wikipedia.org/wiki/N-gram">n</a>=3 (trigrams)とすると、コンテンツ「limit」を構成するngramは<code>lim</code>,<code>imi</code>,<code>mit</code>,<code>itsと</code>なる。上の文書で、これらのtrigramのインデックスは次のようになります。</p>
 <div class="content-table-wrap"><table>
 <tr>
 <td><strong>ngram</strong>
@@ -119,7 +119,7 @@ summary: "  GitHubは、「コード検索はどのように機能するのか�
    </td>
 </tr>
 </table></div>
-<p>検索を行うには、複数の検索結果を交差させて、その文字列が出現する文書のリストを得ます。トリグラムインデックスの場合、<code>lim</code>、<code>imi</code>、<code>mit</code>、<code>itsの</code>4つの検索が必要である。</p>
+<p>検索を行うには、複数の検索結果を交差させて、その文字列が出現する文書のリストを得ます。トリグラムインデックスの場合、<code>lim</code>、<code>imi</code>、<code>mit</code>、<code>itsの</code>4つの検索が必要です。</p>
 <p>しかし、ハッシュマップとは異なり、これらのインデックスは大きすぎてメモリに収まらないので、代わりにアクセスする必要のあるインデックスごとにイテレータを構築します。これらはソートされたドキュメントID（IDは各ドキュメントのランキングに基づいて割り当てられる）を遅延的に返し、イテレータを（特定のクエリの要求に応じて）交差させたり結合したりして、要求された数の結果を取得するのに十分な距離だけ読み取ります。こうすることで、投稿リスト全体をメモリ上に保持する必要がなくなるのです。</p>
 <h2 id="indexing-45-million-repositories">4,500万件のリポジトリへのインデックス付け<a href="#indexing-45-million-repositories" class="heading-link pl-2 text-italic text-bold" aria-label="Indexing 45 million repositories"></a></h2>
 <p>次の問題は、このインデックスを合理的な時間で構築する方法です（最初の反復作業では数ヶ月かかったことを思い出してください）。よくあることですが、ここでのコツは、作業している特定のデータについて何らかの洞察を得て、アプローチの指針とすることです。私たちの場合、それは2つのことです。Gitが<a href="https://en.wikipedia.org/wiki/K-way_merge_algorithm">Content Addressable Hashingを</a>使用していることと、GitHubに非常に多くの重複コンテンツが存在することです。この二つの洞察から、私たちは次のような決定を下しました。</p>
@@ -142,11 +142,12 @@ summary: "  GitHubは、「コード検索はどのように機能するのか�
 <p><img decoding="async" loading="lazy" src="https://github.blog/wp-content/uploads/2023/02/code-search.png?w=1024&#038;resize=1024%2C508" alt="Architecture diagram of a query path." width="1024" height="508" class="aligncenter size-large wp-image-69989 width-fit" srcset="https://github.blog/wp-content/uploads/2023/02/code-search.png?w=1376 1376w, https://github.blog/wp-content/uploads/2023/02/code-search.png?w=300 300w, https://github.blog/wp-content/uploads/2023/02/code-search.png?w=768 768w, https://github.blog/wp-content/uploads/2023/02/code-search.png?w=1024&#038;resize=1024%2C508 1024w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1" /></p>
 <p>GitHub.com とシャードの間には、ユーザーのクエリを受け取り、検索クラスタの各ホストにリクエストを分散させるサービスを配置しています。Redis を使ってクォータを管理し、アクセス制御データをキャッシュしています。</p>
 <p>フロントエンドはユーザーのクエリを受け取り、それをBlackbirdクエリサービスに渡します。クエリは抽象的な構文ツリーに解析され、言語などを正規の<a href="https://github.com/github/linguist">Linguist</a>言語IDに解決し、パーミッションやスコープのための追加の句をタグ付けして、書き直されます。この場合、パブリック・リポジトリや、私がアクセスできるプライベート・リポジトリからの結果が、どのように書き換えられるかがわかると思います。</p>
-<pre><code>そして(
+<pre><code>
+And(
     Owner("rails"),
-    言語ID(326),
-    Regex("引数?"),
-    または(
+    LanguageID(326),
+    Regex("arguments?"),
+    Or(
         RepoIDs(...),
         PublicRepo(),
     ),
@@ -154,30 +155,31 @@ summary: "  GitHubは、「コード検索はどのように機能するのか�
 </code></pre>
 <p>次に、検索クラスタの各シャードに1つずつ、ファンアウトして<em>n個の</em>同時リクエストを送信します。シャーディング戦略のため、クエリーリクエストはクラスタ内の各シャードに送信されなければなりません。</p>
 <p>各シャードでは、インデックスの情報を検索するために、さらにクエリの変換を行います。ここでは、正規表現がngramインデックスに対する一連の部分文字列クエリに変換されていることがわかります。</p>
-<pre><code>そして(
+<pre><code>
+and(
   owners_iter("rails"),
   languages_iter(326),
-  または(
-    と(
+  or(
+    and(
       content_grams_iter("arg"),
       content_grams_iter("rgu"),
       content_grams_iter("gum"),
-      または(
-        および(
+      or(
+        and(
          content_grams_iter("ume"),
          content_grams_iter("ment")
         )
         content_grams_iter("uments"),
       )
     ),
-    または(paths_grams_iter...)
-    or(symbols_grams_iter...)。
+    or(paths_grams_iter…)
+    or(symbols_grams_iter…)
   ), 
-  ...
+  …
 )
 </code></pre>
 <p>正規表現を部分文字列クエリにする方法についてもっと知りたい場合は、Russ Coxの記事「<a href="https://swtch.com/~rsc/regexp/regexp4.html">Regular Expression Matching with a Trigram Index</a>」を参照してください。私たちは異なるアルゴリズムと、trigramの代わりに動的なグラムサイズを使っています(<sup id="fnref2:69904-bignote"><a href="#fn-69904-bignote" class="jetpack-footnote" title="Read footnote.">3</a></sup>).この場合、エンジンは次のグラムを使います：<code>arg</code><code>, rgu</code>,<code>gum</code>、そして<code>umeと</code> <code>ment</code>、または6グラムの<code>umentsの</code>いずれかです。</p>
-<p>各節のイテレータは、<em>andは</em>交差を意味し、<em>unionは</em>結合を意味する。その結果、文書のリストが得られる。各文書をダブルチェックし（マッチの検証や範囲の検出）、スコアリング、ソート、そして要求された数の結果を返さなければならない。</p>
+<p>各節のイテレータは、<em>andは</em>交差を意味し、<em>unionは</em>結合を意味します。その結果、文書のリストが得られます。各文書をダブルチェックし（マッチの検証や範囲の検出）、スコアリング、ソート、そして要求された数の結果を返さなければならなりません。</p>
 <p>クエリサービスに戻ると、すべてのシャードの結果を集約し、スコアで再ソートし、フィルタリングして (パーミッションを再確認して) 上位 100 件を返します。GitHub.com のフロントエンドでは、構文強調や用語強調、ページ送りを行い、最後に結果をページにレンダリングします。</p>
 <p>個々のシャードからのp99のレスポンスタイムは100ミリ秒程度ですが、レスポンスの集約やパーミッションのチェック、シンタックスハイライトなどのため、全体のレスポンスタイムはもう少し長くなっています。クエリはインデックスサーバーの1CPUコアを100ミリ秒拘束するので、64コアのホストでは1秒あたり640クエリ程度が上限となります。grepのアプローチ（0.01QPS）と比較すると、これは非常に高速で、同時ユーザクエリや将来の拡張にも十分対応できるものです。</p>
 <h2 id="in-summary">まとめ<a href="#in-summary" class="heading-link pl-2 text-italic text-bold" aria-label="In summary"></a></h2>
