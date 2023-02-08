@@ -10,7 +10,7 @@ englishsummary: "  Students can now apply to the GitHub Campus Experts program o
 summary: "GitHub Global Campus の GitHub Campus Experts プログラムへの応募が可能になりました。詳細はドキュメントに掲載されています。"
 ---
 
-<p>学生コミュニティリーダーが、<a href="https://education.github.com/experts">GitHub</a> <a href="https://education.github.com/">Global Campus</a>.の<a href="https://education.github.com/experts">GitHub Campus Expertsに</a>申請できるようになりました。</p>
+<p>学生コミュニティリーダーが、<a href="https://education.github.com/experts">GitHub</a> <a href="https://education.github.com/">Global Campus</a>の<a href="https://education.github.com/experts">GitHub Campus Expertsに</a>申請できるようになりました。</p>
 <p>この変更に伴い、URL を更新しました。<code>https://apply.githubcampus.expert/</code>でホストされていたフォームは使用できなくなり、<code>https://education.github.com/campus_experts</code> が使用できるようになります。</p>
 <p>詳しくは、<a href="https://docs.github.com/en/education/explore-the-benefits-of-teaching-and-learning-with-github-education/use-github-at-your-educational-institution/about-campus-experts">GitHub Campus Experts プログラムへの</a>申請方法に関するドキュメントをご覧ください。</p>
 
