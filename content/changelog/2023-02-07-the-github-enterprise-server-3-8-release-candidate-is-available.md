@@ -10,7 +10,7 @@ englishsummary: "  GitHub Enterprise Server 3.8 offers over 100 new features, in
 summary: "GitHub Enterprise Server 3.8は、ProjectsやGitHub Actionsのサポート、KotlinのCode Scanningサポートなど100以上の新機能を提供し、企業がより迅速に安全なソフトウェアを構築、提供できるよう支援します"
 ---
 
-<h2 id="the-github-enterprise-server-38-release-candidate-is-here" id="the-github-enterprise-server-38-release-candidate-is-here" >GitHub Enterprise Server 3.8のリリース候補が登場<a href="#the-github-enterprise-server-38-release-candidate-is-here" class="heading-link pl-2 text-italic text-bold" aria-label="The GitHub Enterprise Server 3.8 release candidate is here"></a></h2>
+<h2 id="the-github-enterprise-server-38-release-candidate-is-here" id="the-github-enterprise-server-38-release-candidate-is-here" >GitHub Enterprise Server 3.8 Release Candidate が登場<a href="#the-github-enterprise-server-38-release-candidate-is-here" class="heading-link pl-2 text-italic text-bold" aria-label="The GitHub Enterprise Server 3.8 release candidate is here"></a></h2>
 <p>GitHub Enterprise Server 3.8は、企業が安全なソフトウェアをより迅速に構築し、提供するための新機能を提供します。100以上の新機能の中から、いくつかのハイライトをご紹介します。</p>
 <ul>
 <li><strong>GitHubで作業を計画・追跡するための柔軟なツールであるProjectsが、Enterprise Serverでパブリックベータ版</strong>として利用できるようになりました。プロジェクトは、GitHub上の課題やプルリクエストと統合された適応性の高いスプレッドシートで、作業の計画や追跡を効率的に行うことができます。課題およびプルリクエストのフィルタリング、ソート、グループ化、チーム固有のメタデータを追跡するためのカスタムフィールドの追加によって、複数のビューを作成およびカスタマイズすることができます。プロジェクトは、特定の方法論を強制するのではなく、チームのニーズやプロセスに合わせてカスタマイズできる柔軟な機能を提供します。</li>
@@ -18,7 +18,7 @@ summary: "GitHub Enterprise Server 3.8は、ProjectsやGitHub Actionsのサポ�
 <li><strong>コードスキャンはKotlinをサポートする</strong>ようになりました。Kotlinをサポートするためのパブリックベータを開始します。このパブリックベータでは、すべての新しいコードスキャンユーザーと、すでにJava分析を設定している既存のユーザーに対して、Kotlinのサポートがデフォルトで有効になります。</li>
 <li><strong>マネジメントコンソールが複数ユーザーを</strong>サポートするようになりました。管理コンソールの認証は、現在、単一の管理者パスワードに基づいています。バージョン3.8では、管理者が異なる種類の役割を持つ新しいユーザーを招待できるように、管理コンソールにユーザー管理インターフェイスを備えたマルチユーザーの概念を導入しています。</li>
 </ul>
-<p><em>リリース候補版は、最新の機能をいち早く試すことができる方法であり、リリースがお客様の環境で動作することを確認するために、早期にフィードバックを収集するのに役立ちます。リリース候補版は、非運用環境でテストする必要があります。このリリースのハイライトはこちらです。<a href="https://docs.github.com/en/enterprise-server@3.8/admin/overview/about-upgrades-to-new-releases">リリース候補の</a>プロセスについてはこちらをご覧ください。</em></p>
+<p><em>リリース候補版は、最新の機能をいち早く試すことができる方法であり、リリースがお客様の環境で動作することを確認するために、早期にフィードバックを収集するのに役立ちます。リリース候補版は、非運用環境でテストする必要があります。このリリースのハイライトはこちらです。<a href="https://docs.github.com/en/enterprise-server@3.8/admin/overview/about-upgrades-to-new-releases">Release Candidate の</a>プロセスについてはこちらをご覧ください。</em></p>
 <p><a href="https://docs.github.com/en/enterprise-server@3.8/admin/release-notes">GitHub Enterprise Server 3.8 の詳細については、リリースノートを</a>ご覧ください<a href="https://enterprise.github.com/releases/3.8.0/download">。</a>フィードバックやご質問は、<a href="https://support.github.com/features/enterprise-administrators-server">サポート</a>チームまでご連絡ください。</p>
 
 
