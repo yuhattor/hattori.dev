@@ -39,8 +39,7 @@ def get_cover_image_url(url):
   img = soup.find('img', class_="cover-image")
   return img.get("src")
 
-
-# 文章を要約する関数
+# summarize the article
 def summarize(text, openai_api_key):
   # API Key の設定
   url = "https://api.openai.com/v1/completions"
@@ -57,6 +56,10 @@ def summarize(text, openai_api_key):
 
   payload = json.dumps(data,ensure_ascii=False).encode('utf-8').decode('unicode-escape')
   response = requests.post(url, headers=headers, data=payload)
+
+  if not 'choices' in response.json():
+    return ""
+
   message = response.json()['choices'][0]['text']
   return message
 
