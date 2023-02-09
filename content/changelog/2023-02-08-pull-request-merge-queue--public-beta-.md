@@ -10,7 +10,7 @@ englishsummary: "anched merge is merged back into the base branch.  GitHub's マ
 summary: "GitHub の マージキュー は、プルリクエストをキューに入れ、継続的インテグレーションチェックを行い、変更がメインブランチを壊さないようにすることで、プルリクエストのマージ処理を自動化します。"
 ---
 
-<p>本日、GitHub Enterprise Cloud上のレポとオープンソース組織向けのプルリクエスト・マージキューのパブリックベータを発表します！<g-emoji fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f389.png?v8" alias="tada">🎉</g-emoji>。</p>
+<p>本日、GitHub Enterprise Cloud上のレポとオープンソース組織向けのプルリクエスト・マージキューのパブリックベータを発表します！<g-emoji fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f389.png?v8" alias="tada">🎉</g-emoji></p>
 <p>マージキュー は、最も忙しいブランチへのプルリクエストのマージを自動化することで、ソフトウェアのデリバリー速度を向上させるのに役立ちます。</p>
 <p><img decoding="async" src="https://i0.wp.com/user-images.githubusercontent.com/2503052/217027654-f570fb25-092d-476e-b6f5-0b31b8514662.png?ssl=1" alt="Pull request マージキュー" data-recalc-dims="1"></p>
 <p>マージキュー以前は、開発者はマージする前にプルリクエストブランチを更新して、マージ時に自分の変更がメインブランチを壊さないようにする必要があることがよくありました。更新するたびに継続的インテグレーション (CI) のチェックが繰り返され、それが終わらないと開発者はマージすることができませんでした。別のプルリクエストがマージされると、すべての開発者がこのプロセスを再度行う必要がありました。</p>
@@ -27,7 +27,7 @@ summary: "GitHub の マージキュー は、プルリクエストをキュー�
 <p><img decoding="async" src="https://i0.wp.com/user-images.githubusercontent.com/2503052/217023511-13c729f7-7458-4ee3-8f7c-be5a7cf06f99.png?ssl=1" alt="マージキュー details page" data-recalc-dims="1"></p>
 <p>権限によっては、このページからプルリクエストをキューから削除したり、キューをクリアしたりすることもできます。</p>
 <h2 id="getting-started" id="getting-started" >はじめに<a href="#getting-started" class="heading-link pl-2 text-italic text-bold" aria-label="Getting started"></a></h2>
-<p>マージキュー は、全体のベロシティを向上させ、開発者の生産性に影響を与える手動でのブランチ更新を回避するのに役立ちます。最も忙しいブランチでマージキューを<a href="https://docs.github.com/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue">有効に</a>する方法について、詳しくはこちらをご覧ください。</p>
-<p>マージキュー をどのように改善したらよいか、皆さんのご意見をお聞かせください。マージ<a href="https://github.com/community/community/discussions/46757">キューのパブリックベータディスカッションに</a>参加してください。</p>
+<p>マージキューは、全体のベロシティを向上させ、開発者の生産性に影響を与える手動でのブランチ更新を回避するのに役立ちます。最も忙しいブランチでマージキューを<a href="https://docs.github.com/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue">有効にする方法</a>について、詳しくはこちらをご覧ください。</p>
+<p>マージキューをどのように改善したらよいか、皆さんのご意見をお聞かせください。マージキューの<a href="https://github.com/community/community/discussions/46757">パブリックベータディスカッションに</a>参加してください。</p>
 
 
