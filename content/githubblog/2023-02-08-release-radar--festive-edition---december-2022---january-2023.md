@@ -10,7 +10,7 @@ description: " Welcome to our special edition of the Release Radar . Between Chr
 coverimage: "https://github.blog/wp-content/uploads/2023/02/Release-Radar-festive.jpg?resize=1200%2C630"
 category: "Community,Open Source,GitHub Game Off,PHP,React,Vercel"
 englishsummary: ", and more.  GitHub Unwrapped and Vite 4.0 are two open source projects that were released during December and January to celebrate the end of the year festivities."
-summary: "GitHub UnwrappedとVite 4.0は、12月から1月にかけて年末のお祭りを祝うためにリリースされた2つのオープンソースプロジェクトです。"
+summary: "リリースレーダー🎄のスペシャルエディションへようこそ。クリスマスのお祭り、忘年会、旧正月、あるいは単に休暇を楽しんでいる間、ほとんどの人がお祝いをしています。さて、今回は12月中にメジャーバージョンリリースを行った素晴らしいオープンソースプロジェクトをお祝いします。"
 ---
 
 <p>リリース・レーダー<img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f384.png" alt="🎄" class="wp-smiley" style="height: 1em; max-height: 1em;" /> の特別版へようこそ。クリスマスのお祭り、忘年会、旧正月、あるいは単に休暇を楽しんでいる間、ほとんどの人がお祝いをしています - 私たちもです!さて、今回は12月と1月にメジャーバージョンをリリースした素晴らしいオープンソースプロジェクトをお祝いします。</p>
