@@ -19,12 +19,12 @@ summary: ""
 <p>また、テーブルビューの列のサイズを変更するように、ロードマップビューのテーブルのサイズを変更し、必要なスペースを作ることができるようになりました。</p>
 
 <h2 id="white_check_mark-tasklists-improvements" id="white_check_mark-tasklists-improvements" ><g-emoji fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2705.png?v8" alias="white_check_mark">✅</g-emoji>タスクリストの改善<a href="#white_check_mark-tasklists-improvements" class="heading-link pl-2 text-italic text-bold" aria-label="&lt;g-emoji fallback-src=&quot;https://github.githubassets.com/images/icons/emoji/unicode/2705.png?v8&quot; alias=&quot;white_check_mark&quot;&gt;&#9989;&lt;/g-emoji&gt; Tasklists improvements"></a></h2>
-<p>タスクリストは現在プライベートベータ版ですが、できる限り早く皆さんにお知らせしています。まだの方は、ぜひ<a href="https://github.com/features/issues/signup">ウェイティングリストに</a>ご登録ください。</p>
+<p>タスクリストは現在プライベートベータ版ですが、できる限り早く皆さんにお知らせしています。まだの方は、ぜひ<a href="https://github.com/features/issues/signup">ウェイティングリスト</a>にご登録ください。</p>
 <p>最近、以下の改善を行いました<a href="https://github.com/orgs/community/discussions/39106">。</a></p>
 <ul>
 <li><code>Tracked by</code>でグループ化された場合、サイドパネルからナビゲートできるようになりました。 </li>
-<li><code>Tracks</code>completionのピルをクリックすると、サイドパネルが開き、ナビゲートされます。</li>
-<li>ボードレイアウトの<code>Tracked by</code>フィールドの &quot;Tracked by &quot;テキストをクリックすることで自動的にフィルタを更新する</li>
+<li><code>Tracks</code>の Completionボタン(ピル)をクリックすると、サイドパネルが開き、ナビゲートされます。</li>
+<li>ボードレイアウトの<code>Tracked by</code>フィールドの &quot;Tracked by &quot;テキストをクリックすることで自動的にフィルタを更新できます。</li>
 </ul>
 <h2 id="sparkles-bug-fixes-and-improvements" id="sparkles-bug-fixes-and-improvements" ><g-emoji fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2728.png?v8" alias="sparkles">バグ</g-emoji>フィックスと改善<a href="#sparkles-bug-fixes-and-improvements" class="heading-link pl-2 text-italic text-bold" aria-label="&lt;g-emoji fallback-src=&quot;https://github.githubassets.com/images/icons/emoji/unicode/2728.png?v8&quot; alias=&quot;sparkles&quot;&gt;&#10024;&lt;/g-emoji&gt; Bug fixes and improvements"></a></h2>
 <ul>
