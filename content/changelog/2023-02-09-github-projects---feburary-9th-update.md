@@ -1,5 +1,5 @@
 ---
-title: "GitHubプロジェクト - 2月9日更新"
+title: "GitHub Project - 2月9日 アップデート"
 englishtitle: "GitHub Projects – Feburary 9th update"
 date: "2023-02-09"
 cardurl: "https://github.blog/changelog/2023-02-09-github-projects-feburary-9th-update"
