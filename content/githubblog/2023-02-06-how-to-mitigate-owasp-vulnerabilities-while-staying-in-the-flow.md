@@ -13,7 +13,7 @@ englishsummary: ""
 summary: ""
 ---
 
-<p>セキュリティ脆弱性の発生ペースと規模が拡大しています。これは、チームが何年も前からコードの安全性を保とうとしてきたにもかかわらず、です。では、なぜ脆弱性がこれほどまでに問題なのでしょうか？チームが、開発者の体験を最適化しないセキュリティツールや戦略を使用すると、開発が遅くなります。これはフラストレーションを生み、顧客の使い勝手を悪くし、ビジネスの成功を妨げることになります。このようなツールや戦略を使用する企業は、結局、セキュリティの優先順位を下げ、ソフトウェアを早く出荷することに注力しています。</p>
+<p>セキュリティ脆弱性の発生ペースと規模が拡大しています。これは、チームが何年も前からコードの安全性を保とうとしてきたにもかかわらず、です。では、なぜ脆弱性がこれほどまでに問題なのでしょうか？チームが、開発者の体験を最適化しないセキュリティツールや戦略を使用すると、開発が遅くなります。これはフラストレーションを生み、顧客の使い勝手を悪くし、ビジネスの成功を妨げることになります。このようなツールや戦略を使用する企業は、結局、セキュリティの優先順位を下げ、ソフトウェアを早くシッピングすることに注力しています。</p>
 <p>GitHubでは、開発者の生産性を高めながら、脆弱性を緩和するお手伝いをしたいと考えています。幸いなことに、Open Web Application Security Project (OWASP)がその手助けをしてくれます。OWASPは脆弱性の<a href="https://owasp.org/www-project-top-ten/#:~:text=The%20OWASP%20Top%2010%20is,step%20towards%20more%20secure%20coding">トップ10リストを</a>提供しており、開発者や組織がアプリケーションのセキュリティやコンプライアンスリスクに対処するために必要な情報を提供しています。本日は、OWASP の脆弱性のいくつかと、開発者の生産性を維持し、さらに向上させながらソフトウェアを安全に保つための、開発者に最適な戦略について検討します。</p>
 <figure class="gh-full-blockquote mx-0 pl-6 mt-6 mt-md-7 mb-7 mb-md-8"><blockquote><p>ユーザビリティを犠牲にしたセキュリティは、セキュリティを犠牲にすることになるのです。</p></blockquote><figcaption class="text-mono color-fg-muted f5-mktg mt-3">- Avi Douglen、OWASP 理事会</figcaption></figure>
 <h2 id="1-the-ideal-application-security-environment">1.理想的なアプリケーションセキュリティ環境<a href="#1-the-ideal-application-security-environment" class="heading-link pl-2 text-italic text-bold" aria-label="1. The ideal application security environment"></a></h2>
@@ -23,7 +23,7 @@ summary: ""
 <li>軽量で文脈に応じたコミュニケーション・チャネルにより、容易なコラボレーションを可能にする。</li>
 <li>ビジネスニーズに合わせた拡張性</li>
 </ul>
-<p>ビジネスの成熟度によっては、これらの機能を一度に実装することは不可能かもしれません。しかし、ビジネスの成熟度や継続的な改善に伴い、この理想的な環境を育成することで、脆弱性から保護し、安全なソフトウェアをより早く出荷できるようになります。</p>
+<p>ビジネスの成熟度によっては、これらの機能を一度に実装することは不可能かもしれません。しかし、ビジネスの成熟度や継続的な改善に伴い、この理想的な環境を育成することで、脆弱性から保護し、安全なソフトウェアをより早くシッピングできるようになります。</p>
 <h2 id="2-owasp-vulnerabilities-risk-mitigation-and-prevention">2.OWASP 脆弱性のリスク軽減と予防<a href="#2-owasp-vulnerabilities-risk-mitigation-and-prevention" class="heading-link pl-2 text-italic text-bold" aria-label="2. OWASP vulnerabilities risk mitigation and prevention"></a></h2>
 <p>理想的な状態を説明したところで、いくつかの OWASP 脆弱性と、それを軽減するためのテクニックを見ていきましょう。</p>
 <h3 id="a02-cryptographic-failures"><a href="https://owasp.org/Top10/A02_2021-Cryptographic_Failures/">A02-Cryptographic Failures（暗号の失敗</a><a href="#a02-cryptographic-failures" class="heading-link pl-2 text-italic text-bold" aria-label="&lt;a href=&quot;https://owasp.org/Top10/A02_2021-Cryptographic_Failures/&quot;&gt;A02-Cryptographic Failures&lt;/a&gt;"></a></h3>

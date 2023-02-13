@@ -11,11 +11,11 @@ coverimage: "https://github.blog/wp-content/uploads/2022/09/Open-Source-Engineer
 category: "Engineering,Open Source,automation,Deployment,GitHub Actions"
 ---
 
-<p>GitHubでは、ブランチ・デプロイ・モデルはどこにでもあり、私たちがコードをプロダクションに出荷する標準的な方法であり、それは何年も前からそうでした。私たちは、<a href="https://github.blog/2015-06-02-deploying-branches-to-github-com/">2015</a>年にChatOpsでブランチデプロイを行う方法の詳細を公開しました。</p>
+<p>GitHubでは、ブランチ・デプロイ・モデルはどこにでもあり、私たちがコードをプロダクションにシッピングする標準的な方法であり、それは何年も前からそうでした。私たちは、<a href="https://github.blog/2015-06-02-deploying-branches-to-github-com/">2015</a>年にChatOpsでブランチデプロイを行う方法の詳細を公開しました。</p>
 <p>私たちはほとんどのリポジトリでChatOpsを使用してブランチデプロイメントを実行することができますが、ChatOpsが単にうまくいかない状況もいくつかあります。もし開発者がブランチデプロイを活用したいが、リポジトリにChatOpsのフルスタックを統合していない場合はどうすればいいのでしょうか？私たちは、すべての開発者がGitHubのリポジトリから簡単にブランチ・デプロイを利用できる方法を見つけるために、branch-deploy Action を作りました！</p>
 <p><img decoding="async" src="https://github.blog/wp-content/uploads/2023/02/usage.gif" alt="Gif demonstrating how to us the branch-deploy Action."/></p>
 <h2 id="how-does-github-use-this-action">GitHubはこのアクションをどのように使っているのか？<a href="#how-does-github-use-this-action" class="heading-link pl-2 text-italic text-bold" aria-label="How Does GitHub use this Action?"></a></h2>
-<p>GitHubは主にChatOpsと<a href="https://hubot.github.com/">Hubot</a>)を使って、可能な限りブランチデプロイを促進するようにしています。ChatOpsが使えない場合は、このbranch-deploy Actionで代用しています。私たちのユースケースの大半は、Infrastructure as Code (IaC)リポジトリで、インフラの変更をTerraformを使ってデプロイしています。GitHubはこのActionを多くの内部リポジトリで使っていますし、<a href="https://www.npmjs.com/">npmも</a>そうです。他にも多くの公共、オープンソース、企業組織がこのActionを採用し、コードを本番環境に出荷するのに役立っています。</p>
+<p>GitHubは主にChatOpsと<a href="https://hubot.github.com/">Hubot</a>)を使って、可能な限りブランチデプロイを促進するようにしています。ChatOpsが使えない場合は、このbranch-deploy Actionで代用しています。私たちのユースケースの大半は、Infrastructure as Code (IaC)リポジトリで、インフラの変更をTerraformを使ってデプロイしています。GitHubはこのActionを多くの内部リポジトリで使っていますし、<a href="https://www.npmjs.com/">npmも</a>そうです。他にも多くの公共、オープンソース、企業組織がこのActionを採用し、コードを本番環境にシッピングするのに役立っています。</p>
 <h2 id="understanding-the-branch-deploy-model">ブランチ・デプロイ・モデルを理解する<a href="#understanding-the-branch-deploy-model" class="heading-link pl-2 text-italic text-bold" aria-label="Understanding the branch deploy model"></a></h2>
 <p>branch-deploy アクションを理解する前に、まずブランチデプロイモデルとは何か、そしてなぜそれが有用なのかを理解しましょう。</p>
 <p>ブランチデプロイモデルを理解するために、まず伝統的な<strong>デプロイ → マージ</strong>モデルを見てみましょう。それは次のようなものです。</p>
@@ -130,7 +130,7 @@ jobs:
 <li><a href="https://github.com/github/branch-deploy/blob/main/docs/examples.md#cloudflare-workers">Cloudflare ワーカー</a></li>
 </ul>
 <h2 id="conclusion">まとめ<a href="#conclusion" class="heading-link pl-2 text-italic text-bold" aria-label="Conclusion"></a></h2>
-<p>もしあなたがDevOpsの経験を高めたい、デプロイの信頼性を高めたい、あるいは変更をより速く出荷したいと考えているなら、ブランチデプロイはあなたのためにあります!</p>
+<p>もしあなたがDevOpsの経験を高めたい、デプロイの信頼性を高めたい、あるいは変更をより速くシッピングしたいと考えているなら、ブランチデプロイはあなたのためにあります!</p>
 <p>ブランチ・デプロイ・モデルがなぜ本番環境へのコード配布に最適なのか、ご理解いただけたでしょうか。</p>
 <p>GitHub + Actions + IssueOps を使えば、どんなリポジトリでもブランチ・デプロイ・モデルを利用することができるのです!</p>
 <p><small>ソースコード<a href="https://github.com/marketplace/actions/branch-deploy">GitHub</a></small></p>
