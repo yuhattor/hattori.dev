@@ -1,5 +1,5 @@
 ---
-title: "Pull Request がメンテナによって編集可能であることを確認します。"
+title: "Pull Request がメンテナによって編集可能であることを確認できます"
 englishtitle: "See when a Pull Request is editable by maintainers"
 date: "2023-02-10"
 cardurl: "https://github.blog/changelog/2023-02-10-see-when-a-pull-request-is-editable-by-maintainers"
