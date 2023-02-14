@@ -1,0 +1,45 @@
+---
+title: "GitHub Copilot for Businessの提供を開始しました。"
+subtitle: "GitHub Copilotは世界初のアットスケールAI開発者向けツールで、現在、すべての開発者、チーム、組織、企業に対して提供しています。"
+englishsubtitle: "GitHub Copilot is the world’s first at-scale AI developer tool and we’re now offering it to every developer, team, organization, and enterprise."
+englishtitle: "GitHub Copilot for Business is now available"
+date: "2023-02-14"
+cardurl: "https://github.blog/2023-02-14-github-copilot-for-business-is-now-available/"
+author: "Thomas Dohmke"
+description: " First previewed in partnership with OpenAI in 2021 , GitHub Copilot is the world’s first at-scale AI developer tool. Sitting within the editor as a simple extension, GitHub Copilot draws context from a developer’s code to suggest new lines, entire functions, tests, and even complex algorithms. Since its release, GitHub Copilot has transformed developer productivity for more than one million people, helping developers code up to 55% faster .  The rise of generative AI models like GitHub Copilot has triggered widespread recognition that the age of AI has begun. But until now, generative AI has largely benefited the individual. That’s changing today.  Over 400+ organizations are already using GitHub Copilot. Now, with GitHub Copilot for Business , we’re opening it up to every developer, team, organization, and enterprise. We’re also introducing a more advanced OpenAI model and new capabilities to bring even greater benefits to organizations.  Copilot for Business with new capabilities  A more powerful AI model: New modeling algorithms improve the quality of code suggestions .  AI-based security vulnerability filtering: GitHub Copilot automatically blocks common insecure code suggestions by targeting issues such as hardcoded credentials, SQL injections, and path injections.  VPN proxy support: GitHub Copilot works with VPNs, including with self-signed certificates, so developers c"
+coverimage: "https://github.blog/wp-content/uploads/2023/02/GitHub-Copilot-for-Business.png?resize=1600%2C850"
+category: "Product,GitHub Copilot"
+englishsummary: " an use the product from any location.  GitHub Copilot is the world's first at-scale AI developer tool that helps developers code up to 55% faster and has been used by over 400+ organizations since its release."
+summary: "が場所を選ばず利用できるようになります。  GitHub Copilotは、開発者のコーディングを最大55%高速化する世界初のアットスケールAI開発者ツールで、リリース以来400以上の組織で利用されています。"
+---
+
+<p><a href="https://github.blog/2021-06-29-introducing-github-copilot-ai-pair-programmer/">2021年にOpenAIとの</a>提携で初めて<a href="https://github.blog/2021-06-29-introducing-github-copilot-ai-pair-programmer/">プレビューされた</a>GitHub Copilotは、世界初のアットスケールAI開発者向けツールです。エディター内にシンプルな拡張機能として設置されたGitHub Copilotは、開発者のコードからコンテキストを引き出し、新しい行や関数全体、テスト、複雑なアルゴリズムまでも提案します。リリース以来、GitHub Copilotは100万人以上の開発者の生産性を向上させ、開発者の<a href="https://github.blog/2022-09-07-research-quantifying-github-copilots-impact-on-developer-productivity-and-happiness/">コードを最大55%高速</a>化するのに役立っています。</p>
+<p>GitHub Copilotのような生成型AIモデルの台頭は、AIの時代が始まったという認識を広めるきっかけとなりました。しかしこれまで、ジェネレーティブAIは主に個人に恩恵を与えてきました。それが今日、変わりつつあります。</p>
+<p><strong>すでに400以上の組織がGitHub Copilotを利用しています。そして今、<a href="https://github.com/features/copilot/">GitHub Copilot for Businessで</a>、すべての開発者、チーム、組織、企業へ開放します。</strong>また、<a href="https://github.blog/2023-02-14-github-copilot-now-has-a-better-ai-model-and-new-capabilities">より高度なOpenAIモデルと新機能を</a>導入し、組織にさらに大きな利益をもたらします。</p>
+<aside class="p-4 p-md-6 post-aside--large"></p>
+<h3 id="copilot-for-business-with-new-capabilities">新機能を搭載したCopilot for Business<a href="#copilot-for-business-with-new-capabilities" class="heading-link pl-2 text-italic text-bold" aria-label="Copilot for Business with new capabilities"></a></h3>
+<ul>
+<li><strong>より強力なAIモデル。 </strong>新しいモデリングアルゴリズムにより、<a href="https://github.blog/2023-02-14-github-copilot-now-has-a-better-ai-model-and-new-capabilities">コード提案の品質が</a>向上します。</li>
+<li><strong>AIベースのセキュリティ脆弱性フィルタリング。 </strong>GitHub Copilot は、ハードコードされた認証情報、SQL インジェクション、パスインジェクションなどの問題をターゲットにして、<a href="https://github.blog/2023-02-14-github-copilot-now-has-a-better-ai-model-and-new-capabilities">一般的な安全でないコードの提案を自動的にブロック</a>します。</li>
+<li><strong>VPNプロキシのサポート。 </strong>GitHub Copilot は、自己署名証明書を含む VPN に対応しているため、開発者はどのような作業環境でも使用することができます。</li>
+<li><strong>簡単なサインアップ </strong>どのような企業でも、<a href="https://github.com/features/copilot/">Copilot for Business のライセンスをオンラインで素早く購入</a>し、シートの割り当てを簡単に行うことができます（ソースコードに GitHub プラットフォームを使用していない場合でも同様）。</li>
+</ul>
+<p><strong><a href="https://github.com/features/copilot">GitHub Copilotの詳細&gt;&gt;を参照してください。 </a></strong></p>
+</aside>
+<h2 id="the-future-of-ai-programming-is-here">AIプログラミングの未来はここにある<a href="#the-future-of-ai-programming-is-here" class="heading-link pl-2 text-italic text-bold" aria-label="The future of AI programming is here"></a></h2>
+<p>GitHub Copilot は、リアルタイムでコードを提案するエディター拡張機能に、生成的な AIの力を組み込みました。コードや自然言語のプロンプトと連動し、複数の提案を行い、素早く承認または拒否することができます。また、開発者とともに学習し、個々のコーディングスタイルや慣習に適応していきます。GitHub Copilotを使えば、開発者はVisual StudioからNeovim、VS Code、JetBrains IDEまで、好きなエディタを使うことができます。</p>
+<blockquote><p>
+ <strong>開発者がGitHub Copilotをどのように使用しているか知りたいですか？</strong>世界中の人々がGitHub Copilotを使用して、より速いコーディング、テストの生成、コンテキストスイッチの削減を実現しています。詳しくは<a href="https://github.blog/2022-09-14-8-things-you-didnt-know-you-could-do-with-github-copilot/">ガイドを</a>ご覧ください。
+</p></blockquote>
+<p>2022年6月、私たちはGitHub Copilotがすでに開発者のコードの27%を生成していることを報告しました。現在では、すべてのプログラミング言語において平均46%のコードがGitHub Copilotで作成され、Javaを使用している開発者では61%となっており、この現象はますます増えています。</p>
+<p>さらに、弊社の調査によると、GitHub Copilotを使用している開発者の90％が、<a href="https://github.blog/2022-09-07-research-quantifying-github-copilots-impact-on-developer-productivity-and-happiness/">タスクの完了が早く</a>、73％が流れに身を任せ、精神的なエネルギーを節約できたと報告しています。また、GitHub Copilotを利用する開発者の75％が、より充実した仕事に集中できると感じていることも、弊社の調査で明らかになっています。</p>
+<figure id="attachment_70102"  class="wp-caption aligncenter mx-0"><img decoding="async" loading="lazy" class="width-fit width-fit wp-image-70102 size-full" src="https://github.blog/wp-content/uploads/2023/02/GitHub-Copilot-research-developer-productivity.png" alt="A chart showing the productivity impact of GitHub Copilot on developers. " srcset="https://github.blog/wp-content/uploads/2023/02/GitHub-Copilot-research-developer-productivity.png?w=2400 2400w, https://github.blog/wp-content/uploads/2023/02/GitHub-Copilot-research-developer-productivity.png?w=300 300w, https://github.blog/wp-content/uploads/2023/02/GitHub-Copilot-research-developer-productivity.png?w=768 768w, https://github.blog/wp-content/uploads/2023/02/GitHub-Copilot-research-developer-productivity.png?w=1024 1024w, https://github.blog/wp-content/uploads/2023/02/GitHub-Copilot-research-developer-productivity.png?w=1536 1536w, https://github.blog/wp-content/uploads/2023/02/GitHub-Copilot-research-developer-productivity.png?w=2048 2048w" sizes="(max-width: 1000px) 100vw, 1000px" /><figcaption class="text-mono color-fg-muted mt-14px f5-mktg">GitHub Copilotが開発者のコーディング速度を向上させ、仕事への充実感を高め、全コードの最大46%を生成しているという調査結果のトップレベルを示すグラフィックです。</figcaption></figure>
+<p>この成功率は、開発者にとっても企業にとっても大きな可能性を秘めています。100人、1000人、あるいは1万人の開発チームの手にGitHub Copilotが渡った場合のメリットを想像してみてください。</p>
+<p>企業にとって、開発者がバグをより早く修正することは、製品やサプライチェーンの安全性をより高めることになります。開発者が手作業で何度も定型文を書くことが少なくなれば、チームの生産性と集中力が高まります。開発者が新しい技術を学習して取り入れることができれば、顧客により良いソリューションを提供できるようになります。</p>
+<p><strong>最終的に、<a href="https://github.com/features/copilot/">Copilot for Businessは</a>、開発者が今日の問題に時間をとられることなく、明日のために構築する能力を提供します。</strong></p>
+<h2 id="building-ai-into-the-full-developer-experience">開発者の完全なエクスペリエンスにAIを組み込む<a href="#building-ai-into-the-full-developer-experience" class="heading-link pl-2 text-italic text-bold" aria-label="Building AI into the full developer experience"></a></h2>
+<p>ソフトウェアの構築はかつてないほど複雑になっており、開発者は新しいソリューションを必要としています。AIは、この一世代で最も重要な技術的変革をもたらそうとしています。AIを活用して開発者に力を与える組織は、未来を勝ち取ることができます。そしてこれは、AIを活用した統合型GitHubを構築するという私たちのビジョンのほんの始まりに過ぎません。</p>
+<p>今後数年間で、コーディングからプルリクエスト、コードのデプロイまで、<a href="https://githubnext.com/">開発者の体験のあらゆる側面にAIを統合</a>し、すべての組織がこれまで以上に彼らの成功に依存する世界で、開発者が最高のものを作り上げることができるようにします。GitHub<a href="https://github.com/features/copilot/">Copilot for Business</a>は、この未来への第一歩であり、すべての開発者の限界を押し広げる未来です。</p>
+<div class="content-button-wrap text-left"><a href="https://github.com/features/copilot/" target="_self" class="btn-mktg arrow-target-mktg">始める<svg xmlns="http://www.w3.org/2000/svg" class="octicon arrow-symbol-mktg" width="24" height="24" viewBox="0 0 16 16" fill="none"><path fill="currentColor" d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"></path><path class="octicon-chevrow-stem" stroke="currentColor" d="M1.75 8H11" stroke-width="1.5" stroke-linecap="round"></path></svg></a></div>
+
+
