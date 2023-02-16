@@ -1,5 +1,5 @@
 ---
-title: "依存関係グラフはPython PEP 621標準をサポートします。"
+title: "Dependency Graph は Python PEP 621標準をサポートします"
 englishtitle: "Dependency graph supports the Python PEP 621 standard"
 date: "2023-02-13"
 cardurl: "https://github.blog/changelog/2023-02-13-dependency-graph-supports-the-python-pep-621-standard"
