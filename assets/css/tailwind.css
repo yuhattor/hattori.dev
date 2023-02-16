@@ -52,6 +52,11 @@ html.dark * {
   max-width:100%
 }
 
+.blog-content p img {
+  display: inline;
+  margin: 0px;
+}
+
 
 .card {
   margin-top:40px;
