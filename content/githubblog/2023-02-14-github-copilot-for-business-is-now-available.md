@@ -1,5 +1,5 @@
 ---
-title: "GitHub Copilot for Businessの提供を開始しました。"
+title: "Copilot for Business の一般提供（GA）を開始"
 subtitle: "GitHub Copilotは世界初のアットスケールAI開発者向けツールで、現在、すべての開発者、チーム、組織、企業に対して提供しています。"
 englishsubtitle: "GitHub Copilot is the world’s first at-scale AI developer tool and we’re now offering it to every developer, team, organization, and enterprise."
 englishtitle: "GitHub Copilot for Business is now available"
