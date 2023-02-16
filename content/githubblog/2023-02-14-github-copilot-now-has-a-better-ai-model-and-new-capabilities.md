@@ -1,5 +1,5 @@
 ---
-title: "GitHub CopilotにAIモデルの改良と新機能が追加されました。"
+title: "GitHub CopilotにAIモデルの改良と新機能が追加されました"
 subtitle: "GitHub Copilotの新しい改良を開始し、開発者にとってよりパワフルでより応答性の高いものにします。"
 englishsubtitle: "We’re launching new improvements to GitHub Copilot to make it more powerful and more responsive for developers."
 englishtitle: "GitHub Copilot now has a better AI model and new capabilities"
