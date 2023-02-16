@@ -7,7 +7,7 @@ author: "Kevin Duck"
 description: " Back in November 2022 we announced the public beta for Kotlin analysis. We continue to invest in Kotlin and we now support Kotlin 1.8.0 analysis in beta.  If you have any feedback or questions, please use this discussion thread or open an issue in the open source CodeQL repository if you encounter any problems.  Kotlin beta support is available by default in GitHub.com code scanning, the CodeQL CLI , and the CodeQL extension for VS Code . GitHub Enterprise Server (GHES) version 3.9 will include this beta release.  "
 coverimage: ""
 englishsummary: "  GitHub has announced the public beta for Kotlin 1.8.0 analysis, available by default in GitHub.com code scanning, the CodeQL CLI, and the CodeQL extension for VS Code, with GitHub Enterprise Server (GH"
-summary: "  GitHubは、GitHub.comのコードスキャン、CodeQL CLI、VS CodeのCodeQL拡張でデフォルトで利用できるKotlin 1.8.0解析のパブリックベータをGitHub Enterprise Server（GH"
+summary: "2022年11月に、Kotlin解析のパブリックベータを発表しました。私たちはKotlinへの投資を続けており、現在はベータ版でKotlin 1.8.0解析に対応しています。"
 ---
 
 <p>2022年11月に、Kotlin解析の<a href="https://github.blog/changelog/2022-11-28-codeql-code-scanning-launches-kotlin-analysis-support-beta/">パブリックベータを発表</a>しました。私たちはKotlinへの投資を続けており、現在はベータ版でKotlin 1.8.0解析に対応しています。</p>
