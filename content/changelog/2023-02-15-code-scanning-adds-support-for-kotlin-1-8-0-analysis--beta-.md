@@ -12,6 +12,6 @@ summary: "  GitHubは、GitHub.comのコードスキャン、CodeQL CLI、VS Cod
 
 <p>2022年11月に、Kotlin解析の<a href="https://github.blog/changelog/2022-11-28-codeql-code-scanning-launches-kotlin-analysis-support-beta/">パブリックベータを発表</a>しました。私たちはKotlinへの投資を続けており、現在はベータ版でKotlin 1.8.0解析に対応しています。</p>
 <p>フィードバックや質問がある場合は、<a href="https://github.com/github/codeql/discussions/11460">このディスカッションスレッドを</a>使用するか、問題が発生した場合は<a href="https://github.com/github/codeql/issues/new/choose">オープンソースのCodeQLリポジトリでイシューを開いて</a>ください。</p>
-<p>Kotlinのベータ版サポートは、<a href="GitHub.com">GitHub.comの</a>コードスキャン、<a href="https://github.com/github/codeql-cli-binaries/releases">CodeQL CLI</a>、<a href="https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-codeql">VS CodeのCodeQL拡張</a>機能でデフォルトで利用可能です。GitHub Enterprise Server（GHES）バージョン3.9には、このベータ版リリースが含まれる予定です。</p>
+<p>Kotlinのベータ版サポートは、<a href="GitHub.com">GitHub.com</a>のコードスキャン、<a href="https://github.com/github/codeql-cli-binaries/releases">CodeQL CLI</a>、<a href="https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-codeql">VS CodeのCodeQL拡張</a>機能でデフォルトで利用可能です。GitHub Enterprise Server（GHES）バージョン3.9には、このベータ版リリースが含まれる予定です。</p>
 
 
