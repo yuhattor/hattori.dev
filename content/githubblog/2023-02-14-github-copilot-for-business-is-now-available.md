@@ -13,4 +13,4 @@ englishsummary: " an use the product from any location.  GitHub Copilot is the w
 summary: "GitHub Copilotは世界初の大規模なAIペアプログラマーであり、この度すべての開発者、チーム、組織、企業向けに提供を開始しました。"
 ---
  
-オフィシャルブログに日本語がございますので、そちらをご覧ください!!
+オフィシャルブログに日本語がございますので、そちらをご覧ください。
