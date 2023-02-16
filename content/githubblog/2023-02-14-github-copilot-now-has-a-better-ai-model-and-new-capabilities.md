@@ -1,6 +1,6 @@
 ---
 title: "GitHub CopilotにAIモデルの改良と新機能が追加されました"
-subtitle: "GitHub Copilotの新しい改良を開始し、開発者にとってよりパワフルでより応答性の高いものにします。"
+subtitle: "GitHub Copilotの新しいアップデートが利用可能になり、開発者にとってよりパワフルでより応答性が高いものになりました"
 englishsubtitle: "We’re launching new improvements to GitHub Copilot to make it more powerful and more responsive for developers."
 englishtitle: "GitHub Copilot now has a better AI model and new capabilities"
 date: "2023-02-14"
@@ -10,7 +10,7 @@ description: " Since we first launched GitHub Copilot, we have worked to improve
 coverimage: "https://github.blog/wp-content/uploads/2023/02/copilot-header.png?resize=1600%2C840"
 category: "Product,GitHub Copilot"
 englishsummary: " improved Codex model that powers the core of GitHub Copilot’s code suggestions.  GitHub Copilot has been upgraded with an improved Codex model, resulting in more accurate and responsive code suggestions, allowing developers to code faster."
-summary: "GitHub Copilotのコードサジェストの核となるCodexモデルを改良しました。  GitHub Copilotは、改良されたCodexモデルにより、より正確で反応の良いコード提案を実現し、開発者がより速くコーディングできるようアップグレードされました。"
+summary: "GitHub Copilotのコード提案の核となるCodexモデルを改良しました。  GitHub Copilotは改良されたCodexモデルにより、より正確で反応の良いコード提案を実現し、開発者がより速くコーディングできるようアップグレードされました。"
 ---
 
 <p>GitHub Copilot を最初に立ち上げて以来、基礎となる Codex モデルをアップグレードすることで、コード提案の品質と応答性の向上に努めてきました。また、GitHub Copilot のコード提案をより安全にし、開発者が作業中に安全でないコーディングパターンを特定できるように、新しいセキュリティ脆弱性フィルタを開発しました。</p>
@@ -22,13 +22,13 @@ summary: "GitHub Copilotのコードサジェストの核となるCodexモデル
 <p>この作業は、GitHub Copilotを使用する開発者が、より正確でより反応の良いコード提案により、以前より速くコーディングできるようになったことを意味します。</p>
 <p><strong>以下は、これを実現するために行った主な技術的改善点です。</strong></p>
 <ul>
-<li><strong>アップグレードされたAI Codexモデル</strong>。GitHub Copilotを新しいOpenAI Codexモデルにアップグレードし、コード合成の結果をより良いものにしました。</p>
+<li><strong>アップグレードされたAI Codexモデル</strong>: GitHub Copilotを新しいOpenAI Codexモデルにアップグレードし、コード合成の結果をより良いものにしました。</p>
 </li>
 <li>
-<p><strong>より良いコンテキストの理解</strong>。GitHub Copilotは、Fill-In-the-Middle（FIM）と呼ばれる新しいパラダイムによって改良されました。コードの接頭辞だけを考慮するのではなく、既知のコードの接尾辞も活用し、GitHub Copilot が埋められるようなギャップを残します。こうすることで、意図するコードと、それがプログラムの残りの部分とどのように整合させるべきかについて、より多くのコンテキストを得ることができるようになったのです。GitHub CopilotのFIMは常に高品質なコードサジェストを生成し、それを遅延なく提供するための様々な戦略を開発してきました。</p>
+<p><strong>より良いコンテキストの理解</strong>: GitHub Copilotは、Fill-In-the-Middle（FIM）と呼ばれる新しいパラダイムによって改良されました。コードの接頭辞だけを考慮するのではなく、既知のコードの接尾辞も活用し、GitHub Copilot が埋められるようなギャップを残します。こうすることで、意図するコードと、それがプログラムの残りの部分とどのように整合させるべきかについて、より多くのコンテキストを得ることができるようになったのです。GitHub CopilotのFIMは常に高品質なコードサジェストを生成し、それを遅延なく提供するための様々な戦略を開発してきました。</p>
 </li>
 <li>
-<p><strong>軽量なクライアントサイドモデル</strong>。VS CodeのGitHub Copilotエクステンションを更新し、コードサジェストの全体的な受け入れ率を向上させる軽量なクライアントサイドモデルを導入しました。そのため、GitHub Copilot では、ユーザーのコンテキストに関する基本情報 (たとえば、前回の提案が受け入れられたかどうか) を使用して、開発者のワークフローを混乱させるような不要な提案の頻度を減らすようにしました。その結果、不要な提案を4.5%削減し、GitHub Copilotを使用する開発者一人一人によりよく対応できるようになりました。さらに、2023年1月に出荷したこのクライアントサイドモデルの改良版では、コードの受け入れ率をさらに向上させることに成功しています。</p>
+<p><strong>軽量なクライアントサイドモデル</strong>: VS CodeのGitHub Copilotエクステンションを更新し、コードサジェストの全体的な受け入れ率を向上させる軽量なクライアントサイドモデルを導入しました。そのため、GitHub Copilot では、ユーザーのコンテキストに関する基本情報 (たとえば、前回の提案が受け入れられたかどうか) を使用して、開発者のワークフローを混乱させるような不要な提案の頻度を減らすようにしました。その結果、不要な提案を4.5%削減し、GitHub Copilotを使用する開発者一人一人によりよく対応できるようになりました。さらに、2023年1月に出荷したこのクライアントサイドモデルの改良版では、コードの受け入れ率をさらに向上させることに成功しています。</p>
 </li>
 </ul>
 <h2 id="filtering-out-security-vulnerabilities-with-a-new-ai-system">新しいAIシステムでセキュリティ脆弱性をフィルタリング<a href="#filtering-out-security-vulnerabilities-with-a-new-ai-system" class="heading-link pl-2 text-italic text-bold" aria-label="Filtering out security vulnerabilities with a new AI system"></a></h2>
@@ -41,7 +41,7 @@ summary: "GitHub Copilotのコードサジェストの核となるCodexモデル
 <p>従来、セキュリティ脆弱性検出ツールは、ビルド時やリリース時に、リポジトリ全体を対象とした静的コード解析ツールで採用されてきました。これには3つの本質的な理由があります。</p>
 <ul>
 <li>コードが完全な形であるため、スキャンツールはコードベースに対する完全なコンテキストを持ち、コードが脆弱であるかどうかを決定する可能性のある依存関係を追跡することができます。</li>
-<li>静的解析ツールは、コードが構文的に正しいと安全に仮定でき、言語コンパイラを活用してより高い精度を得ることができる。</li>
+<li>静的解析ツールは、コードが構文的に正しいと安全に仮定でき、言語コンパイラを活用してより高い精度を得ることができます。</li>
 <li>これらのフェーズには意味のある時間的制約がないため、静的解析ツールは脆弱性を検出するまでに時間がかかり、高速検出を目的としたものではありません。</li>
 </ul>
 <p>GitHub Copilotは、開発者がエディタから直接、高速かつ正確な脆弱性検出を実現するなど、魔法のようなフロー状態に到達することを可能にします。このフィルタリングの仕組みは、開発者がGitHub Copilotを使ってより安全なコードを構築するための最初の重要なステップとなります。そして、脆弱性のあるコードパターンとないコードパターンを区別するために、LLMの指導を続けていきます。コードの提案で脆弱性のあるパターンを発見した場合は、<a href="mailto:copilot-safety@github.com">copilot-safety</a>@github.com に報告して、GitHub Copilot の改善に協力してください。</p>
