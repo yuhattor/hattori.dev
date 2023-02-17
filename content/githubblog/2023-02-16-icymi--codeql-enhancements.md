@@ -1,5 +1,5 @@
 ---
-title: "ICYMI：CodeQLの機能強化"
+title: "見逃した人向けに: CodeQLの機能強化"
 subtitle: "CodeQLのユーザーエクスペリエンスの向上と、新しい言語のスキャン、新しいタイプのCWEの検出、アプリケーションのより深い分析を可能にする機能強化について説明します。"
 englishsubtitle: "Learn about CodeQL's improved user experience and enhancements that let you scan new languages, detect new types of CWEs, and perform deeper analyses of your applications."
 englishtitle: "ICYMI: CodeQL enhancements"
@@ -10,10 +10,10 @@ description: " Over the last year, GitHub has brought a number of enhancements t
 coverimage: "https://github.blog/wp-content/uploads/2022/08/Security-Product@2x.png?resize=1600%2C850"
 category: "Security,code scanning,CodeQL,SAST"
 englishsummary: "  GitHub has made a number of enhancements to CodeQL, including support for scanning Ruby codebases and the ability to scan mobile applications, to help developers secure their code without disrupting their workflow."
-summary: "  GitHubは、Rubyコードベースのスキャンやモバイルアプリケーションのスキャン機能など、CodeQLに多くの機能強化を行い、開発者がワークフローを中断することなくコードを保護できるよう支援します。"
+summary: "GitHubは、Rubyコードベースのスキャンやモバイルアプリケーションのスキャン機能など、CodeQLに多くの機能強化を行い、開発者がワークフローを中断することなくコードを保護できるよう支援しています。"
 ---
 
-<p>昨年、GitHubはコードスキャンを支えるセマンティック解析エンジンである<a href="https://codeql.github.com/docs/codeql-overview/">CodeQLに</a>多くの機能拡張を行いました。新しい言語のスキャン、新しいタイプのCWEの検出、アプリケーションのより深い分析、そしてユーザーエクスペリエンスの向上が可能になりました。CodeQLの主な強化点を確認し、お客様の環境でどのように活用できるかを学びましょう。</p>
+<p>昨年、GitHubはコードスキャンを支えるセマンティック解析エンジンである<a href="https://codeql.github.com/docs/codeql-overview/">CodeQL</a>に多くの機能拡張を行いました。新しい言語のスキャン、新しいタイプのCWEの検出、アプリケーションのより深い分析、そしてユーザーエクスペリエンスの向上が可能になりました。CodeQLの主な強化点を確認し、お客様の環境でどのように活用できるかを学びましょう。</p>
 <h2 id="test-new-ecosystems">新しいエコシステムのテスト<a href="#test-new-ecosystems" class="heading-link pl-2 text-italic text-bold" aria-label="Test new ecosystems"></a></h2>
 <p>Rubyのコードベースのスキャンを試したことはありますか？私たちは、GitHub Universe 2022でCodeQLの<a href="https://github.blog/changelog/2022-11-09-codeql-code-scanning-launches-ruby-analysis-support-in-ga/">Rubyサポートの一般提供を</a>発表しました。デフォルトクエリの数を2倍にし、Ruby関連のOWASPカテゴリすべてをすぐにカバーできるようにし、パフォーマンスを最適化して90%のベータユーザーが5分以内にテストを提供できるようにするなど、ベータ版から多くの改良を加えています。現在までに、Ruby コードベースをスキャンしたユーザは 4,000 件以上の警告を修正し、平均して 1 日に約 5,000 件の Ruby 分析が実行されています。</p>
 <figure class="gh-full-blockquote mx-0 pl-6 mt-6 mt-md-7 mb-7 mb-md-8"><blockquote><p>Ruby は、進化するニーズに合わせて柔軟なアプリケーションを構築できるため、長年にわたって当社の SDLC に不可欠な要素となっています。Rubyのコードベースをスキャンし、脆弱性の特定と修正をすべてGitHub上で行うことができるため、当社の開発者はワークフローを中断することなくコードの安全性を確保することができます。</p></blockquote><figcaption class="text-mono color-fg-muted f5-mktg mt-3">- Matt McQuillan / エンジニアリング・サービス・ディレクター / Hashicorp</figcaption></figure>
