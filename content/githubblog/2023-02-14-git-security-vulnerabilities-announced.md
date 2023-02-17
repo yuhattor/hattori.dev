@@ -10,7 +10,7 @@ description: " Today, the Git project released new versions to address a pair of
 coverimage: "https://github.blog/wp-content/uploads/2022/01/Security-Open-Source-Product.png?resize=1200%2C630"
 category: "Open Source,Security,Git"
 englishsummary: " ymbolic link, allowing the patch to write a file outside the working copy.  The Git project released new versions to address two security vulnerabilities, CVE-2023-22490 and CVE-2023-23946, which affect versions"
-summary: "ymbolic link を使用し、パッチが作業コピーの外部にファイルを書き込むことを可能にします。  Gitプロジェクトは、2つのセキュリティ脆弱性、CVE-2023-22490とCVE-2023-23946に対応する新しいバージョンをリリースし、その影響はバージョン"
+summary: ""
 ---
 
 <p>本日、Git プロジェクトは、バージョン 2.39.1 以降に存在するセキュリティ脆弱性<a href="https://github.com/git/git/security/advisories/GHSA-gw92-x3fm-3g3q">(CVE-2023-22490</a>および<a href="https://github.com/git/git/security/advisories/GHSA-r87m-v37r-cwfh">CVE-2023-23946</a>) に対応した新バージョンを<a href="https://lore.kernel.org/git/xmqqr0us5dio.fsf@gitster.g/T/#u">リリース</a>しました。それぞれ、Gitのローカルクローンの最適化、および<code>git applyに</code>影響を及ぼします。</p>
