@@ -41,6 +41,6 @@ summary: "  GitHubは、Rubyコードベースのスキャンやモバイルア�
 <p>これらの新機能や統合により、開発者は最初から安全なコードを構築することが容易になり、セキュリティ研究者は問題になる前に脆弱性を発見することができるようになりました。</p>
 <h3 id="get-started-with-codeql">CodeQLを始める<a href="#get-started-with-codeql" class="heading-link pl-2 text-italic text-bold" aria-label="Get started with CodeQL"></a></h3>
 <p>CodeQLとコードスキャンをリポジトリで始めたい場合は、新しい<a href="https://github.blog/2023-01-09-default-setup-a-new-way-to-enable-github-code-scanning/">デフォルトのセットアップオプション</a>で簡単に有効にすることができます。いつものように、CodeQLはオープンソースリポジトリで無料で使用することができます。プライベートリポジトリでCodeQLを活用したい場合は、GitHub EnterpriseサブスクリプションにGitHub Advanced Securityを追加することが可能です。詳しくは<a href="https://github.com/enterprise/contact?ref_page=/security&#038;ref_cta=Contact%20Sales&#038;ref_loc=security%20platform%20page">営業にお問い合わせ</a>ください。</p>
-<p>私たちは常に製品を改善する方法を探していますので、<a href="https://github.com/github/codeql/blob/main/CONTRIBUTING.md">このレポに </a>コメントを書き込んで、あなたやコミュニティのためにCodeQLを改善する手助けをしてください。</p>
+<p>私たちは常に製品を改善する方法を探していますので、<a href="https://github.com/github/codeql/blob/main/CONTRIBUTING.md">このリポジトリ</a>にコメントを書き込んで、あなたやコミュニティのためにCodeQLを改善する手助けをしてください。</p>
 
 
