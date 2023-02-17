@@ -1,5 +1,5 @@
 ---
-title: "Gitのセキュリティ脆弱性を発表"
+title: "Gitのセキュリティ脆弱性に関する発表"
 subtitle: "特に、信頼できないパッチやリポジトリに対して `git apply` や `git clone` を使っている場合は、最新のバージョンにアップグレードすることが推奨されます。"
 englishsubtitle: "Git users are encouraged to upgrade to the latest version, especially if they use `git apply` or `git clone` against untrusted patches or repositories."
 englishtitle: "Git security vulnerabilities announced"
