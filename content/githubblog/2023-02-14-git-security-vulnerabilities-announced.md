@@ -13,9 +13,9 @@ englishsummary: " ymbolic link, allowing the patch to write a file outside the w
 summary: ""
 ---
 
-<p>本日、Git プロジェクトは、バージョン 2.39.1 以降に存在するセキュリティ脆弱性<a href="https://github.com/git/git/security/advisories/GHSA-gw92-x3fm-3g3q">(CVE-2023-22490</a>および<a href="https://github.com/git/git/security/advisories/GHSA-r87m-v37r-cwfh">CVE-2023-23946</a>) に対応した新バージョンを<a href="https://lore.kernel.org/git/xmqqr0us5dio.fsf@gitster.g/T/#u">リリース</a>しました。それぞれ、Gitのローカルクローンの最適化、および<code>git applyに</code>影響を及ぼします。</p>
+<p>本日、Git プロジェクトは、バージョン 2.39.1 以降に存在するセキュリティ脆弱性(<a href="https://github.com/git/git/security/advisories/GHSA-gw92-x3fm-3g3q">CVE-2023-22490</a>および<a href="https://github.com/git/git/security/advisories/GHSA-r87m-v37r-cwfh">CVE-2023-23946</a>) に対応した新バージョンを<a href="https://lore.kernel.org/git/xmqqr0us5dio.fsf@gitster.g/T/#u">リリース</a>しました。それぞれ、Gitのローカルクローンの最適化、および<code>git apply</code>に影響を及ぼします。</p>
 <h2 id="cve-2023-22490">CVE-2023-22490<a href="#cve-2023-22490" class="heading-link pl-2 text-italic text-bold" aria-label="CVE-2023-22490"></a></h2>
-<p>リポジトリをクローンするとき、Git はクローンの URL スキームに適した<a href="https://git-scm.com/docs/gitcore-tutorial#_merging_external_work">トランスポート機構を</a>選択して使用します。しかし、ローカルリポジトリをクローンする場合、Git は代わりに別の<a href="https://git-scm.com/docs/git-clone/2.39.1#Documentation/git-clone.txt---local">ローカルクローン</a>最適化を使い、コピー元からコピー先まで直接ファイルをコピーします。</p>
+<p>リポジトリをクローンするとき、Git はクローンの URL スキームに適した<a href="https://git-scm.com/docs/gitcore-tutorial#_merging_external_work">トランスポート機構</a>を選択して使用します。しかし、ローカルリポジトリをクローンする場合、Git は代わりに別の<a href="https://git-scm.com/docs/git-clone/2.39.1#Documentation/git-clone.txt---local">ローカルクローン</a>最適化を使い、コピー元からコピー先まで直接ファイルをコピーします。</p>
 <p>特別に作られたリポジトリは、ローカルでないトランスポートを使うときにローカルクローン最適化を使うようにGitをだますことができます。Gitは、<code>$GIT_DIR/objects</code>ディレクトリにシンボリックリンクが含まれるリポジトリからのクローンを中断します。しかし、トップレベルの<code>$GIT_DIR/objects</code>ディレクトリは、それ自体がシンボリックリンクである可能性があります。</p>
 <p>この2つを組み合わせることで、被害者のファイルシステムから既知のパスに基づいた任意のファイルをクローンの作業コピーに含めることができ、<a href="https://github.com/git/git/security/advisories/GHSA-3wp6-j8xr-qw85">CVE-2022-39253</a> と同様の方法でデータを流出させることが可能です。</p>
 <p><a href="https://github.com/git/git/security/advisories/GHSA-gw92-x3fm-3g3q">[ソース］</a></p>
@@ -33,9 +33,9 @@ summary: ""
 <p>パッチを適用しても安全かどうかわからない場合は、<code>git apply --stat</code> でパッチの内容を調べます。シンボリックリンクとその先にあるファイルを作成するようなパッチを適用するのは避けましょう。</p>
 <p>これらの攻撃からユーザーを守るために、GitHubは積極的な措置をとっています。具体的には、以下の通りです。</p>
 <ul>
-<li><a href="https://github.com/git/git/security/advisories/GHSA-gw92-x3fm-3g3q">CVE-2023-22490</a>および<a href="https://github.com/git/git/security/advisories/GHSA-r87m-v37r-cwfh">CVE-2023-23946において</a>、GitHub.comが攻撃のベクトルとして使用されることを防ぐための緩和策を実施しました。</li>
+<li><a href="https://github.com/git/git/security/advisories/GHSA-gw92-x3fm-3g3q">CVE-2023-22490</a>および<a href="https://github.com/git/git/security/advisories/GHSA-r87m-v37r-cwfh">CVE-2023-23946</a>において、GitHub.com が攻撃のベクトルとして使用されることを防ぐための緩和策を実施しました。</li>
 <li>本脆弱性の悪用を防止するGitHub Desktopのリリースを本日2月14日以降に予定しています。</li>
-<li>GitHub CodespacesとGitHub Actionsに、Gitのバージョンをアップするためのアップデートを予定。</li>
+<li>GitHub CodespacesとGitHub Actionsに、Gitのバージョンをアップするためのアップデートを予定しています。</li>
 <li>GitHub Enterprise Serverに、パッチを適用したバージョンのGitのアップデートを予定しています。</li>
 </ul>
 <p><a href="https://github.com/git/git/security/advisories/GHSA-gw92-x3fm-3g3q">CVE-2023-22490</a>のクレジットは yvvdwf に、<a href="https://github.com/git/git/security/advisories/GHSA-r87m-v37r-cwfh">CVE-2023-23946</a>のクレジットは GitLab の Joern Schneeweisz に帰属します。この修正は、GitHub の Taylor Blau 氏と GitLab の Patrick Steinhardt 氏がそれぞれ行い、さらに git-security メンバがフィードバックとレビューを行っています。</p>
