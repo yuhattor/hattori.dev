@@ -1,5 +1,5 @@
 ---
-title: "GitHubスポンサーの領収書を別途用意する。"
+title: "GitHub Sponsors 別途のレシート"
 englishtitle: "Separate receipts for GitHub Sponsors"
 date: "2023-02-17"
 cardurl: "https://github.blog/changelog/2023-02-17-separate-receipts-for-github-sponsors"
