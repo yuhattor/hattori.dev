@@ -1,5 +1,5 @@
 ---
-title: "組織ごとのカスタムリポジトリの役割の増加"
+title: "組織ごとのカスタムリポジトリのロールを増やしました"
 englishtitle: "Increased custom repository roles per organization"
 date: "2023-02-17"
 cardurl: "https://github.blog/changelog/2023-02-17-increased-custom-repository-roles-per-organization"
