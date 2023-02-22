@@ -1,6 +1,6 @@
 ---
 title: "ソースコードアーカイブとハッシュの今後の安定性に関する最新情報"
-subtitle: "1月30日に何が起こったのか、サプライズを防ぐためにどのような対策をとっているのか、そして今後の変更にどのように対処していくのかをご紹介します。"
+subtitle: "1月30日に何が起こったのか、問題を防ぐためにどのような対策をとっているのか、そして今後の変更にどのように対処していくのかをご紹介します。"
 englishsubtitle: "A look at what happened on January 30, what measures we’re putting in place to prevent surprises, and how we’ll handle future changes."
 englishtitle: "Update on the future stability of source code archives and hashes"
 date: "2023-02-21"
