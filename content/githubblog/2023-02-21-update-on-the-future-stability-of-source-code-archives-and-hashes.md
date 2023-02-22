@@ -10,7 +10,7 @@ description: " On January 30, 2023, GitHub deployed a change which slightly alte
 coverimage: "https://github.blog/wp-content/uploads/2022/06/Engineering-Product@2x.png?resize=1600%2C850"
 category: "Product,Git"
 englishsummary: "  GitHub deployed a change which caused unexpected problems for some communities and was subsequently rolled back, and they are now implementing measures to prevent similar surprises in the future."
-summary: "  GitHubは、一部のコミュニティで予期せぬ問題を引き起こす変更を展開し、その後ロールバックされましたが、今後同様のサプライズを防止するための対策を実施中とのことです。"
+summary: "GitHubは、一部のコミュニティで予期せぬ問題を引き起こす変更を展開し、その後ロールバックされましたが、今後同様の問題を防止するための対策を実施中です"
 ---
 
 <p>2023年1月30日、GitHubはソースコードのダウンロード時の圧縮設定を若干変更する変更を導入しました。この変更は、多くのコミュニティにとって予期せぬ結果となり、その報告を受けた後、私たちはこの変更を元に戻しました。何が起こったのか、予期せぬ事態を防ぐためにどのような対策をとっているのか、そして今後の変更にどのように対処するのかを説明したいと思います。</p>
