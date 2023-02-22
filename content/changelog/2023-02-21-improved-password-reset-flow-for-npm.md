@@ -11,6 +11,6 @@ summary: ""
 ---
 
 <p>npmパスワードリセットのフローを合理化し、npmアカウントで失われたパスワードのリセットプロセスを簡素化し、安全にしました。</p>
-<p>強力なパスワードの作成についての詳細は、<a href="https://docs.npmjs.com/creating-a-strong-password">「強力なパスワードの作成</a>」を参照してください。</p>
+<p>強力なパスワードの作成についての詳細は、「<a href="https://docs.npmjs.com/creating-a-strong-password">強力なパスワードの作成</a>」を参照してください。</p>
 
 
