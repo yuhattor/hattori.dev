@@ -1,5 +1,5 @@
 ---
-title: "GitHubページ。非Actionsビルドにおけるシンボリックリンクの非推奨"
+title: "GitHubページ: 非 Actions ビルドにおけるシンボリックリンクが非推奨になりました"
 englishtitle: "GitHub Pages: Deprecating symlinks in non-Actions builds"
 date: "2023-02-21"
 cardurl: "https://github.blog/changelog/2023-02-21-github-pages-deprecating-symlinks-in-non-actions-builds"
