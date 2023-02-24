@@ -1,5 +1,5 @@
 ---
-title: "望ましい2FAの方法と設定の改善"
+title: "二要素認証の望ましい方法と設定の改善"
 englishtitle: "Preferred 2FA methods and settings improvements"
 date: "2023-02-22"
 cardurl: "https://github.blog/changelog/2023-02-22-preferred-2fa-methods-and-settings-improvements"
