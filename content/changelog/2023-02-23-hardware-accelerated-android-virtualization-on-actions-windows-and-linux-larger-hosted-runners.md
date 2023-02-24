@@ -10,7 +10,7 @@ englishsummary: ""
 summary: ""
 ---
 
-<p>2023年2月23日より、GitHubがホストする<a href="https://docs.github.com/en/actions/using-github-hosted-runners/using-larger-runners">大規模Linuxランナーの</a>Actionsユーザーは、Androidのテストにハードウェアアクセラレーションを利用することができるようになる予定です。ハードウェアアクセラレーションを利用した4コアマシンでのテストは、ハードウェアアクセラレーションを利用しない場合に比べて約2〜3倍、MacOSを利用した場合に比べて約2倍高速になります。</p>
+<p>2023年2月23日より、GitHubがホストする<a href="https://docs.github.com/en/actions/using-github-hosted-runners/using-larger-runners">大規模Linuxランナー</a>のActionsユーザーは、Androidのテストにハードウェアアクセラレーションを利用することができるようになる予定です。ハードウェアアクセラレーションを利用した4コアマシンでのテストは、ハードウェアアクセラレーションを利用しない場合に比べて約2〜3倍、MacOSを利用した場合に比べて約2倍高速になります。</p>
 <p>Linuxでこれを利用するには、ActionsユーザがrunnerユーザをKVMユーザグループに追加する必要があります。</p>
 <pre><code>      - name: KVMグループのパーマネントを有効にする
         を実行します。|
