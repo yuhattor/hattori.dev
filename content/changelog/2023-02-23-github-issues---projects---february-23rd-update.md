@@ -22,7 +22,7 @@ summary: "本日のChangelogでは、ワークフロー、ロードマップ、A
 <h2 id="&#x2194;-add-cross-organization-issues-and-pull-requests-to-projects" id="&#x2194;-add-cross-organization-issues-and-pull-requests-to-projects" ><img src="https://s.w.org/images/core/emoji/14.0.0/72x72/2194.png" alt="↔" class="wp-smiley" style="height: 1em; max-height: 1em;" /> プロジェクトに組織横断的な課題、プルリクエストを追加<a href="#&#x2194;-add-cross-organization-issues-and-pull-requests-to-projects" class="heading-link pl-2 text-italic text-bold" aria-label="&#x2194; Add cross-organization issues and pull requests to Projects"></a></h2>
 <p>以前は、プロジェクトに直接URLを貼り付ける必要がありましたが、異なる組織間でプロジェクトを使用することが容易になりました。この改善により、次のことが可能になります。</p>
 <ul>
-<li>異なる組織内の課題やプルリクエストをオムニバーから直接検索することができます。組織内の検索を開始するには、<code>#の</code>後に組織名と<code>/を</code>入力します。 </li>
+<li>異なる組織内の課題やプルリクエストをオムニバーから直接検索することができます。組織内の検索を開始するには、<code>#</code>の後に組織名と<code>/</code>を入力します。 </li>
 <li>既存の GraphQL API エンドポイントである<code>addProjectV2ItemById</code> を使ってアイテムを追加することができ、プロジェクトに追加する際に異なる組織からの Issue や Pull Request を受け入れるようになりました。 </li>
 </ul>
 <p><img decoding="async" src="https://i0.wp.com/user-images.githubusercontent.com/7584089/220968252-ab56cf88-b42f-4d14-a44b-b84e645d6262.png?ssl=1" alt="a user searches for issues across organizations using the syntax org-name/repo-name" data-recalc-dims="1"></p>
