@@ -1,5 +1,5 @@
 ---
-title: "GitHubフィードのトレンドリポジトリ"
+title: "GitHubフィードにおけるトレンドリポジトリ"
 englishtitle: "Trending Repositories on GitHub Feed"
 date: "2023-02-22"
 cardurl: "https://github.blog/changelog/2023-02-22-trending-repositories-on-github-feed"
