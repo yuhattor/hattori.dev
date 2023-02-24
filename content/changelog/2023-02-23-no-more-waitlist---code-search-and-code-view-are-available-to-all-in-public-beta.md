@@ -1,5 +1,5 @@
 ---
-title: "コード検索とコードビューは、パブリックベータ版で誰でも利用可能です。"
+title: "コード検索とコードビューは、パブリックベータ版で誰でも利用可能です"
 englishtitle: "No more waitlist – code search and code view are available to all in public beta"
 date: "2023-02-23"
 cardurl: "https://github.blog/changelog/2023-02-23-no-more-waitlist-code-search-and-code-view-are-available-to-all-in-public-beta"
