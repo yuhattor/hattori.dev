@@ -1,5 +1,5 @@
 ---
-title: "Actions WindowsとLinuxの大規模なホストランナー上でハードウェアアクセラレーションによるAndroidの仮想化"
+title: "WindowsとLinux の Larger Hosted Runner におけるハードウェアアクセラレーションをしたAndroidの仮想化"
 englishtitle: "Hardware accelerated Android virtualization on Actions Windows and Linux larger hosted runners"
 date: "2023-02-23"
 cardurl: "https://github.blog/changelog/2023-02-23-hardware-accelerated-android-virtualization-on-actions-windows-and-linux-larger-hosted-runners"
