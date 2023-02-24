@@ -12,6 +12,6 @@ summary: "  GitHubのフィードでトレンドのリポジトリを見るこ�
 
 <p>GitHub全体のトレンドリポジトリをフィードで表示できるようになり、興味のあるリポジトリをより多く発見できるようになりました。</p>
 <p><img decoding="async" src="https://i0.wp.com/user-images.githubusercontent.com/8809849/220434297-9c506d46-692c-4a21-9ddf-15769e12a981.png?ssl=1" alt="Trending repos" data-recalc-dims="1"></p>
-<p>ご質問やご意見は、<a href="https://github.com/community/community/discussions/categories/feed">コミュニティを</a>ご覧ください。</p>
+<p>ご質問やご意見は、<a href="https://github.com/community/community/discussions/categories/feed">コミュニティ</a>をご覧ください。</p>
 
 
