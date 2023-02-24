@@ -4,7 +4,7 @@ englishtitle: "Hardware accelerated Android virtualization on Actions Windows an
 date: "2023-02-23"
 cardurl: "https://github.blog/changelog/2023-02-23-hardware-accelerated-android-virtualization-on-actions-windows-and-linux-larger-hosted-runners"
 author: "Kevin Duck"
-description: " Starting on February 23, 2023, Actions users of GitHub-hosted larger Linux runners will be able to make use of hardware acceleration for Android testing. Testing on a 4-core machine with hardware acceleration is around 2-3 times faster than not using hardware acceleration and around 2 times faster than using MacOS.  To make use of this on Linux, Actions users will need to add the runner user to the KVM user group  - name: Enable KVM group perms  run: |  echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules  sudo udevadm control --reload-rules  sudo udevadm trigger --name-match=kvm  (Thank you gsauthof for the feedback on this!)  You will then be able to make use of hardware acceleration when making use of Android emulator actions such as reactivecircus/android-emulator-runner .  "
+description: ""
 coverimage: ""
 englishsummary: ""
 summary: ""
