@@ -69,55 +69,56 @@ summary: "は、そのようなビジネス・ラインにも対応していま�
 <h3 id="reviewing-environment-changes-using-github-actions-environments">GitHub Actions の環境を使った環境変更のレビュー<a href="#reviewing-environment-changes-using-github-actions-environments" class="heading-link pl-2 text-italic text-bold" aria-label="Reviewing environment changes using GitHub Actions environments"></a></h3>
 <p><a href="https://www.hashicorp.com/blog/automate-infrastructure-provisioning-workflows-with-the-github-action-for-terraform">HashiCorpの</a>例をもとに、もうひとつの例を考えてみましょう。GitHub Actions には、environment (<a href="https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment">環境</a>) という概念が組み込まれています。この環境は、目標とするデプロイ先への論理的なマッピングだと考えてください。保護ルールを環境と関連づけることで、デプロイ前に承認が得られるようになります。</p>
 <p>では、GitHub Action のワークフローを作りましょう。2 つの環境 (計画用とデプロイ用の 2 つ) を用意します。</p>
-<pre><code>name: 'Review and Deploy to EnvironmentA' (レビューと環境 A へのデプロイ)
-を実行します。[push] (プッシュ)
+\ ```
+name: 'Review and Deploy to EnvironmentA'
+on: [push]
 
-ジョブ
-  レビュー
-    name: 'Terraform Plan' (テラフォームプラン)
-    環境: 環境_a_plan
-    ランズオン: ubuntu-latest
+jobs:
+  review:
+    name: 'Terraform Plan'
+    environment: environment_a_plan
+    runs-on: ubuntu-latest
 
-    ステップ
-      - name: 'チェックアウト'
-        用途: アクション/チェックアウト@v2
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v2
 
-      - name: 'Terraform Setup' (テラフォームのセットアップ)
+      - name: 'Terraform Setup'
         uses: hashicorp/setup-terraform@v2
-        を使っています。
-          cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }} とします。
+        with:
+          cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
       - name: 'Terraform Init'
-        run: テラフォームの初期化
+        run: terraform init
 
 
-      - name: 'Terraform Format' (テラフォームフォーマット)
-        run: テラフォーム fmt -check
+      - name: 'Terraform Format'
+        run: terraform fmt -check
 
-      - name: 'Terraform Plan' (テラフォームプラン)
-        run: テラフォーム計画 -input=false
+      - name: 'Terraform Plan'
+        run: terraform plan -input=false
 
-  をデプロイします。
-    名前: 'Terraform'
-    環境: environment_a_deploy
-    実行環境: ubuntu-latest
-    が必要です。[レビュー].
+  deploy:
+    name: 'Terraform'
+    environment: environment_a_deploy
+    runs-on: ubuntu-latest
+    needs: [review]
 
-    ステップ
-      - name: 'チェックアウト'
-        用途: アクション/チェックアウト@v2
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v2
 
-      - name: 'Terraform Setup' (テラフォームのセットアップ)
+      - name: 'Terraform Setup'
         uses: hashicorp/setup-terraform@v2
-        を使っています。
-          cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }} とします。
+        with:
+          cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
       - name: 'Terraform Init'
-        run: テラフォームの初期化
+        run: terraform init
 
-      - name: 'Terraform Plan' (テラフォームプラン)
-        run: Terraform apply -auto-approve -input=false
-</code></pre>
+      - name: 'Terraform Plan'
+        run: terraform apply -auto-approve -input=false
+\```
 <p>ワークフローを実行する前に、<a href="https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment#deleting-an-environment">GitHubのリポジトリに環境を作成</a>し、保護ルールを<code>environment_a_deployに</code>関連付けることができます。つまり、本番デプロイの前にレビューが必要です。</p>
 <h2 id="learn-more">もっと詳しく<a href="#learn-more" class="heading-link pl-2 text-italic text-bold" aria-label="Learn more"></a></h2>
 <p><a href="https://www.hashicorp.com/resources/a-practitioner-s-guide-to-using-hashicorp-terraform-cloud-with-github">HashiCorpのTerraform CloudをGitHubで使うための実践的なガイド</a>で、始めるにあたっての一般的な推奨事項を確認してください。また、GitHubがどのように<a href="https://www.hashicorp.com/case-studies/github">Terraformを利用してミッションクリティカルな機能をより早く、より低コストで</a>提供しているかをご覧ください。</p>
