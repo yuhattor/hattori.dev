@@ -1,5 +1,5 @@
 ---
-title: "GitHub Codespacesでできることを知らなかった10のこと"
+title: "意外と知らない、GitHub Codespacesでできる10のこと！"
 subtitle: "GitHub Codespacesの可能性を最大限に引き出す10のヒントとトリックをご紹介します。AIイメージの生成から、セルフガイドのコーディングワークショップの運営まで、このパワフルなツールを使ってソフトウェア開発のワークフローを最適化する方法を発見してください。"
 englishsubtitle: "Unlock the full potential of GitHub Codespaces with these 10 tips and tricks! From generating AI images to running self-guided coding workshops, discover how to optimize your software development workflow with this powerful tool."
 englishtitle: "10 things you didn’t know you could do with GitHub Codespaces"
@@ -10,7 +10,7 @@ description: " Ever feel like you’re coding on a plane mid-flight? When I firs
 coverimage: "https://github.blog/wp-content/uploads/2023/02/221670941-4fc6bc8d-d6dc-4701-8cd3-92d4d8d78908.png?resize=1600%2C850"
 category: "Engineering,Product,Codespaces"
 englishsummary: "  GitHub Codespaces provides a powerful Integrated Development Environment (IDE) on a virtual machine, allowing developers with less powerful machines to code without draining their local resources, and can be used for a variety of tasks such as generating AI images."
-summary: "  GitHub Codespacesは、仮想マシン上に強力な統合開発環境（IDE）を提供し、性能の低いマシンを持つ開発者がローカルリソースを消耗せずにコーディングできるようにし、AI画像の生成など様々なタスクに利用することが可能です。"
+summary: "GitHub Codespacesは、仮想マシン上に強力な統合開発環境（IDE）を提供し、性能の低いマシンを持つ開発者がローカルリソースを消耗せずにコーディングできるようにし、AI画像の生成など様々なタスクに利用することが可能です。"
 ---
 
 <p>飛行中の飛行機でコーディングしているような気分になったことはありませんか？私が初めてコードを学んだ5年ほど前、私のノートパソコンは苦痛を感じるほど遅かったのですが、もっと良いものを買う余裕はありませんでした。そのため、私はコードを実行するために<a href="https://jsbin.com/">jsbin.com</a>のようなブラウザベースの IDE に頼っていました。</p>
