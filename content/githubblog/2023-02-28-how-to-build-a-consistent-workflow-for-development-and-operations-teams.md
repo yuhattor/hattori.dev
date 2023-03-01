@@ -10,7 +10,7 @@ description: " In GitHub’s recent 2022 State of the Octoverse report , HashiCo
 coverimage: "https://github.blog/wp-content/uploads/2022/12/1200x640-1.png?resize=1200%2C640"
 category: "Engineering,Enterprise,Product,DevOps,GitOps,HCL,Infrastructure as Code"
 englishsummary: "ers to those lines of business.  HashiCorp Configuration Language (HCL)'s growth shows the importance of bringing together the worlds of infrastructure, operations, and developers, which is the goal of DevOps, but many enterprises still remain sil"
-summary: "は、そのようなビジネス・ラインにも対応しています。  HashiCorp Configuration Language (HCL) の成長は、DevOps の目標であるインフラ、オペレーション、開発者の世界を一つにすることの重要性を示していますが、多くの企業ではまだ沈黙が続いています。"
+summary: "HashiCorp Configuration Language (HCL) の成長は、DevOps の目標であるインフラ、オペレーション、開発者の世界を一つにすることの重要性を示していますが、多くの企業ではまだ沈黙が続いています。"
 ---
 
 <p>GitHubが最近発表した「<a href="https://octoverse.github.com/">2022 State of the Octoverse」レポートにおいて</a>、HashiCorp Configuration Language（HCL）がGitHubで<a href="https://octoverse.github.com/2022/top-programming-languages">最も成長したプログラミング言語と</a>なりました。HashiCorpは、クラウドコンピューティングのためのInfrastructure as Code (IaC) 自動化のリーディングプロバイダーです。HCLは、<a href="https://www.terraform.io/">Terraformや</a> <a href="https://www.vaultproject.io/">Vaultなどの</a>ツールと共に使用されるHashiCorpの設定言語で、マルチクラウドやオンプレミス環境において、人間が読みやすい設定ファイルでIaC機能を提供することができます。</p>
