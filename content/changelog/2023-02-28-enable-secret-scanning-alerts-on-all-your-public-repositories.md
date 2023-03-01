@@ -7,7 +7,7 @@ author: "Kevin Duck"
 description: " You can now enable secret scanning alerts on all your personal public repositories from your account's code security and analysis settings .  As before, you can also enable secret scanning alerts on any individual public repository or on all public repositories within an organization or cloud enterprise .  Secret scanning is free on public repositories, and available as part of GitHub Advanced Security on private repositories.  Read our blog post on how you can secure your public repositories, for free  Learn more about secret scanning in our documentation  "
 coverimage: ""
 englishsummary: "  You can now enable free secret scanning alerts on all your personal public repositories and on public repositories within an organization or cloud enterprise."
-summary: "  個人のパブリックリポジトリと、組織やクラウド企業内のパブリックリポジトリに対して、無料の秘密スキャン警告を有効にすることができるようになりました。"
+summary: "個人のパブリックリポジトリと、組織やクラウド企業内のパブリックリポジトリに対して、無料の秘密スキャン警告を有効にすることができるようになりました。"
 ---
 
 <p>アカウントの<a href="https://github.com/settings/security_analysis">コードセキュリティと解析の設定</a>から、すべての個人のパブリックリポジトリでシークレットスキャンアラートを有効にできるようになりました。</p>
