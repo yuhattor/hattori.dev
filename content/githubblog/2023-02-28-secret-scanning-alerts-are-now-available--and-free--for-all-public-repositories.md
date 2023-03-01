@@ -1,5 +1,5 @@
 ---
-title: "すべての公開リポジトリでシークレットスキャンアラートを利用可能に（しかも無料"
+title: "すべての公開リポジトリでシークレットスキャンアラートが無料で利用可能になりました！"
 subtitle: "シークレットスキャンアラートが、すべての公開リポジトリで一般に利用できるようになりました。管理者はワンクリックでアラート体験をオンにできるようになりました。"
 englishsubtitle: "Secret scanning alerts are now generally available for all public repositories. Admins can now turn on the alert experience with one click."
 englishtitle: "Secret scanning alerts are now available (and free) for all public repositories"
@@ -9,8 +9,8 @@ author: "Zain Malik"
 description: " In December, we announced the public beta for free secret scanning alerts across public repositories . Since its release, 70 thousand public repositories have turned on secret scanning alerts, helping users like you to triage thousands of leaked secrets.  As of today, GitHub secret scanning’s alert experience is generally available and free for all public repositories. You can enable secret scanning alerts across all the repositories you own to notify you of leaked secrets across your full repository history including code, issues, description, and comments.  GitHub secret scanning works with 100+ service providers in the GitHub Partner Program. In addition to alerting users, we will continue to notify our partners when one of their secrets is leaked. But with secret scanning alerts enabled, you’ll now also receive alerts for secrets where it’s not possible to notify a partner–for example, if self-hosted keys are exposed–along with a full audit log of actions taken on the alert.  This empowers you with full visibility into your risk at scale. One example of this in practice is @rajbos , DevOps Consultant and Trainer, who enabled secret scanning on approximately 14 thousand repositories and discovered over one thousand secrets. Rob remarked, “My research proves the point to why everyone should have secret scanning enabled. I have researched 14 thousand public GitHub Action repo"
 coverimage: "https://github.blog/wp-content/uploads/2022/01/Security-Open-Source-Product.png?resize=1200%2C630"
 category: "Open Source,Security,Secret Scanning"
-englishsummary: "’s and have found over 1000 secrets that could have been used for malicious activities.”  GitHub secret scanning is now available for free for all public repositories, helping users to discover and triage thousands of leaked secrets."
-summary: "のもので、悪意のある活動に利用された可能性のある1000以上の秘密を発見しました。"  GitHubのシークレットスキャンは現在、すべての公開リポジトリを対象に無料で提供されており、ユーザーが数千件の流出シークレットを発見し、トリアージするのに役立っています。"
+englishsummary: ""
+summary: "GitHubのシークレットスキャンは現在、すべての公開リポジトリを対象に無料で提供されており、ユーザーが数千件の流出シークレットを発見し、トリアージするのに役立っています。"
 ---
 
 <p>12月、私たちは<a href="https://github.blog/2022-12-15-leaked-a-secret-check-your-github-alerts-for-free/">公開リポジトリ全体で無料の秘密スキャンアラートを提供するパブリックベータを</a>発表しました。リリース以来、7万ものパブリックリポジトリがシークレットスキャンアラートを有効にし、あなたのようなユーザーが何千もの流出した秘密をトリアージするのに役立っています。</p>
