@@ -69,7 +69,8 @@ summary: ""
 <h3 id="reviewing-environment-changes-using-github-actions-environments">GitHub Actions の環境を使った環境変更のレビュー<a href="#reviewing-environment-changes-using-github-actions-environments" class="heading-link pl-2 text-italic text-bold" aria-label="Reviewing environment changes using GitHub Actions environments"></a></h3>
 <p><a href="https://www.hashicorp.com/blog/automate-infrastructure-provisioning-workflows-with-the-github-action-for-terraform">HashiCorpの</a>例をもとに、もうひとつの例を考えてみましょう。GitHub Actions には、environment (<a href="https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment">環境</a>) という概念が組み込まれています。この環境は、目標とするデプロイ先への論理的なマッピングだと考えてください。保護ルールを環境と関連づけることで、デプロイ前に承認が得られるようになります。</p>
 <p>では、GitHub Action のワークフローを作りましょう。2 つの環境 (計画用とデプロイ用の 2 つ) を用意します。</p>
-\ ```
+
+```
 name: 'Review and Deploy to EnvironmentA'
 on: [push]
 
@@ -118,7 +119,8 @@ jobs:
 
       - name: 'Terraform Plan'
         run: terraform apply -auto-approve -input=false
-\```
+```
+
 <p>ワークフローを実行する前に、<a href="https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment#deleting-an-environment">GitHubのリポジトリに環境を作成</a>し、保護ルールを<code>environment_a_deployに</code>関連付けることができます。つまり、本番デプロイの前にレビューが必要です。</p>
 <h2 id="learn-more">もっと詳しく<a href="#learn-more" class="heading-link pl-2 text-italic text-bold" aria-label="Learn more"></a></h2>
 <p><a href="https://www.hashicorp.com/resources/a-practitioner-s-guide-to-using-hashicorp-terraform-cloud-with-github">HashiCorpのTerraform CloudをGitHubで使うための実践的なガイド</a>で、始めるにあたっての一般的な推奨事項を確認してください。また、GitHubがどのように<a href="https://www.hashicorp.com/case-studies/github">Terraformを利用してミッションクリティカルな機能をより早く、より低コストで</a>提供しているかをご覧ください。</p>
