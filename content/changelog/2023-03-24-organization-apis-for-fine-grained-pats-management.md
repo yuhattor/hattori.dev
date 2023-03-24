@@ -1,0 +1,22 @@
+---
+title: "きめ細かいPATs管理のための組織API"
+englishtitle: "Organization APIs for fine-grained PATs management"
+date: "2023-03-24"
+cardurl: "https://github.blog/changelog/2023-03-24-organization-apis-for-fine-grained-pats-management"
+author: "Kevin Duck"
+description: " Organization owners can now automate the approval and auditing of fine-grained personal access tokens (PATs) in their organization using a GitHub app. New APIs and webhook events allow a GitHub app to be notified of new PAT requests in an organization, review the request, and then approve or deny the PAT. They also provide a view of all approved fine-grained PATs for an organization, with the ability to revoke their authorization as well. These APIs and events are part of the ongoing fine-grained PAT public beta that launched last year .  Details included in the webhook event and API listings include the repositories and permissions requested, the expiration time of the token, and the user's explanation for what they plan to do with the PAT. The personal_access_token_request events are generated when a request is created, approved or denied by an administrator or application, or cancelled by the requesting user.  Only a GitHub app is able to call these APIs, either acting on its own or on behalf of a signed-in organization administrator.  The organization_personal_access_tokens permission is needed to manage the active tokens, while the organization_personal_access_token_requests permission enables the app to recieve webhooks about requests and call the request management APIs.  Organizations must have the personal access token approval flow enabled in order to manage these re"
+coverimage: "https://i0.wp.com/user-images.githubusercontent.com/1666363/227591227-7d5d739e-72ef-4990-bfdf-ee7cd9423c23.png?ssl=1"
+englishsummary: "uqests.  GitHub Apps now allow organization owners to automate the approval and auditing of fine-grained personal access tokens (PATs) in their organization with new APIs, webhook events, and permission settings."
+summary: "uqestsです。  GitHub Appsでは、新しいAPI、Webhookイベント、権限設定により、組織オーナーが組織内のきめ細かいパーソナルアクセストークン（PAT）の承認と監査を自動化できるようになりました。"
+---
+
+<p>組織オーナーは、GitHubアプリを使用して、組織内のきめ細かいパーソナルアクセストークン（PAT）の承認と監査を自動化できるようになりました。新しいAPIとWebhookイベントにより、GitHubアプリは組織内の新しいPATリクエストの通知を受け、リクエストをレビューし、PATを承認または拒否することができます。また、組織で承認されたすべてのきめ細かいPATのビューを提供し、その承認を取り消すことも可能です。これらのAPIとイベントは、<a href="https://github.blog/2022-10-18-introducing-fine-grained-personal-access-tokens-for-github/">昨年開始さ</a>れたファイングラファイドPATのパブリック・ベータ版の一部である。</p>
+<p><img decoding="async" src="https://i0.wp.com/user-images.githubusercontent.com/1666363/227591227-7d5d739e-72ef-4990-bfdf-ee7cd9423c23.png?ssl=1" alt="Mermaid diagram indicating how a request from a user triggers a webhook event to an app, who can then review the request and choose to approve it. Later, the application can review all approved PATs, and choose to revoke one, resulting in an email notification to the user who created the PAT." data-recalc-dims="1"></p>
+<p>WebhookイベントとAPIリストに含まれる詳細には、要求されたリポジトリと権限、トークンの有効期限、PATで何をする予定なのかのユーザーの説明が含まれています。<code>personal_access_token_request</code>イベントは、リクエストが作成されたとき、管理者やアプリケーションによって承認または拒否されたとき、またはリクエストしたユーザーによってキャンセルされたときに生成されます。</p>
+<p>これらの API を呼び出せるのは、GitHub アプリだけです。<br />
+アクティブなトークンを管理するには<code>organization_personal_access_tokens</code>権限が必要で、<code>organization_personal_access_token_requests</code>権限によってアプリがリクエストに関する Webhook を受信してリクエスト管理 API を呼び出すことができます。</p>
+<p>組織は、これらのリクエストを管理するために、パーソナルアクセストークンの承認フローを有効にする必要があります。そうでない場合は、細かいパーソナルアクセストークンが組織に対して自動的に承認されます（<code>personal_access_token_request: approved</code>イベントが生成されます）。</p>
+<p>これらのAPIの詳細については、<a href="https://docs.github.com/en/rest/orgs/orgs?apiVersion=2022-11-28#list-requests-to-access-organization-resources-with-fine-grained-personal-access-tokens">「List requests to access organization resources with fine-grained PATs</a>」および<a href="https://docs.github.com/en/webhooks-and-events/webhooks/webhook-events-and-payloads?actionType=approved#personal_access_token_request">「<code>personal_access_token_request</code>webhook event</a>」を参照してください。きめ細かいPATの詳細、および組織で有効にする方法については、<a href="https://docs.github.com/en/organizations/managing-programmatic-access-to-your-organization/setting-a-personal-access-token-policy-for-your-organization">「組織でパーソナルアクセストークンポリシーを設定</a>する」を参照してください。</p>
+<p>きめ細かいPATに関するフィードバックやバグがある場合は、<a href="https://github.com/community/community/discussions/36441">専用のフィードバックディスカッションで</a>お知らせください。</p>
+
+
