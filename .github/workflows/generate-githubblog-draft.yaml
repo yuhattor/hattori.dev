@@ -52,6 +52,6 @@ jobs:
           --body "@yuhattor Please review this PR and close #${{ github.event.issue.number }}" \
           --base "main" \
           --head "githubblog/$ITEM" \
-          --label "blog" \
-          --reviewer "yuhattor" \
-          --assignee "yuhattor"
+          --label "blog" 
+          # --reviewer "yuhattor" \
+          # --assignee "yuhattor"
