@@ -13,7 +13,7 @@ summary: "  GitHub Enterprise Cloudのお客様は、パブリックベータに
 <p>GitHub Enterprise Cloudをご利用のお客様は、エンタープライズ監査ログの一部としてAPIリクエストイベントをストリーミングするパブリックベータに参加できるようになりました。</p>
 <p>このベータ版の一部として、企業のプライベートおよび内部リポジトリに対するREST APIコールは、<a href="https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/streaming-the-audit-log-for-your-enterprise">GitHubがサポートするストリーミングエンドポイントの</a>1つにストリーミングできます。<br />
 <img decoding="async" alt="image (4)" src="https://i0.wp.com/user-images.githubusercontent.com/95828167/229549675-7d472b3b-c636-47c2-8372-4adcde52d1f9.png?w=693&#038;ssl=1" data-recalc-dims="1"></p>
-<p><sub>注：セキュリティ上の理由から、<code>hashed_tokenと</code> <code>token_idは</code>再表示されています。 </sub></p>
+<p><sub>注：セキュリティ上の理由から、<code>hashed_token</code>と <code>token_id</code>は再表示されています。 </sub></p>
 <p>多くのGitHubユーザーは、GitHubのAPIを活用してGitHubの体験を拡張したりカスタマイズしています。しかし、APIを利用することで、企業にとってセキュリティや運用上のユニークな課題が生じることがあります。APIリクエストを対象とした監査ログストリーミングの導入により、企業経営者は以下のことが可能になりました：</p>
 <ul>
 <li>プライベートおよび内部リポジトリを対象としたAPI利用をよりよく理解し、分析する；</li>
