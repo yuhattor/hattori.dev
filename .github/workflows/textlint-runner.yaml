@@ -1,9 +1,7 @@
 name: TextLint
 
 on:
-  pull_request:
-    paths:
-      - "**/*.md"
+  workflow_dispatch
 
 jobs:
   run-textlint:

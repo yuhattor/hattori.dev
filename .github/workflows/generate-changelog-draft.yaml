@@ -1,9 +1,8 @@
 name: Generate GitHub Changelog Draft
 
 on:
-  issues:
-    types: [opened, reopened]
-
+  workflow_dispatch:
+  
 env:
   TZ: 'Asia/Tokyo'
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
