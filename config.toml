@@ -44,10 +44,6 @@ googleAnalytics = "G-8B5XLER8F7"
 	url = 'https://speakerdeck.com/yuhattor'
   weight = 5
 [[menu.main]]
-  name = 'RSS'
-  url = '/changelog/index.xml'
-  weight = 6
-[[menu.main]]
   name = 'Links'
   params.header = true
   weight = 20
@@ -72,10 +68,6 @@ googleAnalytics = "G-8B5XLER8F7"
 #   name = 'LinkedIn'
 #   url = 'https://www.linkedin.com/in/yukihattori/'
 #   weight = 3
-# [[menu.social]]
-#   name = 'RSS'
-#   url = '/changelog/index.xml'
-#   weight = 9
 
 
 # syntax highlight settings
